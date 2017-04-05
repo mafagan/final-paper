@@ -1,0 +1,784 @@
+\chapter{预备知识}
+
+aaaaaaaaaaaaaaaaaaaaa要改aaaaaaaaaaaaaaaaaaaa
+本章是本文工作的理论基础，主要对本文中所涉及的相关背景知识进行介绍。
+第一节简单介绍了经典命题逻辑的相关知识；
+第二节介绍命题逻辑的传统逻辑程序的语法与语义；
+第三节介绍回答集逻辑程序~(ASP)的语法与语义；
+第四节介绍后续章节中需要用到的一些定义与定理。
+
+\section{经典命题逻辑}
+
+
+经典命题逻辑是数理逻辑的一部分，其包括一部分逻辑形式与规律。在命题逻辑中我们
+实际上无法给命题一个数学化的严格定义，因为命题本身就是逻辑最基本的概念。命题的一个
+直观描述为：命题（proposition）是具有真假值但不能既真又假的陈述句，我们将命题或者
+命题变量所具有的真假值统称为真值（truth value）。事实上，真值包括真与假两个值，
+通常用~0表示假，~1表示真。
+在本文中，我们约定命题逻辑的形式语言~$\mathfrak{L}_P$的符号表包括三类逻辑符号：
+表示命题变量的小写英文字母，同时令~$Var$表示所有可能出现的命题变量构成的集合；
+命题连接词：$\neg$，$\wedge$，$\vee$，$\rightarrow$，$\leftrightarrow$；
+辅助符合：(，)。命题逻辑公式的语法按标准的方式归纳定义给出。
+\begin{definition}\label{def_proformula}
+语言~$\mathfrak{L}_P$的句子~(元素)被称为命题逻辑公式，其归纳定义为：
+
+~1.归纳基：命题变量是命题逻辑公式；
+
+~2.归纳步：若~$A$和~$B$是命题逻辑公式，则~$A \oplus B$是命题逻辑公式，其中
+~$\oplus \in \{\neg,\wedge,\vee,\rightarrow,\leftrightarrow\}$；
+
+~3.最小化：语言~$\mathfrak{L}_P$中所有的命题逻辑公式均是通过有限次运用上述
+两条规则得到的。
+\end{definition}
+
+现在我们考虑命题逻辑公式的语义，即指的是公式的真值。定义公式的真值我们仍
+使用标准的归纳法。基于命题连接词的语义，我们首先假定有一个函数指派了公式
+中出现的全部命题变量的真值，如下定义\ref{def_proformulavalue1}，然后在此基
+础上进一步归纳最终确定整个公式的真值。
+\begin{definition}\label{def_proformulavalue1}
+真值赋值函数~$t$形式为：$Var \rightarrow \{0,1\}$的函数，它为命题逻辑公式中
+的每一个命题变量~$p$指派了一个真值~$t(p) \in \{0,1\}$。
+\end{definition}
+\begin{definition}\label{def_proformulavalue2}
+给定真值赋值函数~$t$：$Var \rightarrow \{0,1\}$，命题逻辑公式~$A$在该赋值函数
+下的真值~$t(A) \in \{0,1\}$归纳定义如下：
+
+~1.归纳基：如果公式~$A$本身就是命题变量~$p$，则$t(A)=t(p)$;
+
+~2.归纳步：
+
+~~(1).如果公式~$A$的形式为~$(\neg B)$，则$t(A)=1$当且仅当$t(B)=0$；
+
+~~(2).如果公式~$A$的形式为~($B \wedge C$)，则$t(A)=1$当且仅当$t(B)$和$t(C)$都等于~1；
+
+~~(3).如果公式~$A$的形式为~($B \vee C$)，则$t(A)=0$当且仅当$t(B)$和$t(C)$都等于~0；
+
+~~(4).如果公式~$A$的形式为~($B \rightarrow C$)，则$t(A)=0$当且仅当$t(B)=1$而$t(C)=0$；
+
+~~(5).如果公式~$A$的形式为~($B \leftrightarrow C$)，则$t(A)=1$当且仅当$t(B)=t(C)$；
+\end{definition}
+
+接下来我们给出命题逻辑公式各类范式的定义，及与之相关的定理。
+\begin{definition}\label{def_proliteral}
+文字~(literal)：命题变量或者命题变量的否定称之为文字。
+\end{definition}
+\begin{example}\label{eg_literal}
+$p , \neg p, r, \neg r $等都是文字，而~$(p \wedge r)$，$p \vee r$则不是文字。
+\end{example}
+\begin{definition}\label{def_simple DCNF}
+简单析取式：仅由有限个文字的析取组成的公式；简单合取式：仅由有限个文字的合取组成的公式。
+\end{definition}
+\begin{example}\label{eg_simple DCNF}
+$p, \neg p \vee q, \neg p \vee q \vee \neg r$等都是简单析取式，
+而$\neg(p \wedge r), p \wedge(r \vee q), p \leftrightarrow r$等都不是简单析取式；
+$p, p \wedge r, \neg p \wedge \neg r \wedge r$等都是简单合取式，而
+$\neg (p \vee r), \neg p \vee (r \wedge q), r \leftrightarrow q$等都不是简单合取式。
+\end{example}
+
+\begin{theorem}\label{thm_simple DCNF}
+一个简单析取式是永真式（即公式在任意真值赋值函数下的真值都为~1），当且仅当它同时含有一个命题符合及该命题符合的否定；
+一个简单合取式是矛盾式（即公式在任意真值赋值函数下的真值都为~0），当且仅当它同时含有一个命题符合及该命题符合的否定。
+\end{theorem}
+
+\begin{definition}\label{def_DCNF}
+析取范式~(disjunctive normal form：DNF)：有限个简单合取式的析取组成的公式；
+合取范式~(conjunctive normal form：CNF)：有限个简单析取式的合取组成的公式。
+\end{definition}
+\begin{example}\label{eg_DCNF}
+$p, p \vee q, p \wedge r, (p \wedge r) \vee (q \wedge r) $等都是析取范式；
+$p, p \vee q, p \wedge r, (p \vee r) \wedge (q \vee r)$等都是合取范式。
+\end{example}
+
+\begin{theorem}\label{thm_DCNF1}
+析取范式是矛盾式，当且仅当它的每个简单合取式都是矛盾式；
+合取范式是永真式，当且仅当它的每个简单析取式都是永真式。
+\end{theorem}
+
+\begin{theorem}\label{thm_DCNF2}
+每一个命题逻辑公式都可以通过有限次数的等值演算，得到与之等值的析取范式，
+同理也能够得到与之等值的合取范式。
+\end{theorem}
+
+关于经典命题逻辑各类定义与定理更为详细的介绍，请参阅文献\cite{Lu2002}或\cite{ebbinghaus1994}。
+
+\section{传统逻辑程序}
+
+本节我们将介绍传统的逻辑程序。由于本文的研究目标是实现命题逻辑
+的正析取逻辑程序的求解器，因此我们不再讨论一阶逻辑的相关知识，实际上，一阶逻辑
+程序的求解也是先通过例化，将全部出现变量的规则例化后，最终仍是在命题逻辑下进行求解的，
+但限于篇幅所限，本文将不再详细予以介绍，关于一阶逻辑程序更为详细的介绍，
+请参阅文献\cite{lloyd1987}与\cite{enderton2001}。
+
+现在介绍命题逻辑的传统逻辑程序的基本语法形式，其中主要的术语和定义来源于文献\cite{eiter2009}与\cite{lifschitz1996}。
+\begin{definition}\label{def_atom}
+原子集$A$，是一个非空的符号集合。$A$的选择决定了所考虑的逻辑程序的“语言”。
+原子又称为正文字，负文字的前面带有一个经典语义下的否定符号$\neg$修饰。
+一个文字要么是正文字，要么是负文字。对于任意的原子$A$，文字$A$和$\neg$$A$被
+称作一对互补的文字。一个文字集被称作不一致的，如果它包含一对互补的文字；
+否则，它就是一致的。注意，由于本文的讨论研究都是在命题逻辑下，因此这里定义
+的原子与命题逻辑中的命题原子是相对应的，这里定义的文字也与定义\ref{def_proliteral}相对应。
+\end{definition}
+
+
+\begin{definition}\label{def_traditional LP}
+LP：一个传统的逻辑程序~(Logic Programs)是由有限个如下形式的规则构成的一个集合
+\begin{equation}
+\label{for:chap2:TLPrule}
+a \leftarrow b_1,\ldots,b_m
+\end{equation}
+
+其中，$a, b_1,\ldots,b_m$都是命题语言~$\mathfrak{L}_P$中的原子，即正文字。我们
+称~$a$为规则的头部，$b_1,\ldots,b_m$代表该规则的体部。一个规则也可以被简写成
+下列形式：
+\begin{equation} \label{for:chap2:TLPrule2}
+Head \leftarrow Body
+\end{equation}
+其中，如果该规则的体部为空，则式\ref{for:chap2:TLPrule2}可以直接被简写为~$Head$,
+这种形式的规则，我们称之为事实~$Fact$。
+
+对于给定的一个逻辑程序~$P$，我们定义其原子集~$Atom(P)$为~$P$中出现的所有原子。
+\end{definition}
+\begin{example}\label{eg_TLP}
+下列四条规则组成一个传统的逻辑程序~$P_1$，其中原子集$A$为~$\{p,q,r,s\}$。
+\begin{eqnarray}
+s.\\
+r \leftarrow q,s.\\
+p \leftarrow r.\\
+r \leftarrow s
+\end{eqnarray}
+\end{example}
+
+
+在命题逻辑中，通过真假赋值给命题符号指派真假值，就构成了对命题语义的解释。
+解释实际上是命题语言~$\mathfrak{L}_P$的一个子集。
+下面我们给出一个传统逻辑程序~(LP)的模型及其极小模型的语义。
+\begin{definition} \label{def_TLP Model}
+令~$I$是一个解释，那么~$I$是
+\begin{itemize}
+\item 一个子句~$C = a \leftarrow b_1,\ldots,b_m$的模型，如果$\{b_1,\ldots,b_m\} \nsubseteq I$或者$a \in I$，
+记为 $I \models C$；
+\item 一个逻辑程序~$P$的模型，如果对于每一个子句$C \in P$，有 $I \models C$，记为$I \models P$；
+\end{itemize}
+\end{definition}
+\begin{example}\label{eg_TLP Model}
+我们现在来考虑例\ref{eg_TLP}中的逻辑程序~$P_1$，由定义\ref{def_TLP Model}可以知道，
+$I_1 = \emptyset$不是~$P_1$的模型（因为事实~$s$在$I_1$中不为真）；而
+$I_2 = \{s,r,p\}$与$I_3 = \{s,r,p,q\}$都是~$P_1$的模型，因为对于~$P_1$中的
+每一条子句$C$(即规则),都有$I_2 \models C$与$I_3 \models C$成立。
+\end{example}
+
+\begin{definition} \label{def_TLP minimal Model}
+逻辑程序~$P$的模型~$I$是极小~(minimal)模型，如果不存在~$J$是~$P$的模型，且~$J \subset I$。
+\end{definition}
+
+\begin{theorem}\label{the_TLP minimal Model}
+每一个传统逻辑程序~$P$存在有且唯一的极小模型，我们称该模型为最少的模型~(the least model)，记为~$LM(P)$。
+\end{theorem}
+
+\begin{example}\label{eg_TLP Minimal Model}
+我们再次考虑例\ref{eg_TLP}中的逻辑程序~$P_1$，由例\ref{eg_TLP Model}给出的结果，我们知道逻辑程序~$P_1$
+的极小模型~$LM(P) = I_2 = \{s,r,p\}$。
+\end{example}
+
+
+\section{回答集逻辑程序}
+
+本节我们将介绍回答集逻辑程序的语法与语义，包括普通逻辑程序（Normal Logic Programs），
+析取逻辑程序（Disjunctive Logic Programs），扩展的析取逻辑程序（Extended Disjunctive
+Logic Programs），head-cycle-free的扩展析取逻辑程序（HEDLP）。其中主要的术语和定义
+来源于文献！！！！！
+
+\subsection{回答集逻辑程序的语法}
+
+这一小节我们将介绍回答集逻辑程序的语法，在此我们约定，在本文接下来的章节中，出现的全部
+逻辑程序都将是有限个如下形式的规则~(Rule)构成的一个集合：
+\begin{equation}
+\label{for:chap2:DLP}
+L_1 | \ldots | L_k \leftarrow L_{k+1},\ldots, L_{k+m},not~L_{k+m+1},\ldots,not~L_{k+m+n}
+\end{equation}
+
+其中$k,m,n \in \mathbb{N}$。式\ref{for:chap2:DLP}中的每一个~$L_i$都称为文字。~$L_i$称为正文字，如果它为原子命题
+；~$L_i$称为负文字，如果它为原子命题的否定。回答集逻辑程序不同于传统逻辑程序在于其引入失败集否定的同时，
+也引入了经典否定。对于含经典否定的逻辑程序，我们使用下面的方法将其转换为与之等价的不含经典否定的逻辑程序
+后再进行求解\cite{}：
+\begin{itemize}
+  \item 将每一个负文字$\neg p$，用一个新原子$p'$替换，然后在新逻辑程序中加入新规则$\leftarrow p,p'$。
+\end{itemize}
+
+符号~$not$ 是逻辑连接符，代表失败集否定~$(Negation~as~failure)$。
+因为引入了逻辑连接符~$not$，因此使用符合‘$|$’来区别经典逻辑中的'$\vee$'。规则中的逗号表示合取。
+
+在式\ref{for:chap2:DLP}中我们约定，一个文字在规则的体部出现为正，如果它的前面
+没有逻辑连接符~$not$；出现为负，如果它的前面带有逻辑连接符~$not$。
+
+在本文的后续章节中，如无特别说明，则所提及的规则均指形如式\ref{for:chap2:DLP}的规则。
+与逻辑程序~(LP)的语法类似，在这里，我们称~\{$L_1,\ldots ,L_k$\}为该规则的头部~(Head)，
+称~\{$L_{k+1},\ldots, L_{k+m},not~L_{k+m+1},\ldots,not~L_{k+m+n} $\}为该规则的体部~(Body)。
+记为：
+\begin{itemize}
+  \item $H_r = \{L_1,\ldots ,L_k\}$；
+  \item $B_p = \{L_{k+1},\ldots, L_{k+m}\}$；
+  \item $B_n = \{L_{k+m+1},\ldots,L_{k+m+n}\}$。
+\end{itemize}
+
+根据对规则中出现的文字的限制，我们可对规则作如下分类：
+\begin{itemize}
+  \item 约束~(Constraint)指规则头部为空的规则，即~$k = 0$；
+  \item 事实~(Fact)指规则体部为空的规则，即~$m = n = 0$；
+  \item 一般规则~(General rule)指头部仅由一个文字的规则，即~$k = 1$；
+  \item 霍恩规则~(Horn rule)指~$n = 0$的一般规则；
+  \item 正规则~(Positive rule)指规则体部不出现~$not$的规则，即~$n = 0$。
+\end{itemize}
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+本章主要介绍本文的背景工作，
+分别是情景演算与~\golog~语言，~\properplus~知识库、演进与主观逻辑~\sll~，以及规划实例
+这三个主要部分，包括它们的基本概念阐述和相关计算过程。
+
+\section{情景演算与~\golog~语言}
+
+\subsection{情景演算的基本概念}
+
+情景演算（situation calculus）语言~\lsc~\cite{Rei01}是带有等号公理的多类一阶语言，
+含有少量二阶成分，
+它非常适合于描述动态变化的世界。
+我们先简述若干重要概念：情景（situation），原子动作（primitive action）和流（fluent）。
+情景表示了世界变化的历史；
+原子动作则促使了世界发生变化，从而使情景发生改变；
+而流表示一个谓词的真值随着情景的改变而发生变化。
+~\lsc~中还有三种不同用途的个体种类，其中：~$action$~表示动作个体，
+~$situation$~表示情景个体，
+而~$object$~表示与具体应用领域相关的个体。
+
+~\lsc~主要包含以下构件：
+\begin{itemize}
+  \item 常量~$S_0$~代表初始情景；
+  \item 二元函数~$do(a,s)$~代表在情景~$s$~下执行动作~$a$~的后继情景；
+  \item 二元谓词~$Poss(a,s)$~表示动作~$a$~在情景~$s$~下是可执行的；
+  \item 动作函数，如~$move(x,y,z)$~，~$sense\_stench$~等；
+  \item 有穷数量的关系流，即以情景个体作为最后一个参数的谓词，
+      如$on(x,y,s)$，~$wumpusAlive(s)$~等；
+  \item 有穷数量的与情景无关的谓词，如~$block(x)$~，~$pit(x,y)$~。
+\end{itemize}
+
+从上述构件中可以得知，一个情景只可能用~$S_0$~或~$do(a,s)$~表示。
+为了方便起见，本文使用~$do(\vec{a},s)$~表示在情景~$s$~下执行动作序列~$\vec{a}$~的后继情景。
+值得说明的是，流包括关系流和函数流两种，但本文将不对函数流进行讨论。
+另外，我们通常只会关注那些只提及一个特定情景的公式。
+如果公式~$\phi$~不提及除情景~$\sigma$~之外的其它任何情景或~$Poss/2$~谓词，
+并且使用的量词中也不提及关于情景的变量，
+那么我们称~$\phi$~统一（uniform）于~$\sigma$~。
+
+在情景演算中，基本动作理论（Basic Action Theory, BAT）是通过如下格式描述一个具体的应用领域的：
+\begin{center}
+~$\md = \Sigma \cup \md_{ap} \cup \md_{ss} \cup \md_{una} \cup \md_{S_0}$~
+\end{center}
+其中
+\begin{enumerate}
+  \item ~$\Sigma$~是关于情景的基本公理（foundational axiom）集合；
+  \item ~$\md_{ap}$~是一组动作的前置条件公理（action precondition axiom），对于每个动作都有
+      ~$Poss(A(\vec{x}),s)\equiv \Pi_A(\vec{x},s)$~，
+      其中~$\Pi_A(\vec{x},s)$~是一个统一于情景~$s$~的公式；
+  \item ~$\md_{ss}$~是一组流的后继状态公理（successor state axiom，SSA），对于每个流都有
+      ~$F(\vec{x},do(a,s))\equiv \gamma_F^+(\vec{x},a,s)\vee (F(\vec{x})\wedge \neg \gamma_F^-(\vec{x},a,s))$~，
+      其中~$\gamma_F^+(\vec{x},a,s)$~和~$\gamma_F^-(\vec{x},a,s)$~
+      都是统一于情景~$s$~的公式；
+  \item ~$\md_{una}$~是关于动作的唯一名字公理（unique name axiom， UNA）集合，
+      即对于不同的动作函数符号~$\alpha$~和~$\beta$~，都有~$\alpha(\vec{x})\neq\beta(\vec{y})$~，
+      且~$\alpha(x_1,\ldots,x_n)=\alpha(y_1,\ldots,y_n)\supset x_1=y_1\wedge\ldots\wedge x_n=y_n$~；
+  \item ~$\md_{S_0}$~是初始知识库，它是一组统一于情景~$S_0$~的句子。
+\end{enumerate}
+
+在知识不完备情形下，
+我们根据文献\cite{L96}，在情景演算中引入感知动作（sensing action）。
+假设原子动作总是会改变世界的状态（本文又称为物理动作（physical action）），
+那么感知动作并不会改变世界状态，而是获知当前情景下公式~$\phi$~是否成立。
+我们用~$SF(A(\vec{x}),s)$~来刻画机器人通过感知动作获取什么样的知识。
+现在我们在基本动作理论中加入一个组成部分~$\md_{sf}$~，
+它是一组流的感知公理（sensed fluent axiom），
+对于每个感知动作都有~$SF(A(\vec{x}),s)\equiv \Psi_A(\vec{x},s)$~，
+其中~$\Psi_A(\vec{x},s)$~是一个统一于情景~$s$~的公式。
+本文讨论的感知动作都是针对关系进行询问的，
+因此感知结果只有~$True$~和~$False$~两种情况。
+为了方便于表示，对于每个感知动作$\alpha$，
+我们引入两个辅助动作~$\alpha_T$~和~$\alpha_F$~，
+表示感知结果分别为~$True$~和~$False$~的~$\alpha$~。
+
+\subsection{基于情景演算的~\golog~语言}
+
+~\golog~语言（alGOl in LOGic）\cite{Rei01}是一门程序语言，
+它基于情景演算，提供若干基本程序结构，能够定义程序和复合动作。
+~\golog~语言包括以下基本结构，其中~$\delta$~表示由这些基本结构复合而成的程序：
+\begin{itemize}
+  \item 原子动作~$a$~：执行单个原子动作；
+  \item 测试动作~$\phi?$~：判断公式条件是否成立；
+  \item 动作序列~$\delta_1;\delta_2$~：按照先后顺序执行两个程序；
+  \item 动作的非确定性选择~$\delta_1|\delta_2$~：非确定地选择其中一个程序执行；
+  \item 参数的非确定性选择~$\pi x.\delta(x)$~：非确定地选择个体来执行程序；
+  \item 动作的非确定性闭包~$\delta^*$~：0次或多次执行程序；
+  \item ~\mifthenelse~条件选择~$\mif\;\phi\;\mthen\;\delta_1\;\melse\;\delta_2\;\mendif$~：
+      根据条件判断结果执行不同程序；
+  \item ~\mwhileloop~循环~$\mwhile\;\phi\;\mdo\;\delta\;\mendwhile$~：
+      根据条件判断结果重复执行程序或终止；
+  \item 过程定义~$\mproc\;P(\vec{x})\;\delta\;\mendproc$~：以名字表示一个程序；
+  \item 过程调用~$P(\vec{c})$~：执行过程名对应的程序。
+\end{itemize}
+
+~\golog~语言中以宏~$Do(\delta,s,s')$~展开的方式定义其语义，
+它直观上表示在情景~$s$~下执行程序（复合动作）~$\delta$~所确定的动作序列可以到达情景~$s'$~。
+注意到程序中可能带有非确定性选择，所以可能会存在多种不同的动作序列从而到达不同的情景。
+~$Do/3$~的归纳定义如下：
+\begin{enumerate}
+  \item ~$Do(a,s,s')\doteq Poss(a,s) \wedge s'=do(a,s)$~，其中~$a$~是原子动作；
+  \item ~$Do(\phi?,s,s')\doteq \phi[s]$~，其中~$\phi$~是一个不带有情景参数的公式，
+      而~$\phi[s]$~则表示以~$\sigma$~作为~$\phi$~中出现的所有的流的情景参数；
+  \item ~$Do(\delta_1;\delta_2,s,s')\doteq\exists s''.Do(\delta_1,s,s'')\wedge Do(\delta_2,s,s'')$~；
+  \item ~$Do(\delta_1|\delta_2,s,s')\doteq Do(\delta_1,s,s')\vee Do(\delta_2,s,s')$~；
+  \item ~$Do(\pi x.\delta(x),s,s')\doteq\exists x. Do(\delta(x),s,s')$~；
+  \item ~$Do(\delta^*,s,s')\doteq \forall P.\{[\forall s_1. P(s_1,s_1)]\\
+      \wedge [\forall s_1,s_2,s_3. Do(\delta,s_1,s_2) \wedge P(s_2,s_3) \supset P(s_1,s_3)]\}\supset P(s,s')$~；
+  \item ~$Do(P(t_1,\ldots,t_n),s,s')\doteq P(t_1,\ldots,t_n,s,s')$~，
+      其中~$P(t_1,\ldots,t_n)$~是过程调用，
+      ~$P(t_1,\ldots,t_n,s,s')$~是一个关系，
+      可理解为执行过程~$P(t_1,\ldots,t_n)$~会促使情景~$s$~到情景~$s'$~的变迁；
+  \item ~$Do({\mproc\;P_1(\vec{v}_1)\;\delta_1\;\mendproc; \ldots; \mproc\;P_n(\vec{v}_n)\;\delta_n\;\mendproc; \delta_0},s,s')\doteq \\
+      \forall P_1,\ldots,P_n.[\bigwedge_{i=1}^n \forall s_1,s_2,\vec{v}_i. Do(\delta_i,s_1,s_2)\supset P_i(\vec{v}_i,s_1,s_2)] \supset Do(\delta_0,s,s')$~。
+\end{enumerate}
+
+~$Do/3$~的定义中最后一个是带有过程定义的程序结构，
+这是~\golog~程序中最为常见的结构。
+我们可以看出，~$Do/3$~的关于动作闭包和带有过程定义的程序结构的定义
+都使用了二阶逻辑。
+上述定义中没有给出~\mifthenelse~条件选择和~\mwhileloop~循环的情况，
+这是因为通常可以把这两个结构看作是上述结构的宏定义：
+\begin{itemize}
+  \item ~$\mif\;\phi\;\mthen\;\delta_1\;\melse\;\delta_2\;\mendif \doteq [\phi?;\delta_1]|[\neg\phi?;\delta_2]$~；
+  \item ~$\mwhile\;\phi\;\mdo\;\delta\;\mendwhile \doteq [\phi?;\delta]^*;\neg\phi?$~。
+\end{itemize}
+
+~$Do(\delta,s,s')$~是一种过程性语义定义，
+也就是说根据该语义展开可以计算出
+在情景~$s$~下执行程序~$\delta$~到达的最终情景~$s'=do(\vec{a},s)$~，
+从而得到满足~$\delta$~要求的动作序列~$\vec{a}$~。
+因此，~$Do(\delta,s,s')$~是一种离线语义。
+
+
+\section{~\properplus~知识库、演进与主观逻辑~\sll~}
+
+本节中，我们用~$\phi(\mu/\mu')$~表示将公式~$\phi$~中所有个体~$\mu$~的出现替换为个体~$\mu'$~；
+用~$\Gamma\models_\varepsilon\Gamma'$~
+表示句子集合~$\Gamma$~加上等号公理~$\varepsilon$~逻辑蕴含句子集合~$\Gamma'$~；
+用~$\theta$~来表示将变量赋值为常量的替换（substitution），
+把对公式~$\phi$~进行替换~$\theta$~的结果记为$\phi\theta$；
+用~$\forall\phi$~来表示公式$\phi$的全称闭包，
+即在~$\phi$~最外层用量词~$\forall$~约束它的所有自由变量；
+用~$e$~来表示任何一个等值合适公式（ewff），即只含等号并且不带量词的公式。
+
+\subsection{~\properplus~知识库的定义}
+
+~\properplus~知识库能够表示无穷多个体和一阶析取子句知识。
+根据文献\cite{LLL04}，我们给出~\properplus~知识库的形式化定义如下：
+
+\begin{definition}\label{def_properplus}
+给定等值合适公式~$e$~和析取子句~$c$~，
+我们称形式为~$\forall(e \supset c)$~的公式为全称子句(~$\forall$-clause~)。
+如果一个知识库是一个有穷且非空的全称子句集合，那么这个知识库是\memph{~\properplus~知识库}。
+给定~\properplus~知识库~$\Sigma$~，我们用~$\mgnd(\Sigma)$~表示
+~$\{c\theta | \forall(e \supset c)\textrm{ 并且 }\models_{\varepsilon}e\theta\}$~。
+\end{definition}
+
+我们给出一个~\properplus~知识库的示例，如下：
+
+\begin{example}\label{eg_properplus}
+考虑积木世界应用领域，它的初始知识库包含知识为：
+所有的积木都不在积木~$A$~上；若一个积木~$x$~上存在另一个积木~$y$~，
+那么~$x$~上并不是清空的。我们用~\properplus~知识库表示为
+$\{\forall x.\neg on(x,A), \forall x,y. x\neq y\supset (on(y,x)\supset \neg clear(x))\}$。
+\end{example}
+
+\subsection{针对局部效果动作的完备演进}
+
+~Lin~和~Reiter~在1997年提出了演进（progression）的概念\cite{LR97}。
+为方便表示，我们用~$S_\alpha$~表示情景~$do(\alpha,S_0)$~，
+其中~$\alpha$~是一个基动作，即其所有参数都是常量。
+他们定义一个关于两个~\lsc~结构的关系：
+~$M\sim_{S_\alpha}M'$~表示~$M$~和~$M'$~关于谓词和非情景个体都具有一致的解释，
+并且关于情景~$S_\alpha$~下的所有的流也都具有一致的解释。
+通过这个关系，他们给出了演进的形式化定义：
+
+\begin{definition}\label{def_progression}
+给定统一于情景~$S_\alpha$~的句子集合~$\md_{S_\alpha}$~。
+定义~$\md_{S_\alpha}$~是初始知识库~$\md_{S_0}$~关于基原子动作~$\alpha$~的\memph{演进}，
+它满足以下条件：
+如果对任意的~\lsc~结构~$M$~，~$M$~是~$\md_{S_\alpha}$~的一个模型，
+当且仅当存在~$\md$~的一个模型~$M'$~，使得~$M \sim_{S_\alpha} M'$~。
+\end{definition}
+
+根据定义~\ref{def_progression}~，我们可以容易地把演进的概念推广到动作序列上。
+但~Lin~和~Reiter~同时证明了在一般情形下演进不是一阶可定义的。
+而~Liu~和~Lakemeyer~在2009年利用遗忘（forgetting）的概念\cite{LL09}，
+证明了针对局部效果（local-effect）动作类型，
+演进总是一阶可定义并且是可计算的。
+这里以直观语言说明遗忘和局部效果动作两个概念。
+遗忘\cite{LR94}是指在一个理论中消除掉一个个体或谓词的出现，
+但又不影响其他无关谓词的真值。
+在一个一阶公式中遗忘一个命题原子从而得到新的公式，
+该操作可以通过简单的语法处理实现，
+记为~$forget(\md,p)$~。
+\emph{局部效果动作}~\cite{LL09}~是指，
+如果一个动作~$A(\vec{c})$~改变了流~$F(\vec{d},s)$~的真值，
+那么~$\vec{d}$~一定包含在~$\vec{c}$~中，
+即被改变的流的参数一定在动作的参数里。
+
+\begin{theorem}\label{thm_progression}
+给定局部效果理论~$\md$~和基原子动作~$\alpha =  A(\vec{c})$~，
+我们用~$\Omega(s)$~表示流~$F(\vec{a},s)$~的集合，其中~$\vec{a}$~被~$\vec{c}$~所包含。
+那么~$\md_{S_0}$~关于~$\alpha$~的演进为~$forget(\md_{S_0} \cup \md_{ss}[\Omega], \Omega(S_0))(S_0/S_{\alpha})$~，
+其中~$\md_{ss}[\Omega]$~是~$\md_{ss}$~根据~$\Omega$~的实例化。
+\end{theorem}
+
+我们现在扩展关于感知动作演进的概念，并给出相应定理，如下：
+
+\begin{definition}\label{def_sensingprog}
+给定基感知动作~$\alpha$~，
+和统一于情景~$S_\alpha$~的句子集合~$\md_{S_\alpha}$~。
+定义~$\md_{S_\alpha}$~是初始知识库~$\md_{S_0}$~关于~$\alpha_T(\alpha_F)$~的\memph{演进}，
+它满足以下条件：
+如果对任意的~\lsc~结构~$M$~，~$M$~是~$\md_{S_\alpha}$~的一个模型，
+当且仅当存在~$\md\cup\{(\neg)SF(\alpha,S_0)\}$~的一个模型~$M'$~，使得~$M \sim_{S_\alpha} M'$~。
+\end{definition}
+
+
+
+\begin{theorem}\label{thm_sensingprog}
+给定理论~$\md$~和基感知动作~$\alpha=A(\vec{c})$~，
+那么~$\md_{S_0}$~关于~$\alpha_T(\alpha_F)$~的演进为
+~$(\md_{S_0}\cup\{(\neg)\Psi_A(\vec{c},S_0)\})(S_0/S_\alpha)$~。
+\end{theorem}
+
+我们说~$\md_{sf}$~不含量词，是指对于每个动作函数~$A(\vec{x})$~，~$\Psi_A$~都是不含量词的；
+而说~$\md_{ss}$~本质上不含量词，是指对于每个动作函数~$A(\vec{x})$~和流~$F$~，
+可以通过~$\md_{una}$~把~$\Phi_F(\vec{x},A(\vec{x}),s)$~化简为不含量词的公式。
+~Liu~和~Lakemeyer~给出了以下定义和定理\cite{LL09}：
+
+\begin{definition}\label{def_wellformedbat}
+一个基本动作理论~$\md$~是~\memph{良好形式化}的，是指~$\md$~本身是局部效果的，
+~$\md_{ss}$~本质上不含量词，~$\md_{sf}$~不含量词，
+且~$\md_{S_0}$~是~\properplus~知识库。
+\end{definition}
+
+\begin{theorem}\label{thm_computeprogression}
+假设基本动作理论~$\md$~是良好形式化的，
+那么~$\md_{S_0}$~关于任何基动作的演进都是可用~\properplus~知识库定义且都是可计算的。
+\end{theorem}
+
+我们使用~$prog(\md_{S_0},\alpha)$~表示~$\md_{S_0}$~关于基动作~$\alpha$~
+演进而成的~\properplus~知识库。
+然后可以直接衍生出~$prog(\md_{S_0},\sigma)$~表示~$\md_{S_0}$~关于
+实例化情景~$\sigma$~演进而成的~\properplus~知识库。
+为了方便表示，本文用~$\md_\sigma$~来表示~$prog(\md_{S_0},\sigma)$~。
+
+\subsection{基于主观逻辑~\sll~的受限推理}
+
+为了说明~\properplus~知识库的推理机制，~Liu~等人提出了一种基于受限信念（limited belief）的主观逻辑~\sll~，基于~\sll~的推理是可靠的且有时是完备的\cite{LLL04}。
+对于析取知识，它通过单元归结（unit propagation）和受限的分情况讨论（case analysis）
+来进行推理。
+
+~$\ml$~语言是标准的带有等号公理的一阶逻辑。
+~\sll~语言是带有等号公理的一阶逻辑，它的原子公式是形式为~$B_k\phi$~或者~$t = t'$~的信念原子（belief atom），
+其中~$\phi\in\ml$~，并且~$\mb_k$~是~$k \geq 0$~的模态算子。
+~$B_k$~读作“~$\phi$~是一条~$k$~级信念”。
+我们用~\sllk{k}~表示~\sll~中，只用到模态算子~$\mb_j(j \leq k)$~的公式集合。
+我们称~$\ml$~中的公式为客观公式，称~\sll~中的公式为主观公式。
+
+给定实例化析取子句集合~$s$~，
+我们用~$\mup(s)$~表示~$s$~在单元归结下的闭包，
+即满足如下条件的最小集合：
+~$s \subseteq s'$~；
+如果文字~$\rho \in s'$~并且~$\{\overline{\rho}\} \cup c \in s'$~，那么~$c \in s'$~，
+其中~$\overline{\rho}$~是~$\rho$~的反文字。
+给定公式~$\phi\in\ml$~，我们递归定义信念约简~$(\mb_k\phi)\downarrow$~如下：
+\begin{enumerate}
+    \item ~$(\mb_k c)\downarrow = \mb_k c$~，其中~$c$~是一个子句；
+    \item ~$(\mb_k(t = t'))\downarrow = (t = t')$~；
+    \item ~$(\mb_k\neg(t = t'))\downarrow = (t \neq t')$~；
+    \item ~$(\mb_k\neg\neg\phi)\downarrow = \mb_k\phi$~；
+    \item ~$(\mb_k(\phi \vee \psi))\downarrow = (\mb_k\phi \vee \mb_k\psi)$~，其中~$\phi$~和~$\psi$~至少有一个不是析取子句；
+    \item ~$(\mb_k\neg(\phi \vee \psi))\downarrow = (\mb_k\neg\phi \wedge \mb_k\neg\psi)$~；
+    \item ~$(\mb_k\exists x\phi)\downarrow = \exists x \mb_k\phi$~；
+    \item ~$(\mb_k\neg\exists x\phi)\downarrow = \forall x \mb_k\neg\phi$~。
+\end{enumerate}
+
+我们称一个析取装备（setup）是一个非空的实例化析取子句集合。
+对于任意的析取装备~$s$~和公式~$\psi\in$\sll~，递归定义~$s\models\psi$~如下：
+\begin{enumerate}
+    \item ~$s \models (d = d')$~，当且仅当~$d$~和~$d'$~是同一个常量；
+    \item ~$s \models \neg \varphi$~，当且仅当 ~$s \not\models \varphi$~；
+    \item ~$s \models \varphi \vee \omega$~，当且仅当 ~$s \models \varphi$~或者~$s \models \omega$~；
+    \item ~$s  \models \exists x.\varphi$~，当且仅当存在某个常量~$d$~，使得~$s \models \varphi^x_d$~；
+    \item ~$s \models \mb_k\phi$~当且仅当以下的任意一条成立：
+    \begin{itemize}
+        \item 包含（subsume）：~$k = 0$~，~$\phi$~是一个析取子句~$c$~，
+            并且存在析取子句~$c'\in\mup(s)$~，使得~$c'\subseteq c$~；
+        \item 约简（reduce）：~$\phi$~不是一个析取子句，并且~$s \models (\mb_k\phi)\downarrow$~;
+        \item 分裂（split）：~$k > 0$~，并且存在析取子句~$c \in s$~，使得对所有的~$\rho \in c$~，都有~$s \cup \{\rho\} \models \mb_{k-1}\phi$~。
+    \end{itemize}
+\end{enumerate}
+
+句子集合~$\Gamma$~逻辑蕴含句子~$\varphi$~，记做~$\Gamma\models\varphi$~，
+是指每一个满足~$\Gamma$~中每一个句子的析取装备~$s$~，都满足~$\varphi$~。
+
+~Reiter~在文献\cite{Rei01a}中介绍了基于知识的动态封闭世界假设（dynamic closed-world assumption on knowledge）：给定一个关于机器人所知的公理集合~$\mk$~，
+该集合描述了机器人所知的一切知识；
+对于不能由~$\mk$~逻辑推出的基于知识的句子一律看做为假。
+该假设减轻了公理构造者描述缺失知识公理的负担，
+使之能够关注于机器人知道的知识。
+给定~\properplus~知识库~$\Sigma$~，我们该假设扩展到~\sll~上，如下所示：
+
+\begin{definition}\label{def_bcl}
+~$\closure(\mb_0\Sigma)\doteq\mb_0\Sigma\cup\{\neg\mb_k\phi | \mb_0\Sigma\not\models\mb_k\phi\}$~。
+\end{definition}
+
+根据文献\cite{LLL04}，我们知道~$\models \mb_0\Sigma\supset\mb_k\phi$~当且仅当
+~$\mgnd(\Sigma)\models\mb_k\phi$~，因此我们有
+~$\closure(\mb_0\Sigma)=\mb_0\Sigma\cup\{\neg\mb_k\phi | \mgnd(\Sigma)\models\neg\mb_k\phi\}$~。于是我们可以得到下面结论：
+
+\begin{theorem}\label{thm_bcl1}
+给定~\properplus~知识库~$\Sigma$~，我们有：
+\begin{enumerate}
+  \item ~$\closure(\mb_0\Sigma)$~是可满足的；
+  \item 对于任意~$\varphi\in$\sll~，都有~$\closure(\mb_0\Sigma)\models\varphi$~或者
+      ~$\closure(\mb_0\Sigma)\models\neg\varphi$~；
+  \item 对于任意~$\varphi\in$\sll~，都有~$\mgnd(\Sigma)\models\varphi$~当且仅当
+      ~$\closure(\mb_0\Sigma)\models\varphi$~。
+\end{enumerate}
+\end{theorem}
+
+最后，我们把关于主观公式（subjective formula）的推理关联到关于客观公式（objective formula）的推理上去。
+给定公式~$\varphi\in$\sll~，我们定义~$\varphi$~对应的客观公式~$\varphi_o$~，
+是将~$\varphi$~中出现的所有信念原子~$\mb_k\phi$~替换为~$\phi$~。
+~\properplus~知识库是~\proper~的，是指~$\mgnd(\Sigma)$~一个一致的实例化文字集合。
+如果~\proper~知识库是完备的，那么我们可以证明~$\mgnd(\Sigma)\models\varphi$~当且仅当
+~$\Sigma\models_\varepsilon\varphi_o$~。
+那么我们可以得到定理：
+
+\begin{theorem}\label{thm_bcl2}
+给定完备的~\proper~知识库~$\Sigma$~，则有
+~$\closure(\mb_o\Sigma)\models\varphi$~当且仅当~$\Sigma\models_\varepsilon\varphi_o$~。
+\end{theorem}
+
+\section{规划实例}
+
+\subsection{规划实例的定义}
+
+一个规划实例（planning instance）\cite{BFM07}是一个偶对~$I=(D,P)$~，其中~$D$~是一个领域定义（domian），
+~$P$~是一个问题定义（problem）。
+为了简化概念，我们以~ADL~规划语言来描述领域定义和问题定义两部分。
+
+领域定义是由若干有穷集合构成的元组~$(PF,Ops,Objs_D,T,\tau_D)$~，
+其中~$PF$~定义了领域谓词和函数，~$Ops$~是领域动作描述集合，
+~$Objs_D$~包含所有领域个体，~$T$~是一组个体类型，
+而~$\tau_D\subseteq Objs_D\times T$~是一组描述领域个体到个体类型的映射关系。
+由于本文并不使用规划实例中的函数和个体类型的概念，
+且把规划中的个体全部归为问题定义中的问题个体，
+所以我们把领域定义简化为二元组~$(P,Ops)$~，其中~$P$~定义了领域谓词。
+
+一个动作描述是一个四元组~$\langle O,\vec{x},Pre(\vec{x}),Eff(\vec{x})\rangle$~，
+其中~$O(\vec{x})$~构成唯一的动作名字，~$\vec{x}$~是该动作的参数变量；
+~$Pre(\vec{x})$~是一个只以~$\vec{x}$~作为自由变元的一阶公式，
+用来定义动作执行的前置条件；
+而~$Eff(\vec{x})$~是一张用来描述动作效果的列表，
+其中每个元素都是条件效果（conditional effects），具有以下两种形式：
+\begin{enumerate}
+  \item ~$\forall \vec{y}.\psi(\vec{x},\vec{y})\Rightarrow R(\vec{x},\vec{y})$~；
+  \item ~$\forall \vec{y}.\psi(\vec{x},\vec{y})\Rightarrow \neg R(\vec{x},\vec{y})$~；
+\end{enumerate}
+其中，~$\psi(\vec{x},\vec{y})$~是一个只以~$\vec{x}$~和~$\vec{y}$~作为自由变元的一阶公式，
+~$R(\vec{x},\vec{y})$~是一个只以~$\vec{x}$~和~$\vec{y}$~作为自由变元的合取子句。
+条件效果公式表示执行动作~$O(\vec{c})$~后，
+如果条件公式~$\psi(\vec{c},\vec{y})$~在旧的状态下成立，
+那么：根据1，~$R(\vec{c},\vec{y})$~在新的状态下成立；
+根据2，~$R(\vec{c},\vec{y})$~在新的状态下不成立。
+为统一形式化，本文以效果公式（effect formula），它表示为效果集合~$Eff(\vec{x})$~元素的合取，
+作为动作的效果描述。
+
+问题定义是一个四元组~$(Init,Goal,Objs_P,\tau_P)$~，
+其中~$Init$~是初始状态，即一个由有穷多个命题原子构成的集合；
+~$Goal$~是一个不含自由变元的一阶公式，用于描述规划目标；
+~$Objs_P$~和~$\tau_P$~与领域定义中的~$Objs_D$~和~$\tau_D$~的意义相同。
+再次说明的是，本文不考虑规划实例中的个体类型，
+所以我们也把问题定义简化为三元组~$(Init,Goal,Objs)$~，
+其中~$Objs$~表示领域涉及的所有个体。
+
+\subsection{在规划实例中加入领域控制知识}
+
+~Baier~等人在文献\cite{BFM07}中的主要工作是：用~\golog~程序表示领域控制知识，
+并以带空转的非确定性有穷自动机（$\varepsilon$-NFA）描述程序语义；
+然后定义一个编译函数，把以程序描述的控制信息编译到规划实例中去；
+最后调用求解器得到满足程序控制的规划。
+本文将引用他们的工作作为~\planning~算子实现的组成部分。
+
+首先我们给出若干基本定义：
+~$s\models\psi$~被定义为
+公式~$psi$~在状态~$s$~下为真；
+谓词~$Succ(s,a,s')$~为真当且仅当，
+在状态~$s$~中执行可行动作~$a$~将到达状态~$s'$~。
+然后规划（plan）的定义是：
+对于规划实例~$I$~和动作序列$a_1,\ldots,a_n$，
+如果存在一个状态序列~$s_0,\ldots,s_n$~使得
+~$s_0\models Init$~，
+且对于~$0\leq i\leq n-1$~都有$Succ(s_i,a_{i+1},s_{i+1})$，
+且~$s_n\models Goal$~，
+那么~$a_1,\ldots,a_n$~是~$I$~的一个规划。
+
+文献\cite{BFM07}定义了一个~$\varepsilon$-NFA~来
+描述程序~$\delta$~关于规划实例~$I$~的语义，其中涉及的核心概念是程序格局（program configuration），它的形式是由程序~$\delta$~和状态~$s$~构成的~$[\delta,s]$~。
+该~$\varepsilon$-NFA~的形式化定义如下：
+
+\begin{definition}\label{def_enfa}
+给定规划实例~$I$~和~\golog~程序~$\delta$~，
+定义~$A_{\delta,I}=(Q,A,\Delta,q_0,F)$~，
+其中~$Q=\{[\delta',s]|\delta'\textrm{是}nil\textrm{或}\delta\textrm{的子程序}, s\textrm{是}I\textrm{中的任何状态}\}$~，~$A$~是~$I$~中领域动作名字集合，
+~$q_0=[\delta,Init]$~表示初始格局，~$F=\{[nil,s]|s\textrm{是}I\textrm{中的任何状态}\}$~表示终止程序格局的集合，
+而~$\Delta:Q\times(A\cup\{\varepsilon\})\rightarrow 2^Q$~是一个程序格局的变迁函数，
+它的具体定义如下：
+\begin{enumerate}
+  \item ~$\Delta([a,s],a)=\{[nil,s']\}$~，当且仅当~$Succ(s,a,s')$~，其中~$a\in A$~；
+  \item ~$\Delta([\phi?,s],\varepsilon)=\{[nil,s]\}$~，当且仅当~$s\models\phi$~；
+  \item ~$\Delta([\delta_1;\delta_2,s],a)=\bigcup_{[\delta_1',s']\in \Delta([\delta_1,s],a)} \{[\delta_1';\delta_2,s']\}$~，若~$\delta_1\neq nil$~；
+  \item ~$\Delta([nil;\delta_2,s],a)=\Delta([\delta_2,s],a)$~；
+  \item ~$\Delta([\delta_1|\delta_2,s],a)=\Delta([\delta_1,s],a) \cup \Delta([\delta_2,s],a)$~；
+  \item ~$\Delta([\pi x.\delta,s],a)=\bigcup_{o\in Objs}\Delta([\delta|^x_o,s],a)$~；
+  \item ~$\Delta([\delta^*,s],a)=\Delta([\delta;\delta^*,s],a)$~，若~$a\neq\varepsilon$~；
+  \item ~$\Delta([\delta^*,s],\varepsilon)=\Delta([\delta;\delta^*,s],\varepsilon) \cup \{[nil,s]\}$~；
+  \item
+      \begin{math}
+        \Delta([\mif\;\phi\;\mthen\;\delta_1\;\melse\;\delta_2\;\mendif,s],a) = \left\{ \begin{array}{ll}
+            \Delta([\delta_1,s],a)\textrm{，若} s\models \phi\textrm{，}\\
+            \Delta([\delta_2,s],a)\textrm{，若} s\not\models \phi\textrm{；}
+        \end{array} \right.
+      \end{math}
+  \item
+      \begin{math}
+        \Delta([\mwhile\;\phi\;\mdo\;\delta\;\mendwhile,s],a)\\ = \left\{ \begin{array}{ll}
+            \{[nil,s]\}\textrm{，若} s\not\models \phi\textrm{且}a=\varepsilon\textrm{，}\\
+            \Delta([\delta;\mwhile\;\phi\;\mdo\;\delta\;\mendwhile,s],a)\textrm{，若} s\models \phi\textrm{。}
+        \end{array} \right.
+      \end{math}
+\end{enumerate}
+\end{definition}
+
+根据定义\ref{def_enfa}给出的~$\varepsilon$-NFA~~$A_{\delta,I}$~，
+程序~$\delta$~在规划实例~$I$~下的执行是指一个能被~$A_{\delta,I}$~所接受的动作序列~$\vec{a}$~，
+即~$\Delta([\delta,Init],\vec{a})$~包含程序格局~$[nil,s]\in F$~\cite{HU79}。
+以此可以定义在过程控制下的规划，如下所示：
+\begin{definition}\label{def_controlplan}
+定义动作序列~$\vec{a}$~规划实例~$I$~在程序~$\delta$~控制下的规划，
+要求~$\vec{a}$~既是~$I$~的一个规划，又是~$\delta$~在~$I$~下的一个执行。
+\end{definition}
+
+文献\cite{BFM07}定义了一个编译函数（compiling function）把程序信息编译到规划实例中，
+其原理是通过程序构造一个有穷自动机，
+把该自动机的变迁函数对应为规划实例中的动作集合，
+以变迁的状态符号作为动作的前置条件和效果公式的一部分，
+从而限制其规划的动作序列能被该自动机接受。
+如下例子展示了一个控制程序对应的自动机：
+
+\begin{example}\label{eg_programnfa}
+考虑程序~$\delta=(\pi x. \phi(x)?;a(x))^*;\psi?$~，
+那么我们根据~$\delta$~可以构造出对应的有穷自动机如图\ref{fig_compilenfa}所示。
+\begin{figure}
+  \center
+  \includegraphics[width=300pt]{img/nfa1.jpg}\\
+  \caption{程序~$\delta=(\pi x. \phi(x)?;a(x))^*;\psi?$~对应的有穷自动机}\label{fig_compilenfa}
+\end{figure}
+\end{example}
+
+编译函数把程序对应的有穷自动机中的变迁函数（即自动机中的边）编译为一一对应的动作。
+如例\ref{eg_programnfa}所示，通过编译得到的动作不仅包含原子动作~$a(x)$~
+（即规划实例中的动作），还引入了三类辅助动作：用于空转的~$Noop$~动作，
+用于条件判断的~$Test$~动作，还有用于释放~$\pi$~结构变量的~$Free$~动作。
+该编译函数还引入了若干辅助谓词：~$state(s)$~表示当前状态对应的状态个体是~$s$~，
+~$bound(e)$~表示程序变量~$e$~已经被绑定，
+而~$map(e,o)$~则表示程序变量~$e$~被绑定为领域个体~$o$~。
+该编译函数的形式化定义如下：
+
+\begin{definition}\label{def_compilingfunction}
+定义编译函数~$C(\delta,n,E)$~，其中~$\delta$~是需要编译的程序，
+~$n$~是代表程序初始状态个体下标的整数，以及~$E$~是变量个体列表；
+其输出是三元组$(L,L',n')$，其中~$L$~是辅助动作列表，
+~$L'$~是原子动作列表，以及~$n'$~是代表程序终止状态个体下标的整数。
+具体定义如下：
+\begin{enumerate}
+  \item ~$C(nil,n,E)=([],[],n)$~；
+  \item ~$C(O(\vec{c}),n,E) = ([],[\langle O,\vec{x},Pre'(\vec{x}),Eff'(\vec{x})\rangle],n+1)$~，\\
+      其中~$\langle O,\vec{x},Pre(\vec{x}),Eff(\vec{x})\rangle\in Ops$~，\\
+      ~$Pre'(\vec{x}) = (state(s_n) \wedge \bigwedge_{c_i\in E} bound(c_i)\rightarrow map(c_i,x_i) \wedge \bigwedge_{c_i\not\in E} x_i=c_i)$~，\\
+      且~$Eff'(\vec{x})=(state(s_n)\Rightarrow state(s_{n+1}) \wedge \bigwedge_{c_i\in E}(bound(c_i) \wedge map(c_i,x_i)))$~；
+  \item ~$C(\phi?,n,E)=([Ctest(\phi,n,n+1,E)],[],n+1)$~；
+  \item ~$C(\delta_1;\delta_2,n,E)=(L_1\cdot L_2,L_1'\cdot L_2',n_2)$~，\\
+      其中~$(L_1,L_1',n_1)=C(\delta_1,n,E)$~，
+      且~$(L_2,L_2',n_2)=C(\delta_2,n_1,E)$~；
+  \item ~$C(\delta_1|\delta_2,n,E)=(L_1\cdot L_2\cdot X,L_1'\cdot L_2',n_2+1)$~，\\
+      其中~$(L_1,L_1',n_1)=C(\delta_1,n+1,E)$~，
+      ~$(L_2,L_2',n_2)=C(\delta_2,n_1+1,E)$~，\\
+      $X=[Cnoop(n,n+1),Cnoop(n,n_1+1),Cnoop(n_1,n_2+1),Cnoop(n_2,n_2+1)]$；
+  \item ~$C(\pi x.\delta,n,E)=(L\cdot X,L',n_1+1)$~，\\
+      其中~$(L,L',n_1)=C(\delta_1,n,E\cdot[x])$~，\\
+      ~$X=[\langle free\_n_1, x, state(s_{n_1}), (state(s_{n_1+1}) \wedge \neg bound(x) \wedge \forall y.\neg map(x,y))\rangle]$~；
+  \item ~$C(\delta^*,n,E)=(L\cdot X,L',n_1+1)$~，\\
+      其中~$(L,L',n_1)=C(\delta_1,n+1,E)$~，\\
+      且~$X=[Cnoop(n,n+1),Cnoop(n_1,n+1),Cnoop(n+1,n_1+1)]$~；
+  \item ~$C(\mif\;\phi\;\mthen\;\delta_1\;\melse\;\delta_2\;\mendif,n,E) = (L_1\cdot L_2\cdot X,L_1'\cdot L_2',n_2+1)$~，\\
+      其中~$(L_1,L_1',n_1)=C(\delta_1,n+1,E)$~，
+      ~$(L_2,L_2',n_2)=C(\delta_2,n_1+1,E)$~，\\
+      且~$X=[Ctest(\phi,n,n+1,E),Ctest(\neg\phi,n,n_1+1,E),\\
+      Cnoop(n_1,n_2+1),Cnoop(n_2,n_2+1)]$~；
+  \item ~$C(\mwhile\;\phi\;\mdo\;\delta\;\mendwhile,n,E)=(L\cdot X,L',n_1+1)$~，\\
+      其中~$(L,L',n_1)=C(\delta,n+1,E)$~，\\
+      且~$X=[Ctest(\phi,n,n+1,E),Ctest(\neg\phi,n,n_1+1,E),Cnoop(n_1,n)]$~；
+  \item[$*$10.] ~$Cnoop(n_1,n_2)=\langle noop\_n_1\_n_2,[],state(s_{n_1}),state(s_{n_2})\rangle$~；
+  \item[$*$11.] ~$Ctest(\phi,n_1,n_2,E)=\langle test\_n_1\_n_2,\vec{x},Pre(\vec{x}),Eff(\vec{x})\rangle$~，\\
+      其中~$\vec{x}$~与~$\phi$~中出现的属于~$E$~的向量~$\vec{e}=e_1,\ldots,e_m$~具有相等长度，\\
+      ~$Pre(\vec{x})=(state(s_{n_1}) \wedge \phi|^{\vec{e}}_{\vec{x}}) \wedge \bigwedge_{i=1}^m bound(e_i)\Rightarrow map(e_i,x_i)$~，\\
+      且~$Eff(\vec{x})=(state(s_{n_2})\wedge \bigwedge_{i=1}^m(bound(e_i)\wedge map(e_i,x_i)))$~。
+\end{enumerate}
+\end{definition}
+
+给定程序~$\delta$~调用编译函数~$C(\delta,0,[])$~生成~$(L,L',n_{final})$~，其中
+~$L$~包含了所有辅助动作的描述，
+~$L'$~是对原子动作的新增约束，
+而~$n_{final}$~则是终止状态个体下标。
+把编译结果~$(L,L',n_{final})$~的信息与规划实例~$I$~结合，
+生成新的规划实例~$I_\delta$~。
+
+对于~$I$~中的任意动作描述
+$\langle\alpha,\vec{x},Pre(\vec{x}),Eff(\vec{x})\rangle$，
+~$L'$~中的关于~$\alpha(\vec{x})$~动作的所有元素
+~$[\langle\alpha,\vec{x},Pre_i(\vec{x}),Eff_i(\vec{x})\rangle]_{i=1}^n$~，
+把~$\langle\alpha,\vec{x},Pre(\vec{x})\wedge \bigvee_{i=1}^n Pre_i(\vec{x}),Eff(\vec{x})\wedge \bigwedge_{i=1}^n Eff_i(\vec{x}) \rangle$~加入到~$I_\delta$~的动作描述集合中，
+并把~$L$~中所有辅助动作描述也加入到该集合中。
+~$I_\delta$~中的谓词是~$I$~中的谓词，加上谓词$bound/1$，$map/2$，$state/1$；
+而个体是~$I$~中的个体，加上程序变量个体，程序的形式参数~$p_i(1\leq i\leq k)$~，
+和状态个体~$s_i(0\leq i\leq n_{final})$~。
+~$I_\delta$~的初始状态是~$I$~中的初始状态，加上
+~$state(s_0)$~；
+而规划目标是~$I$~的规划目标，加上~$state(s_{n_{final}})$~。
+
+通过上述方法生成的带有程序控制的规划实例，对应的规划就是符合程序控制的规划。
+文献\cite{BFM07}中给出以下定理阐述其正确性：
+
+\begin{theorem}\label{thm_dck}
+给定规划实例~$I=(D,P)$~和程序~$\delta$~，
+用~$Filter(\vec{a},D)$~表示对动作序列~$\vec{a}$~过滤掉其中不属于规划领域~$D$~中的动作
+从而得到的新动作序列，我们有：
+\begin{enumerate}
+  \item 如果~$\vec{a}$~是规划实例~$I_\delta$~的规划，
+      那么~$Filter(\vec{a},D)$~是~$I$~在~$\delta$~控制下的规划；
+  \item 如果~$\vec{a}$~是~$I$~在~$\delta$~控制下的规划，
+      那么将存在~$I_\delta$~的一个规划~$\vec{a}'$~，
+      使得~$\vec{a}=Filter(\vec{a}',D)$~。
+\end{enumerate}
+\end{theorem} 

@@ -1,0 +1,44 @@
+\IncMargin{1em}
+\begin{algorithm}
+  \SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+  \SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \caption{ConvertToDLP 稳定语义下转析取逻辑程序}\label{alg_prqa}%
+
+  \Input{~一条用结构ImplConvert存储的SM[USO]公式$ic$~}
+  \Output{~多条转换后的DLP[$\neg$]公式集$\Delta$~}
+  \BlankLine
+    Queue iqueue; //定义一个转换队列\\
+    iqueue.push($ic$); //将输入公式压入iqueue中  \\
+    \While(\tcp*[h]{转换队列非空则进入循环}){!iqueue.empty()}
+    {
+        $front$ = iqueue.front;\\
+        iqueue.pop();\\
+        \If{$front.srcLeft=NULL~\&\&~front.srcRight=NULL$}
+        {
+            $\Delta~~\Leftarrow~~$ CreateDLP($front$); //创建一个DLP语句为结果\\
+        }
+        \Else
+        {
+            \If{$front.srcLeft!=NULL$}
+            {
+                $\Phi~~\Leftarrow~~$ConvertLeftRules($front$); //使用左规则转换 \\
+                \For{$ilc~\in~\Phi$}
+                {
+                    iqueue.push($iic$);//将左规则转换后的语句压入iqueue中
+                }
+            }
+            \Else
+            {
+                $\Psi~~\Leftarrow~~$ConvertRightRules($front$); // 使用右规则转换 \\
+                \For{$ilc~\in~\Psi$}
+                {
+                    iqueue.push($iic$);//将右规则转换后的语句压入iqueue中
+                }
+            }
+        }
+    }
+
+  %}
+
+\end{algorithm}\DecMargin{1em}

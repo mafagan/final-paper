@@ -1,0 +1,32 @@
+\IncMargin{1em}
+\begin{algorithm}\label{alg_prqa}
+	{\small
+		\SetKwInOut{KwIn}{Input}
+		\SetKwInOut{KwOut}{Output}
+		\caption{$\mathsf{PRQA}(D,\mathcal{O},Q)$}\label{alg:PQA}
+		\KwIn{a database $D$, a preference-based ontology $\mathcal{O}=(\Sigma,\preceq)$, and a Boolean query $Q$}
+		\KwOut{{\em true} if $\langle D, \mathcal{O}\rangle \models Q$, and {\em false} otherwise}
+		\ForEach{$S \subseteq \Sigma$}
+		{
+			\If{$D\cup S$ has at least one stable model}
+			{
+				$isRepair :=$ {\em true}\;
+				\ForEach{$S'\subseteq\Sigma$ with $S \prec S'$}
+				{
+					\If{$D\cup S'$ has at least one stable model}
+					{
+						$isRepair :=$ {\em false}\;
+						{\bf break}\;
+					}
+				}
+				\If{$isRepair$ and $D\cup S \not \models_s Q$}
+				{
+					\Return { false}\;
+				}
+			}
+		}
+		\Return { true}\;
+	}
+	\vspace*{-1mm}
+\end{algorithm}
+\DecMargin{1em}

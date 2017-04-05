@@ -1,0 +1,33 @@
+\IncMargin{1em}
+\begin{algorithm}\label{alg_prqa}
+	{\small
+		\SetKwInOut{KwIn}{Input}
+		\SetKwInOut{KwOut}{Output}
+		\caption{IMR}
+		\KwIn{$\Sigma, D, q$}
+		\KwOut{Whether $(\Sigma, D) \models_{\subseteq} q$}
+		$RQueue \leftarrow \emptyset$;\\
+		push(RQueue, $\Sigma$);\\
+		\While{NotEmpty(RQueue)}
+		{
+			$\Sigma_t \leftarrow pop(RQueue)$\\
+			\If{isConsistent($\Sigma_t, D$)}
+			{
+				\If{$(\Sigma_t, D) \not\models q$} 
+				{
+					\Return False;
+				}
+				Continue;
+			}
+			\For{$r \in \Sigma_t$}
+			{
+				$\Sigma_m \leftarrow \Sigma_t / r$\\
+				push(RQueue, $\Sigma_m$);\\
+			}  
+		}
+		
+		\Return True
+	}
+	\vspace*{-1mm}
+\end{algorithm}
+\DecMargin{1em}

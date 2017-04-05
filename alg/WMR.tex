@@ -1,0 +1,49 @@
+\IncMargin{1em}
+\begin{algorithm}\label{alg_prqa}
+	{\small
+		\SetKwInOut{KwIn}{Input}
+		\SetKwInOut{KwOut}{Output}
+		\caption{WMR}
+		\KwIn{$\Sigma, D, q$}
+		\KwOut{Whether $(\Sigma, D) \models_{\leq_w} q$}
+		
+		\For{$w_n$ in WeightsofProgram}
+		{
+			$\Sigma_w \leftarrow \bigcup_{i\in \{w_0\dots w_n\}}\Sigma[i]$;\\
+			hasConsistent $\leftarrow$ False;\\
+			MWeight $\leftarrow$ -1;\\
+			$RQueue \leftarrow \emptyset$;\\
+			push(RQueue, $\Sigma$);\\
+			\While{NotEmpty(RQueue)}
+			{
+				$\Sigma_t \leftarrow pop(RQueue)$;\\
+				\If{MWeight $\neq$ -1 And $\Sigma_t$.mWeight $>$ MWeight}
+				{
+					Continue;
+				}							
+				\If{isConsistent($\Sigma_t, D$)}
+				{
+					\If{$(\Sigma_t, D)\not\models q$}
+					{
+						\Return False;
+					}
+					MWeight = $\Sigma_t$.mWeight;\\
+					Continue;
+				}
+				\For{$r \in \Sigma_w$}
+				{
+					$\Sigma_m \leftarrow \Sigma_t / r$\\
+					$\Sigma_m$.mWeight += $r$.weight;\\ 
+					push(RQueue, $\Sigma_m$);\\
+				}  
+			}
+			\If{hasConsistent = True}
+			{
+				Break;
+			} 
+		}
+		\Return True
+	}
+	\vspace*{-1mm}
+\end{algorithm}
+\DecMargin{1em}

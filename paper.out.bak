@@ -1,0 +1,27 @@
+\BOOKMARK [0][-]{section*.1}{摘 要}{}% 1
+\BOOKMARK [0][-]{section*.2}{Abstract}{}% 2
+\BOOKMARK [0][-]{chapter.1}{第1章 引言}{}% 3
+\BOOKMARK [1][-]{section.1.1}{本文的意义}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{研究现状}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{本文的工作}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{论文结构简介}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{第2章 预备知识}{}% 8
+\BOOKMARK [1][-]{section.2.1}{知识库模型研究}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{本体的研究}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{推理机与决断集的计算}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{本体溯因诊断的研究}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{第3章 基于决断集模板进行溯因诊断}{}% 13
+\BOOKMARK [1][-]{section.3.1}{知识库诊断问题}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{本体的诊断与解释}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{决断集模版的生成与验证}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{基于决断集模版的解释}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{生成基于决断集模版解释的算法}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{第4章 实验与分析}{}% 19
+\BOOKMARK [1][-]{section.4.1}{实验工具与环境}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{程序框架}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{解释基数对生成解释的效率以及数量对比实验}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{决断集模板解释修复知识库模型对比实验}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{第5章 总结与展望}{}% 24
+\BOOKMARK [1][-]{section.5.1}{工作总结}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{不足与改进方向}{chapter.5}% 26
+\BOOKMARK [0][-]{section*.5}{参考文献}{}% 27

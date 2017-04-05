@@ -1,0 +1,264 @@
+\def\qed{\hfill \vrule height6pt width 6pt depth 0pt}
+\chapter{本体规则修复理论}
+
+本文主要提出了基于本体规则修复的容忍不一致查询理论框架，从规则修复的角度，在定义了偏好关系后，利用修复之间的偏好，实现了容忍不一致查询。
+本体领域对于理论复杂度的要求很高，因为它与实际应用的联系较为密切，尤其是在互联网大数据面前，只有~$tractable$~的算法才能够使得研究变得
+有意义，并帮助到实际应用。而又因为本身本体推理在不断增强其语义的同时，复杂度会急剧地增长，这就要求我们去寻找可计算的片段，在这些片段中
+进行新的理论研究。所以本文选取了在稳定模型语义中有着良好复杂度的~$R\text{-}acyclic$~与~$guarded$~片段，以及~$stratified$~否定片段
+进行研究。后面的讨论表明，本体规则修复下的容忍不一致查询在这些片段中某种程度上有着良好的表现。
+
+本章将先给出需要用到的一些基本定义，即基于本体规则修复的基本定义，同时在原来的最基本的偏好关系基础上，另外给出了四种在实际应用中有相对应场景的偏好关系。
+
+为了帮助后面定理的证明，我们先给出了一些基础定理，其中有前人研究过并且证明过的结论。后面开始展开本文最主体的研究，即在我们的本体规则修复框架下，查询回答问题的复杂度。我们组合了不同的语言片段，分别研究了四种情况的复杂度，即规则片段是~$R\text{-}acyclic$~或~$Guarded$~ 的情况下，采用~$stratified$~否定或全否定的稳定模型语义。对于给出的复杂度定理，本章给出了大篇幅的证明。本章最后会对这些复杂度做总结性分析，及其反映出的在实际应用中的问题。
+
+\section{基本定义及性质}
+在这一部分，本文将提出几种不同的语义来表达本体知识基的不一致性。与现有的许多工作
+不同，本文所关注的是规则相对数据要较为可靠的情况。在Lembo的研究\cite{rr2010LemboLRRS}中提出了在
+数据集上进行的本体修复语义，而本文提出了一种与其相似的容忍不一致本体语义，
+我们称其为{\hei 本体规则修复}。
+
+为了定义规则修复，我们给每一个规则集合加上了偏好关系，这些加了偏好关系的规则集合
+我们称其为{\hei 基于偏好的本体规则}。
+
+\begin{definition}\label{def1}
+基于偏好的本体是一个有序二元组~$(\Sigma,\preceq)$~，其中~$\Sigma$~是一个正程序，
+~$\preceq$~是定义在~$\mathcal{P}(\Sigma)$~(~$\Sigma$~的子集集合)上的一个先序关系(满足自反性，传递性的二元关系)。我们称~$\preceq$~为{\hei 偏好}。
+\end{definition}
+
+为了得到精确的语义定义，我们需要定义与实际应用相符的偏好关系。除了由集合包含关系~$\subseteq$~得到的偏好，与Bienvenu的工作\cite{aaai14BienvenuBG}相似，我们同样考虑了另外四种定义在规则子集上的偏好关系，这些偏好关系首次提出是在Eiter与Gottlob\cite{jacm1995Eiter}的论文中，用于研究逻辑溯因问题。定义\ref{def1}中的~$\preceq$~ 可以用任意的偏好关系进行替换。
+
+\begin{description}
+	\item[基数偏好~$(\leq)$~] 给定任意集合~$S,S'\subseteq \Sigma$~，我们记~$S\leq S'$~ 若~$|S|\leq|S'|$~。对这种偏好的直观理解是，我们总是希望能够获得一致的规则集合所包含的原有本体的规则越多越好。
+	\item[带优先级偏好~$(\subseteq_P,\leq_P)$~] ~$\Sigma$~的一个优先分层~$P$~是一个元组~ $\langle P_1,\dots,P_n\rangle$~，其中~$\{P_1,\dots,P_n\}$~是~$\Sigma$~的一个划分。给定~$\Sigma$~的一个优先分层~$P=\langle P_1,\dots,P_n\rangle$~，优先偏好~$\subseteq_P$~与~$\leq_P$~的定义如下：
+	\begin{itemize}
+		\item 带优先级的集合包含~$(\subseteq_P)$~：给定~$S,S'\subseteq \Sigma$~，我们说~$S\subseteq_P S'$~，若下面两个条件之一成立：1、对于所有~$1\leq i\leq n$~，有~$S\cap P_i = S'\cap P_i$~成立。2、存在~$1\leq i\leq n$~，使得~$S\cap P_i \not\subseteq S' \cap P_i$~且对所有~$1\leq j < i$~，有~$S\cap P_j = S'\cap P_j$~成立。
+		\item 带优先级的基数~$(\leq_P)$~：给定~$S,S'\subseteq \Sigma$~，我们说~$S\subseteq_P S'$~，若下面两个条件之一成立：1、对于所有~$1\leq i\leq n$~，有~$|S\cap P_i| = |S'\cap P_i|$~ 成立。2、存在~$1\leq i\leq n$~，使得~$|S\cap P_i| < |S' \cap P_i|$~且对所有~$1\leq j < i$~，有~$|S\cap P_j| = |S'\cap P_j|$~成立。
+	\end{itemize}
+	注意定义中代表优先级的数字越小，表示优先级越高。
+	
+	带优先级的偏好关系非常适用于不一致修复的场景，因为这种偏好关系对规则的重要性进行了级别分层，限制了修复的选择，也更加贴近于实际情况，实际中的规则本身就不可能完全等价，而通过学习得来的规则更是如此。
+	\item[权重偏好~$(\leq_w)$~] 我们用函数~$w:\Sigma\rightarrow\mathbb{N}$~来表示权重的赋值。给定集合~$S,S'\subseteq \Sigma$~，一个权重赋值~$w$~，若~$\sum_{r\in S}w(r)\leq \sum_{r\in S'}w(r)$~，则~$S\leq_w S'$~。
+	
+	带权重的偏好同样也是对每一条规则赋予了可信度的标识，某种程度上它的表达更为简单。在后面我们会讨论到，实际上带优先级的基数是能够转化成权重偏好的。
+\end{description}
+
+有了前面的叙述，我们开始来进行规则修复的定义。
+
+\begin{definition}
+令~$\mathcal{O}$~为一个基于偏好的本体~$(\Sigma,\preceq)$~，~$D$~为数据库。
+令~$S$~为~$\Sigma$~的一个子集，若~$D\cup S$~拥有至少一个稳定模型，且对于~$\Sigma$~的
+每个子集~$S'$~满足，若~$S\prec S'$~(即~$S \preceq S'$~但~$S' \npreceq S$~)，则~$S' \cup D$~不存在稳定模型，那么我们称~$S$~ 是在~$\preceq$~ 与~$D$~ 下的~$\Sigma$~ 的一个修复(若上下文明晰，可把~$D$~省略)。
+\end{definition}
+
+直观地来理解，每一个基于偏好的规则修复实际上是本体规则集合的一个极大一致
+子集，相对于当前的数据库。这里的思想意义在于尽量多的信任当前所存在的规则，
+尽可能少的删掉已有规则。一个本体的偏好修复的个数往往会有多个。为了避免
+要选择哪一个修复来进行推理，并进行查询回答的问题，我们提出了如下的查询回答
+语义。
+
+\begin{definition}\label{def3}
+令~$\mathcal{O}$~为一个基于偏好的本体~$(\Sigma,\preceq)$~，其中~$\Sigma$~是一个正规则集合，令~$D$~为数据库，~$Q$~为一个~$NBCQ$~。若对于~$\Sigma$~的任意一个在~$\preceq$~及~$D$~ 下的规则修复~$S$~都满足~$D \cup S \models_s Q$~，则我们有~$\langle D,\mathcal{O}\rangle\models Q$~。
+\end{definition}
+我们在定义\ref{def3}中选择的是谨慎推理，即我们需要所有情况都满足才定义为可推理。不同于基于数据集的修复理论，我们不考虑所有修复的交集的推理情况，因为在非单调逻辑的条件下(我们的理论基于稳定模型语义)，规则子集有可能比其父集推理出更多的模型，这样来看，用子集的规则来进行判断是没有意义的。
+
+下面的命题表明，我们的语义对于容忍不一致查询回答在本体知识基本身是一致的情况下，与查询回答的经典语义是一致的。这是一个重要的结论。
+
+\begin{proposition}
+令~$\mathcal{O}$~为一个基于偏好的本体~$(\Sigma,\preceq)$~，~$D$~为数据库。若~$\Sigma\cup D$~存在稳定模型，则以下结论成立：对于任意一个~$NBCQ$~~$Q$~，~$\langle D,\mathcal{O}\rangle\models Q$~当且仅当~$\Sigma\cup D\models_s Q$~。
+\end{proposition}
+
+我们很容易能够得到以上命题的正确性，若一个本体本身是一致的，那么它有且仅有一个规则修复，即其本身，我们只需要验证该本体是否能够推出~$Q$~即可。
+
+通过以上的定义，我们得到了基于偏好的本体规则修复理论框架，整个基本流程如图\ref{fig:framework}所示，接下来可以对基于规则修复的容忍不一致查询回答进行正式的研究。
+\vspace*{1.5em}
+\begin{figure}[h!]
+	\center
+	\includegraphics[width=400pt]{img/queryAnsProcess.png}\\
+	\caption{带偏好的存在规则语言修复理论示意图} \label{fig:framework}
+\end{figure}
+
+\section{问题复杂度分析}
+在这个部分，我们将研究在规则修复语义下的查询蕴含问题的数据复杂度与组合复杂度。特别地，我们将关注以下判定问题：
+\begin{itemize}
+    \item {\bf 数据复杂度}：给定一个基于偏好的本体~$\mathcal{O}$~ 和一个NBCQ~$Q$~，对于任意输入的数据库~$D$~，判断~$\langle D, \mathcal{O}\rangle\models Q$~是否成立。
+    \item {\bf 组合复杂度}：对于任意输入的基于偏好的本体~$\mathcal{O}$~，NBCQ~$Q$~，数据库~$D$~，判断~$\langle D, \mathcal{O}\rangle\models Q$~是否成立。
+\end{itemize}
+
+为了表示整体输入的大小，我们利用另外一个方法来表示整体的大小。我们用~$\|D\|$~，~$\|\Sigma\|$~，~$\|Q\|$~，~$\|P\|$~，~$\|w\|$~来分别表示数据库~$D$~，有限的正规则集合~$\Sigma$~，NBCQ~$Q$~，优先级划分~$P$~，权重赋值函数~$w$~的大小。另外，给定一个基于偏好的本体~$\mathcal{O}=(\Sigma,\preceq)$~，我们定义\vspace{0.5em}
+$$
+|\!|\mathcal{O}|\!|:=\left\{
+\begin{aligned}
+&|\!|\Sigma|\!| &\text{ if }&\preceq\,\in\{\subseteq,\le\}, \\
+&|\!|\Sigma|\!|+|\!|P|\!| &\text{ if }&\preceq\,\in\{\subseteq_P,\le_P\}, \\
+&|\!|\Sigma|\!|+|\!|w|\!| & \text{ if }&\preceq\,=\,\le_w.
+\end{aligned}
+\right.
+$$
+\vspace{2em}
+为了统一的表达形式，我们有~$\|\mathcal{O}\|=\|\Sigma\|^{O(1)}$~。
+
+\begin{proposition}\label{decprec}
+令~$\mathcal{O}$~是一个基于偏好的本体~$(\Sigma, \preceq)$~，其中~$\preceq \in \{\subseteq,\leq,\leq_P,\subseteq_P,\subset_w\}$。给定任意子集~$S,S'\subseteq \Sigma$~，判断~$S\prec S'$~是否成立的复杂度是~$\textsc{DTime}(\|\mathcal{O}\|^{O(1)})$。
+\end{proposition}
+\begin{proof}
+我们能够很轻易地看出，判断~$S \subseteq S'$~可以由~$O(n)$~的算法完成，~$n$~为规则个数。而~$S \leq S'$~可以由两个集合的大小直接判断。加入优先级分层后，我们假定分层数为~$m$~，那么判断~$S \subseteq_P S'$~的其中一个简单算法能够在~$n\times m$~时间内完成，$S\leq_P S'$为~$n + m$。对于~$\subseteq_w$，只需计算出权重总和进行比较即可，在线性时间内就能完成。这里我们还想探究一下~$\subseteq_P$~与~$\subseteq_w$~间的关系，实际上我们有以下引理
+\begin{lemma}\label{prec_lemma}
+	(基于Eiter与Gottob论文\cite{jacm1995Eiter})~令~$P=\langle\mathcal{P}_1,\dots,\mathcal{P}_k\rangle$~是规则集合~$\Sigma$~的一个优先级分层，令~$u=(max_{i=1}^k|\mathcal{P}_i|)+1$~，对于所有的~$\alpha\in\mathcal{P}_i$~，我们定义~$w$~函数:$w(\alpha)=u^{k-i}$。那么对于两个规则子集~$S$~与~$S'$，~$S\subseteq_P S'$~的结果与~$S\subseteq_w S$~的结果是一致的。
+\end{lemma}
+由以上引理我们可以知道每一个在~$\subseteq_P$~上的问题都能够转化成在~$\subseteq_w$~上的问题，即~$\subseteq_P$~复杂度不会超过~$\subseteq_w$~。
+
+总结以上的讨论，与命题的结果是一致的。\qed
+\end{proof}
+命题的结论告诉我们，所有集合的比较都至少能够在线性时间(相对于本体大小)内完成。而这是我们后面证明算法中一个较为频繁的操作。
+
+在研究修复语义的查询回答问题前，由于我们的问题是在稳定模型语义下提出的，我们首先给出一系列关于稳定模型语义下~$Datalog\pm$~的定理，这些定理是由前人的研究所得，并且已经被证明。
+
+下面两个命题基于Magka论文\cite{ijcai2013Magka}的定理9，我们会给出简要的证明。
+\begin{proposition}\label{P1}
+设~$\Sigma$~是一段满足~$R\text{-}acyclic$~的规则，给定数据库~$D$~，以及一个安全的NBCQ~$Q$~，判断~$\Sigma\cup D\models Q$~的组合复杂度为~\textsc{coN2ExpTime}-complete，数据复杂度为~\textsc{coNP}-complete。判断~$SM(\Sigma\cup D)\neq\emptyset$~的组合复杂度的上界为~\textsc{N2ExpTime}，数据复杂度的上界为~\textsc{NP}。
+\end{proposition}
+
+\begin{proposition}\label{P2}
+设~$\Sigma$~是一段满足~$R\text{-}acyclic$~且~$R\text{-}stratified$~的规则，给定数据库~$D$，以及一个安全的NBCQ~$Q$~，判断~$\Sigma\cup D\models Q$~的组合复杂度为~\textsc{2ExpTime}-complete，数据复杂度下能够在多项式时间内求解。判断~$SM(\Sigma\cup D)\neq\emptyset$~的组\begin{array}{ccc}
+                                                         \begin{array}{c}
+                                                             \\
+                                                             
+                                                          \end{array}
+                                                          &  &  \\
+                                                          &  &  \\
+                                                          &  &  
+                                                       \end{array}
+合复杂度的上界为~\textsc{2ExpTime}，数据复杂度下能够在多项式时间内求解。
+\end{proposition}
+
+以下命题基于Cal\'{\i}论文\cite{ai2012Cali}中的定理33与Gottlob论文\cite{kr2014Gottlob}的定理5。
+\begin{proposition}\label{P3}
+设~$\Sigma$~是一段满足~$guarded$~且~$stratified$~的规则，给定数据库~$D$~，以及一个覆盖的NBCQ~$Q$，判断~$\Sigma\cup D\models Q$~的组合复杂度为~\textsc{2ExpTime}-complete，数据复杂度下能够在多项式时间内求解。判断~$SM(\Sigma\cup D)\neq\emptyset$~的组合复杂度的上界为~\textsc{2ExpTime}~，数据复杂度下能够在多项式时间内求解。
+\end{proposition}
+
+下面命题基于Gottlob论文\cite{kr2014Gottlob}中的推论9。
+\begin{proposition}\label{P4}
+设~$\Sigma$~是一段~$guarded$~规则，给定数据库~$D$~，以及一个覆盖的NBCQ~$Q$，判断~$\Sigma\cup D\models Q$~的组合复杂度是~\textsc{2ExpTime}-complete~，数据复杂度为~\textsc{coNP}-complete。判断~$SM(\Sigma\cup D)\neq\emptyset$~的组合复杂度的上界为~\textsc{2ExpTime}~，数据复杂度在~\textsc{NP}内。	
+\end{proposition}
+
+以上4个命题关于查询蕴含问题的复杂度是前人论文中的直接结果，而模型判断问题的复杂度并没有提供，下面我们给出关于这四个命题的模型判断问题的简要证明。
+
+\begin{proof}
+我们以命题\ref{P1}为例，证明判断~$SM(\Sigma\cup D)\neq\emptyset$~的复杂度。我们知道给定~$\Sigma~$满足~$R\text{-}acyclic$，给定NBCQ~$Q$，则~$\Sigma\cup D\models Q$~的复杂度为~\textsc{coN2ExpTime}-complete。我们构造规则~$r:Body(Q)\rightarrow\bot$，构造~$\Sigma'=\Sigma\cup r$，则我们有如下结论若~$\Sigma'\cup D$~不存在稳定模型当且仅当~$\Sigma\cup D\models Q$，该结论是显而易见的，在查询回答语义下，需要~$\Sigma\cup D$~的所有稳定模型都能够蕴含查询~$Q$，$\Sigma'\cup D$不存在稳定模型说明原本~$\Sigma\cup D$~中存在的所有稳定模型都与限制~$r$产生冲突。我们由此得到，任意一个查询蕴含问题都能够规约成一个模型存在问题的反问题。所以模型存在问题复杂度的上界可以有查询问题获得，则命题\ref{P1}中~$SM(\Sigma\cup D)\neq\emptyset$~的复杂度上界为~\textsc{N2ExpTime}。
+
+同理我们可以证明另外三个命题中的模型存在问题的复杂度上界。注意，在确定性图灵机下定义的复杂度类的反操作的封闭的，即若一个问题复杂度为~\textsc{2ExpTime}-complete，其反问题的复杂度依旧是~\textsc{2ExpTime}-complete。
+\qed
+\end{proof}
+
+是证明后面定理的重要结论，其中
+现在让我们来考虑~$R\text{-}acyclic$~规则集合在我们的修复语义下的查询回答问题的复杂度。
+
+\RestyleAlgo{ruled}\LinesNumbered\input{Alg_PRQA.tex}
+
+\begin{theorem}\label{T1}
+令~$\mathcal{O}$~是一个基于偏好的本体~$(\Sigma, \preceq)$~，其中~$\Sigma$~是~$R\text{-}acyclic$~且~$R\text{-}stratified$~的，~$\preceq\in\{\subseteq,\leq,\subseteq_P,\leq_P,\leq_w\}$~。给定一个数据库~$D$~和一个安全NBCQ~$Q$~，判断~$\langle D,\mathcal{O}\rangle\models Q$~的数据复杂度为~\textsc{PTime}-complete，组合复杂度为~\textsc{2ExpTime}-complete。
+\end{theorem}
+
+\begin{proof}
+设~$D$~是一个数据库，~$Q$~是一个安全的NBCQ。通过前面的基于偏好的容忍不一致查询回答语义的定义，我们很容易得知，通过算法
+\ref{alg_prqa}是可以解决定理中的查询回答问题的，该算法
+实际上是最直观且显而易见的解决该问题的方法，的基本思想就是遍历规则集合~$\Sigma$~ 的每一个子集，判断该子集是否存在稳定模型，若存在，再判断它是否是偏好关系下的极大集合，最后判断其稳定模型语义下是否能推出~$Q$~，如果存在一个子集满足偏好极大但无法推出~$Q$~，那么问题的回答即为假。
+
+我们首先来考虑问题的数据复杂度。在算法\ref{alg_prqa}中，设给定一个基于偏好的本体~$\mathcal{O}=(\Sigma,\preceq)$~，给定一个安全的NBCQ~Q~，令~$D$~是唯一的输入。因为~$\Sigma$~是~$R\text{-}acyclic$~且~$R\text{-}stratified$~的，那么根据前面的结论，判断~$\Sigma\cup D$~是否存在稳定模型能够在多项式时间内完成。又因为~$\Sigma$~是给定不变的，那么其子集个数是一个常量，即第二层循环执行次数为常量。而判断查询回答~$D\cup S\not\models_s Q$~的问题复杂度为~\textsc{PTime}-complete，所以外层循环的每次操作都能够在多项式时间内完成，同时外层循环也是执行常数次，则整个算法的运行能够在多项式时间内完成，问题上界得证。问题的下界我们引用Dantsin\cite{csur2001DantsinEGV}的结论，Datalog是~$Datalog\pm$~ 的一个特例，而其回答查询的数据复杂度是~\textsc{PTime}~难的。问题的数据复杂度得证。
+
+接下来我们考虑组合复杂度。首先我们来证明组合复杂度的上界。我们用~n~记作~$\Sigma$~里规则的个数，则算法里的每层循环都最多执行~$2^n$~次。由前面的结论得知，判断~$D\cup S$~是否存在稳定模型的组合复杂度为~$\textsc{DTime}(2^{2^{\|\Sigma\|^{O(1)}}})$~。而通过命题
+\ref{decprec}我们知道第二层循环的循环条件可以在~$\textsc{DTime}(\|\mathcal{O}\|^{O(1)})$~ 时间内判断。则第二层循环的计算时间为~$2^n\times(\|\mathcal{O}\|^{O(1)} + 2^{2^{\|\Sigma\|^{O(1)}}})$~，即~$\textsc{DTime}(2^{2^{\|\Sigma\|^{O(1)}}})$~。同理我们可以计算整个算法的时间，能够在~$\textsc{DTime}(2^{2^{\|\Sigma\|^{O(1)}}})$~里完成。由于~$R\text{-}acyclic$~语言的回答查询本身已经是~\textsc{2ExpTime}~难的，我们因此得到问题的下界。到此我们完成了整个定理的证明。
+\qed
+\end{proof}
+
+\begin{theorem}\label{T2}
+令~$\mathcal{O}$~是一个基于偏好的本体~$(\Sigma, \preceq)$~，其中~$\Sigma$~是~$R\text{-}acyclic$~的，~$\preceq\in\{\subseteq,\leq,\subseteq_P,\leq_P,\leq_w\}$~。 给定一个数据库~$D$~和一个安全NBCQ~$Q$~，判断~$\langle D,\mathcal{O}\rangle\models Q$~的数据复杂度属于~\textsc{BH}~复杂类，组合复杂度属于~$\triangle_2\text{-}2\textsc{ExpTime}$复杂类。
+\end{theorem}
+
+\begin{proof}
+我们首先来证明数据复杂度。为了后面的证明，我们需要先定义一些符号。设~$\mathcal{R}$~为~ $\Sigma$~的模式。给定~$\Sigma$~的任意子集~$X$~，我们用~$L^X$~记作所有满足以下条件的~$\mathcal{R}$-数据库~$D$~的集合，
+\begin{enumerate}
+  \item ~$D\cup X$~拥有至少一个稳定模型。
+  \item ~$D\cup X\models_s Q$~不成立。
+  \item 对于所有的~$Y\subset\Sigma$~，若~$X\prec Y$~，则~$D\cup Y$~不存在稳定模型。
+\end{enumerate}
+对这个~$L^X$~这个记号我们来阐述一个直观的理解: 给定一个数据库~$D$~，条件1与3说明了，~$X$~ 这个集合对于~$D$~是一个一致的修复，且不存在其他偏好上比其更优的修复，即~$X$~对于~$\langle D,\mathcal{O}\rangle$~是一个偏好极大的修复，而条件2指出~$X$~这个修复无法推出~$Q$~，那么实际上说明了~$D$~这个数据库是没有办法在我们的不一致偏好修复语义下与本体~$\mathcal{O}$~一起蕴含出给定的查询~$Q$。那么~$L^X$~这个集合描述的是，对于我们所指定的这一个规则子集，所有使得这个偏好下不一致查询蕴含问题不成立的数据库~$D$~的集合。
+我们用~$L$~表示所有~$\Sigma$~的子集~$X$~下的~$L^X$~的并集，则~$L$~实际上表示的是，对于给定的这个本体~$\mathcal{O}$，所有使得蕴含问题不成立的~$D$~的集合。进一步的，我们很容易得出以下结论：如果不存在子集~$X\subseteq\Sigma$~使得~$D\in L^X$~，即~$D$~不属于~$L$~，则~$\langle D,\mathcal{O}\rangle\models Q$~。又因为在数据复杂度下，我们可以在常数次数下检查~$\Sigma$~的每一个子集~$X$~，所以，若下面的引理是正确的话，那么我们的复杂度是属于~$\textsc{BH}$~的。注意~$\textsc{BH}$~复杂类的取反操作是封闭的，即其反问题的复杂度不变。
+\begin{lemma}\label{le1}
+给定~$\Sigma$~的任意子集~$X$~，判断~$D\in L^X$~是否成立能够在~$\textsc{DP}$~复杂度时间内完成(相对于输入的数据库~$D$~的大小)。
+\end{lemma}
+现在我们只剩下证明引理\ref{le1}。给定一个子集~$X\subseteq\Sigma$~，令~$L_1$~为所有满足条件~1，2~的~$\mathcal{R}$-数据库的集合的语言，~$L_2$~为所有满足条件~3~的$\mathcal{R}$-数据库的集合的语言。由命题\ref{P1}我们知道，~$L_1$~显然属于~$\textsc{NPTime}$~，而~$L_2$~是属于~$\textsc{CoNPTime}$~的，注意在数据复杂度中，条件~3~中的~$Y$~的个数也是独立于输入的，即常数个，判断常数个~$\textsc{CoNP}$~问题的复杂度依旧是~$\textsc{CoNP}$~的。又因为~$L^X = L_1 \cap L_2$~，那么根据定义，我们知道判断~$D$~是否为属于~$L^X$~的语言的复杂度是属于~$\textsc{DP}$~的。因此问题数据复杂度得证。
+
+接下来我们证明组合复杂度。很显然，~$\langle D,Q\rangle\models Q$~是否成立与下面的条件是等价的:若不存在集合~$S\subseteq\Sigma$~使得
+\begin{enumerate}
+	\item ~$D\cup S$~存在稳定模型。
+	\item ~$D\cup S\models_s Q$~不成立。
+	\item 对于所有的~$S'\subseteq \Sigma$~，若~$S\prec S'$~，则~$D\cap S'$~不存在稳定模型。
+\end{enumerate}
+我们由命题\ref{P1}知，判断集合~$D\cup S$~是否有稳定模型的复杂度为~\textsc{coN2ExpTime}，则判断条件~1，2~的复杂度为~$\textsc{coN2ExpTime}$~(蕴含问题可编码为规则)，对于条件~3，遍历~$S'$~的次数为~$2^{|\Sigma|}$，判断的复杂度是~$\textsc{N2ExpTime}$~，那么整个条件~1，2，3~的判断需要指数次调用用于~$\textsc{NP}^{\textsc{2ExpTime}}$~的~$oracle$~，再加上外层循环，遍历~$S$~同样需要~$2^{|\Sigma|}$~次，所以总共是需要调用双指数次的用于~$\textsc{NP}^{\textsc{2ExpTime}}$~的~$oracle$~，即该问题所属的复杂类为~$\triangle_2\text{-}\textsc{2ExpTime}$~。得证。
+\qed
+\end{proof}
+
+接下来让我们关注规则是~$guarded$~的情况。下面定理的证明与定理\ref{T1}的证明相似。
+
+\begin{theorem}\label{T3}
+令~$\mathcal{O}$~是一个基于偏好的本体~$(\Sigma, \preceq)$~，其中~$\Sigma$~是~$guarded$~且~$stratified$~的，~$\preceq\in\{\subseteq,\leq,\subseteq_P,\leq_P,\leq_w\}$~。给定一个数据库~$D$~和一个覆盖的NBCQ~$Q$，判断~$\langle D,\mathcal{O}\rangle\models Q$~的数据复杂度为~\textsc{PTime}-complete，组合复杂度为~\textsc{2ExpTime}-compltete。
+\end{theorem}
+\begin{proof}
+首先是数据复杂度，我们由该本体片段的查询回答与模型判断在数据复杂度下都能够在多项式时间内完成，那么与定理\ref{T1}的证明相似，同样采用算法\ref{alg_prqa}的过程，我们很容易能够得到问题的上界，下界我们依旧能够用“Datalog的查询回答问题是~\textsc{PTime}~难的”来证明，完全性得证。
+
+而组合复杂度依旧类似定理\ref{T1}的证明，由命题\ref{P4}知，在算法下其确定性计算时间与本体大小成双指数关系，又因为~$stratified$~的~$guarded$~规则本身的查询回答复杂度已经是~\textsc{2ExpTime}-complete，完全性得证。
+\qed
+\end{proof}
+
+对于全否定的~$guarded$~规则，我们有以下的结果。
+\begin{theorem}\label{T4}
+令~$\mathcal{O}$~是一个基于偏好的本体~$(\Sigma, \preceq)$~，其中~$\Sigma$~是~$guarded$~ 的，~$\preceq\in\{\subseteq,\leq,\subseteq_P,\leq_P,\leq_w\}$~。给定一个数据库~$D$~和一个覆盖的NBCQ~$Q$，判断~$\langle D,\mathcal{O}\rangle\models Q$~的数据复杂度属于~\textsc{BH}，组合复杂度为~\textsc{2ExpTime}-complete。
+\end{theorem}
+\begin{proof}
+数据复杂度的证明与定理\ref{T2}的数据复杂度证明相似，我们由命题\ref{P4}知条件~1，3~的复杂度在~\textsc{NP}~内，而条件~2的验证能够在~\textsc{coNP}~时间内完成，易知整个求解过程的复杂度在~\textsc{BH}~内。
+
+而组合复杂的证明与定理\ref{T1}的组合复杂度证明相似，上界我们用同样的方法很容易得出，而下界则是通过命题\ref{P4}中本身~$guarded$~规则稳定模型语义的回答查询已经是~\textsc{2ExpTime}-complete~来确定，所以问题复杂度~\textsc{2ExpTime}~的完全性得证。
+\qed
+\end{proof}
+%\vspace{-15mm}
+\section{本章小结}
+%\vspace{-15mm}
+本章介绍了本文的主要工作，即提出了基于偏好的规则修复容忍不一致本体查询理论，并在原来的的~$datalog\pm$~带存在量词规则的基础上加入了稳定模型语义，这极大地增加了复杂度，所以我们必须选择特定的~$datalog\pm$~片段来研究我们的问题，~$R\text{-}acyclic$~是~$weak\text{-}acyclic$~在加了稳定模型语义后的一个变形，该性质保证了规则与数据库的~$chase$~过程是有限的，只产生有限的新函词。而~$guarded$~片段则能够用有限次的~$chase$~来代表整个~$chase$~树，即其同样保证了可判定性。前人对这两个个片段在稳定模型语义中的问题复杂度都有深入的研究。本文则在他们的基础上对我们的的所提出的理论问题进行了复杂度研究。
+
+\vspace*{1.5em}
+\begin{table}[!h]
+	\setlength{\belowcaptionskip}{0.01pt}
+	%\vspace*{-5mm}
+	\tabcolsep 0pt
+	\begin{center}
+		\begin{tabular}{c||c|c}
+			%\hline
+			& ~~\textbf{Data complexity}\, & ~~\textbf{Combined complexity}\, \\
+			\hline
+			\,RA + stra\,      & ~\textsc{PTime}-complete    & ~\textsc{2ExpTime}-complete \\
+			%\hline
+			RA + full   & ~in \textsc{BH} & ~in $\Delta_2$-$2\textsc{ExpTime}$ \\
+			%\hline
+			~~~G + stra    & ~\textsc{PTime}-complete    & ~\textsc{2ExpTime}-complete \\
+			%\hline
+			~~~G + full & ~in \textsc{BH}            & ~\textsc{2ExpTime}-complete \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{
+	    基于偏好语义的正规则程序的不同片段组合在五种偏好修复下的布尔查询回答的数据复杂度与组合复杂度。
+	    这五种偏好修复基于关系~$\subseteq$，$\leq$， $\subseteq_{P}$， $\leq_{P}$，和 ~$\leq_{w}$。~``RA"~表示~ acyclic~的规则集合，~``G"~表示~guarded~的规则集合，~``stra"~表示~stratified~否定语义，~``full"~表示全否定语义。有一部分复杂度没有证明完全性。
+	}\label{tab1}
+\end{table}
+
+本体领域更偏向于实际应用，尤其是互联网大数据，所以获得~$tractable$~的复杂度十分重要。
+
+表\ref{tab1}总结了本章所研究的所有的复杂度结果，我们可以看到无论是哪一个片段组合，其数据复杂度与组合复杂度的难度相差的都很大。组合复杂度几乎都无法处理，这是因为存在规则本身在计算模型的过程中会产生与本体大小成双指数关系的项，使用一般的方法是无法避免的。
+
+虽然我们能够发现到，对于数据复杂度有着非常可观的多项式时间复杂度，但对于实际应用还有相当大的差距，因为在计算不同的修复时，在数据复杂度下，规则部分是独立于输入的，即修复的个数是一个常量，但这个常量会随着本体的变大而急剧增长，那么就会使这个多项式时间变得毫无意义。所以直观的看，这些问题在实际应用中可能更适用于本体规则集合较小的情况，或在本体之间的规则定义了优先次序后，我们通过针对性强的算法，如我们将会在后面实验中提到的，来使我们需要检测的规则规模尽量的少。
+
+另外对于本体在数据复杂度下的应用有一项十分重要的技术，即查询重写，当我们只有数据库在不断变化的情况下，我们可以将代表本体知识的规则加入到查询中，重新写成一条新的查询语句，这条语句不但包含了要查询的信息，还包含了本体所要表达的推理过程。使用这条结合了本体的语句，我们就能够直接在数据集上操作，如利用高度优化发展的数据库技术来进行查询。所以这启发我们在未来的工作中利用重写技术来实现查询回答求解器。
+
+另外一个使技术难度降低的方向是提出新的容忍不一致查询语义，我们现在所使用的是原本用于基于数据修复的语义，且应用的逻辑片段表达能力并不强，所以数据修复在谨慎推理下有着相比规则修复较好的效率。尤其加入稳定模型语义后，貌似现在有的语义并不能保证实际应用所要求的效率，那么结合实际情况，提出新的容忍不一致语义可能是一个可行的方案。
+

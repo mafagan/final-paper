@@ -1,0 +1,40 @@
+%\thispagestyle{empty} %取消当前页码
+%\chapter[ABSTRACT（英文摘要）]{Abstract}
+\begin{tabular}{l l}
+Title：& Computing General First-order Circumscription\\
+Major：& Computer Software and Theory\\
+Name：& Zhanhao Xiao\\
+Supervisor：& Hai Wan\\
+\end{tabular}
+\vspace{0.5cm}
+%\chapter*{Abstract}
+% \markboth{英~文~摘~要}{英~文~摘~要}
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+
+%\vspace*{-1cm}
+
+%\centerline{\LARGE \textsf{\textbf{Abstract}}}
+\centerline{\xiaoerhao \textbf{Abstract}}
+\vspace{0.5cm}
+
+How to reason and solve problems with common sense knowledge in computer is one of the most difficult problems in artificial intelligence community. Non-monotonic logics are a significant class of knowledge representation formalism aiming at this problem. As a kind of classical non-monotonic logic, circumscription provides an elegant mathematical technique for modeling common sense reasoning. This paper focuses on computing general first-order parallel and prioritized circumscription with varied constants and their applications. Our main contributions are shown as follows:
+
+We propose linear-time translations from a general first-order theory in circumscription to another first-order theory under stable model semantics
+which are equivalent over arbitrary structures, including $Tr_v$ for parallel circumscription, $Tr^s_v$ for several parallel circumscriptions (further for prioritized circumscription), and $Tr_p$ for prioritized circumscription. These translations have no restrictions on domains and guarantee the equivalence between the original theories and the resulting theories over arbitrary structures, despite the interpretations of auxiliary predicates.
+
+To improve the efficiency, we give an optimization for existential quantifiers elimination. For a general first-order theory, the occurrence of existential quantifiers is avoidless and they are intractable under stable model semantics. Therefore, it is essential to eliminate existential quantifiers. We propose an optimization translation, $\Gamma_{\exists}$, to reduce auxiliary predicates in number and logic programs in size when eliminating existential quantifiers during the translations.
+In addition, this optimization has been generalized to adapt prioritized circumscription.
+
+Based on these translations and optimizations, we have developed a general first-order circumscription solver, named cfo2lp, by translating into logic programs and calling answer set programming solvers. With this solver, we can compute all minimal models over a given domain. Using minimal circuit diagnosis problem and extended stable marriage problem as benchmarks, we compare cfo2lp with propositional circumscription solvers circ2dlp and metasp on efficiency.
+The comparison on expressive power shows that cfo2lp can represent problems more naturally and intuitively.
+The experimental results demonstrate that
+for problems represented without existential quantifiers, cfo2lp has comparative performances with metasp and better performances than circ2dlp on solving efficiency;
+but for problems represented with existential quantifiers, metasp has the best computing efficiency, cfo2lp takes up the second place, and circ2dlp is the worst.
+
+Circumscription, as a kind of classical non-monotonic logic, can be applied to represent problems in many communities.
+%We have applied our approach to description logics with circumscription and minimal repairs in inconsistent databases, which can be represented naturally and computed effectively by our solver.
+For some $\Sigma^p_2$-complete problems which can be represented naturally by circumscription, we can use general first-order circumscription solver, cfo2lp, to solve them efficiently.
+
+{\bf Key Words:  Non-monotonic logics, Circumscription, Stable model semantics, Logic program, Solver}
+%\clearpage
