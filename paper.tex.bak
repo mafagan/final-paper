@@ -632,7 +632,7 @@
  \include{chap3}
  \include{chap4}
  \include{chap5}
- \include{chap6}
+ %\include{chap6}
  %\include{chap7}
 
 \backmatter %结束章节自动编号
@@ -641,7 +641,7 @@
 
 
 %\begin{thebibliography}{99}
-\addtolength{\itemsep}{-1.8 em} % 缩小参考文献间的垂直间距
+\addtolength{\itemsep}{-0.9 em} % 缩小参考文献间的垂直间距
     %\input{phD.bib}
     %\bibliographystyle{chinesebst}
     %\bibliographystyle{plain}
@@ -664,10 +664,10 @@
 
 %$\mathscr{ABC}$.
 
-%\include{public}
+\include{public}
 %\thispagestyle{empty}
 %
-%\include{ack}   %论文感谢部分
+\include{ack}   %论文感谢部分
 %\newpage
 %\mbox{}
 %\thispagestyle{empty}

@@ -133,7 +133,7 @@
     \begin{itemize}
         \item (非平凡) $\mathcal{E} \nvDash \alpha$
         \item (一致) $\mathcal{O}\cup\mathcal{E}$ 是一致的
-        \item ($\subseteq_\mathsf{ds}-\emph{minimal}$) 不存在一个对于$alpha$在$\mathcal{O}$中的解释$\mathcal{E}'$使得$\mathcal{E}'\subseteq_\mathsf{ds}\mathcal{E}$ 且$\mathcal{E}\not\subseteq_\mathsf{ds}\mathcal{E}'$。
+        \item ($\subseteq_\mathsf{ds}-\emph{minimal}$) 不存在一个对于$\alpha$在$\mathcal{O}$中的解释$\mathcal{E}'$使得$\mathcal{E}'\subseteq_\mathsf{ds}\mathcal{E}$ 且$\mathcal{E}\not\subseteq_\mathsf{ds}\mathcal{E}'$。
         \item (可容许) 存在一个决断集模版$\mathcal{J}_p \in \mathcal{P}$以及$\mathcal{J}_p$的一个差异化替换$\theta$使得$\alpha = r_o(X\theta, Y\theta)$，$\mathcal{E} \subseteq \mathcal{J}_p\theta$且$\mathcal{J}_p\theta \in Jst(\alpha, \mathcal{O}\cup\mathcal{E})$
     \end{itemize}
 \end{definition}
@@ -162,7 +162,7 @@
 
   $\mathcal{S}\gets \emptyset $\
 
-  
+
 	$\mathcal{T}_p \gets TBox \ \mathcal{T}$ in $\mathcal{J}_p$\;
 	$\mathcal{O} \gets \mathcal{T}_p \cup \mathcal{A}$\;
 	\If{$\mathcal{O}$ is not consistent}
@@ -208,7 +208,7 @@
 			}
 		}
 	}
-  
+
 
 \end{algorithm}
 
@@ -324,3 +324,9 @@
 		又$\mathcal{O} \cup \mathcal{J}_2\theta$是一致的，$\mathcal{O} \cup \mathcal{J}_2\theta \models \alpha$。但是因为存在一个$\mathcal{E}' \in subs_1(\mathcal{E}_6) \cup lifts_1(\mathcal{E}_6)$使得$\mathcal{O} \cup \mathcal{E}'  \models \alpha$，所以$\mathcal{E}_6$不是一个合理的解释。
 		
 		综上所述，可以得到可接受的解释为$\{\mathcal{E}_2,\mathcal{E}_3,\mathcal{E}_4,\mathcal{E}_5,\mathcal{E}_6\}$，经验证，其中合理的解释为$\{\mathcal{E}_2,\mathcal{E}_3,\mathcal{E}_4,\mathcal{E}_5\}$。
+
+\section{本章小结}
+		在本章中，我们首先对求解的问题进行了定义，针对待求解的问题我们首先提出了变量公理的概念。在介绍了决断集后，我们结合变量公理对决断集模版进行了定义。为了限制对解释空间进行限制，我们提出了$\subseteq_\mathsf{ds}$-$\emph{minimal}$概念，并证明了$\subseteq_\mathsf{ds}$-$\emph{minimal}$的性质比$subset$-$minimal$更强。$\subseteq_\mathsf{ds}$-$\emph{minimal}$的解释不仅满足了最小解的限制，还可以对解释集中的语义等价解进行表达，从而减少了需要计算的解释数量。
+		
+		
+			我们提出基于决断集模版的目的，就是利用决断集模版生成符合语义逻辑的最小解释。通过对决断集模版进行$(\mathcal{J}_1, \mathcal{J}_2)$ 划分，我们在知识库中寻找匹配的三元组(如果存在)计算替换$\theta$，然后利用替换$\theta$计算解释。最后，我们展示了针对问题$\Delta_p$和观察值$\alpha$进行解释集求解的完整算法。

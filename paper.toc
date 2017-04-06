@@ -3,7 +3,7 @@
 \ttl@change@v {chapter}{}{}{}\relax 
 \ttl@change@i {\@ne }{section}{2.0em}{\song \addvspace {2bp minus 0bp}}{\thecontentslabel \hspace {1em}}{}{\titlerule *[4pt]{.}\contentspage }\relax 
 \ttl@change@v {section}{}{}{}\relax 
-\contentsline {chapter}{Abstract}{III}{section*.2}
+\contentsline {chapter}{Abstract}{II}{section*.2}
 \contentsline {chapter}{\numberline {}第一章\hspace {0.8em}引言}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}本文的意义}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}研究现状}{2}{section.1.2}
@@ -27,17 +27,19 @@
 \contentsline {section}{\numberline {3.3}决断集模版的生成与验证}{27}{section.3.3}
 \contentsline {section}{\numberline {3.4}基于决断集模版的解释}{30}{section.3.4}
 \contentsline {section}{\numberline {3.5}生成基于决断集模版解释的算法}{34}{section.3.5}
-\contentsline {chapter}{\numberline {}第四章\hspace {0.8em}实验与分析}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}实验工具与环境}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}程序框架}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}解释基数对生成解释的效率以及数量对比实验}{41}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}实验设计}{41}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}实验结果与数据分析}{42}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}决断集模板解释修复知识库模型对比实验}{42}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}实验设计}{43}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}实验结果与数据分析}{43}{subsection.4.4.2}
-\contentsline {chapter}{\numberline {}第五章\hspace {0.8em}总结与展望}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}工作总结}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}不足与改进方向}{47}{section.5.2}
-\contentsline {chapter}{参考文献}{49}{section*.5}
+\contentsline {section}{\numberline {3.6}本章小结}{38}{section.3.6}
+\contentsline {chapter}{\numberline {}第四章\hspace {0.8em}实验与分析}{41}{chapter.4}
+\contentsline {section}{\numberline {4.1}实验工具与环境}{41}{section.4.1}
+\contentsline {section}{\numberline {4.2}程序框架}{42}{section.4.2}
+\contentsline {section}{\numberline {4.3}解释基数对生成解释的效率以及数量对比实验}{43}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}实验设计}{43}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}实验结果与数据分析}{44}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}决断集模板解释修复知识库模型对比实验}{46}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}实验设计}{46}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}实验结果与数据分析}{47}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {}第五章\hspace {0.8em}总结与展望}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}工作总结}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}后续工作以及展望}{52}{section.5.2}
+\contentsline {chapter}{参考文献}{53}{section*.5}
+\contentsline {chapter}{在学期间论文发表情况}{59}{chapter*.7}
 \contentsfinish 

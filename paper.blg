@@ -7,6 +7,7 @@ A level-1 auxiliary file: chap3.aux
 A level-1 auxiliary file: chap4.aux
 A level-1 auxiliary file: chap5.aux
 The style file: unsrtnat.bst
+A level-1 auxiliary file: public.aux
 Database file #1: cfo2lp.bib
 A bad cross reference---entry "BordesWCB11"
 refers to entry "DBLP:conf/aaai/2011", which doesn't exist
@@ -38,6 +39,8 @@ A bad cross reference---entry "JiGHZ11"
 refers to entry "DBLP:conf/aswc/2011", which doesn't exist
 A bad cross reference---entry "Lin15"
 refers to entry "DBLP:conf/aaai/2015", which doesn't exist
+A bad cross reference---entry "DuWS15"
+refers to entry "DBLP:conf/aaai/2015", which doesn't exist
 Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "DBLP:conf/nips/2013"
 Warning--I didn't find a database entry for "DBLP:conf/aaai/2011"
@@ -52,4 +55,4 @@ Warning--I didn't find a database entry for "DBLP:conf/aaai/2017"
 Warning--I didn't find a database entry for "DBLP:conf/saicsit/2012"
 Warning--I didn't find a database entry for "DBLP:conf/dlog/2016"
 Warning--I didn't find a database entry for "DBLP:conf/webi/2013"
-(There were 15 error messages)
+(There were 16 error messages)
