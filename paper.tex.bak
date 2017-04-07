@@ -525,6 +525,8 @@
 
 \SetKw{Continue}{continue}
 \SetKw{Or}{or}
+\documentclass{beamer}
+\usepackage{algorithmic}
 \usepackage{cases}
 \usepackage{multirow}
 \begin{document}
@@ -632,7 +634,7 @@
  \include{chap3}
  \include{chap4}
  \include{chap5}
- %\include{chap6}
+ \include{chap6}
  %\include{chap7}
 
 \backmatter %结束章节自动编号
@@ -667,7 +669,7 @@
 \include{public}
 %\thispagestyle{empty}
 %
-\include{ack}   %论文感谢部分
+%\include{ack}   %论文感谢部分
 %\newpage
 %\mbox{}
 %\thispagestyle{empty}

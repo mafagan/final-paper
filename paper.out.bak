@@ -17,13 +17,16 @@
 \BOOKMARK [1][-]{section.3.4}{基于决断集模版的解释}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.5}{生成基于决断集模版解释的算法}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.6}{本章小结}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{第4章 实验与分析}{}% 20
-\BOOKMARK [1][-]{section.4.1}{实验工具与环境}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{程序框架}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{解释基数对生成解释的效率以及数量对比实验}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.4}{决断集模板解释修复知识库模型对比实验}{chapter.4}% 24
-\BOOKMARK [0][-]{chapter.5}{第5章 总结与展望}{}% 25
-\BOOKMARK [1][-]{section.5.1}{工作总结}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.2}{后续工作以及展望}{chapter.5}% 27
-\BOOKMARK [0][-]{section*.5}{参考文献}{}% 28
-\BOOKMARK [0][-]{chapter*.7}{在学期间论文发表情况}{}% 29
+\BOOKMARK [0][-]{chapter.4}{第4章 解释集生成与嵌入更新}{}% 20
+\BOOKMARK [1][-]{section.4.1}{决断集计算}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{多观察值的解释生成}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{第5章 实验与分析}{}% 23
+\BOOKMARK [1][-]{section.5.1}{实验工具与环境}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{程序框架}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.3}{解释基数对生成解释的效率以及数量对比实验}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.4}{决断集模板解释修复知识库模型对比实验}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{第6章 总结与展望}{}% 28
+\BOOKMARK [1][-]{section.6.1}{工作总结}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{后续工作以及展望}{chapter.6}% 30
+\BOOKMARK [0][-]{section*.5}{参考文献}{}% 31
+\BOOKMARK [0][-]{chapter*.7}{在学期间论文发表情况}{}% 32
