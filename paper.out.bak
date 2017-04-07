@@ -19,7 +19,7 @@
 \BOOKMARK [1][-]{section.3.6}{本章小结}{chapter.3}% 19
 \BOOKMARK [0][-]{chapter.4}{第4章 解释集生成与嵌入更新}{}% 20
 \BOOKMARK [1][-]{section.4.1}{决断集计算}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{多观察值的解释生成}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{多观察值的最小解释集生成}{chapter.4}% 22
 \BOOKMARK [0][-]{chapter.5}{第5章 实验与分析}{}% 23
 \BOOKMARK [1][-]{section.5.1}{实验工具与环境}{chapter.5}% 24
 \BOOKMARK [1][-]{section.5.2}{程序框架}{chapter.5}% 25

@@ -175,12 +175,12 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	\end{tabular}
 \end{table}
 	
-	在本文中，考虑对三元组的表达，我们使用$\mathcal{ALC}$的扩展DL $\mathcal{SROI}$。$\mathcal{SROI}$是OWL一个具有较强表达能力的可判定性片段。一个$\mathcal{SROI}$本体$\mathcal{O}=(\mathcal{T}, \mathcal{A})$包括两个部分，一个是TBox $\mathcal{T}$，$\mathcal{T}$是一个由有限个概念包含公理$C \sqsubseteq D$组成的集合，其中$C$和$D$是$\mathcal{SROI}$的概念，由以下元素递归性构造：
+	在本文中，考虑对三元组的表达，我们使用$\mathcal{ALC}$的扩展DL $\mathcal{SROI}$。$\mathcal{SROI}$ 是OWL一个具有较强表达能力的可判定性片段。一个$\mathcal{SROI}$本体$\mathcal{O}=(\mathcal{T}, \mathcal{A})$包括两个部分，一个是TBox $\mathcal{T}$，$\mathcal{T}$是一个由有限个概念包含公理$C \sqsubseteq D$组成的集合，其中$C$和$D$是$\mathcal{SROI}$的概念，由以下元素递归性构造：
 	\begin{equation}
-		\bot, \top, A, \{a\}, \not C', C' \sqcap D', C' \sqcup D',\exists r.C',\exists r.\mathsf{Self}, \forall r.C'
+		\bot, \top, A, \{a\}, \neg C', C' \sqcap D', C' \sqcup D',\exists r.C',\exists r.\mathsf{Self}, \forall r.C'
 	\end{equation}
-	
-	另一个是断言知识的集合ABox $\mathcal{A}$，它描述的是TBox词汇表中的个体断言,包括概念类的成员元素，二元关系的成员元素二元组以及二元关系的等价关系。
+	其中$A$是$N_C$中的概念名实例，$a$是$N_I$中的个体实例，$r$是二元关系，$C'$和$D'$是$\mathcal{SROI}$ 中的概念。一般的，为了便于表述，$\mathcal{T}$中还包含了RBoxes。 在本文中RBox包含以下形式公理的集合，$r_1 \circ \cdots \circ r_k \sqsubseteq r$以及关系属性断言，其中所有的属性断言我们都以公理进行表达：对称性($r\sqsubseteq r^-$)，传递性($r\circ r\sqsubseteq r$)以及自反性($\top \sqsubseteq \exists r.\mathsf{Self}$)。
+	另一个是断言知识的集合ABox $\mathcal{A}$，它描述的是TBox词汇表中的个体断言,包括概念类的成员元素，二元关系的成员元素二元组以及二元关系的等价关系，在本文中我们只需要对知识库中三元组进行表达，所以ABox中我们只考虑形如$r(a,b)$的关系断言，其中$a$和$b$是$N_I$中的个体实例，$r$是$\mathcal{SROI}$中的关系。
 	
 	在本文中，断言知识部分我们仅考虑二元关系的断言，形如$r(a,b)$，其中$r$是$\Delta^\mathcal{I}\times\Delta^\mathcal{I}$ 中的一个二元关系实例，$a$和$b$是$\Delta^\mathcal{I}$中的一个个体。表2.2展示了TBox与ABox的语法以及语义。
 
@@ -267,31 +267,45 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	
      \begin{example}
         考虑一个一致的DL本体$\mathcal{O}$，其中TBox包含以下三条公理:
-             \begin{center}
-               \item [(1)]$Girl\sqsubseteq Female$
-               \item [(2)]$Female \sqsubseteq Person$
-               \item [(3)]$\exists giveBirth.Person \sqsubseteq Female$
-             \end{center}
+            
+			 
+			 	$$ \mathcal{T}=\left\{
+				\begin{aligned}
+				Girl\sqsubseteq Female\\
+				Female \sqsubseteq Person\\
+				\exists giveBirth.Person \sqsubseteq Female
+				\end{aligned}
+				\right\}.
+				$$
         ABox包含以下两条公理:
-            \begin{center}
-               \item [(1)]$Female(Mary)$
-               \item [(2)]$giveBirth(Lily, Mary)$
-             \end{center}
+			 	$$ \mathcal{A}=\left\{
+				\begin{aligned}
+				Female(\mathsf{Mary})\\
+				giveBirth(\mathsf{Lily}, \mathsf{Mary})
+				\end{aligned}
+				\right\}.
+				$$
+			 
         蕴含为：
-             \begin{center}
-               \item $Female(Lily)$
-             \end{center}
-			
+
+				$$ 
+				\begin{aligned}
+				Female(\mathsf{Lily})
+				\end{aligned}
+				$$
 			 对于以上例子，我们根据$Female(Mary)$以及$Female \sqsubseteq Person$可以得出
-			 \begin{equation}
-				Person(Mary)
-			\end{equation}
-			
-			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(Lily, Mary)$以及个体断言$Person(Mary)$，我们可以得到：
-			 \begin{equation}
-				Female(Lily)
-			 \end{equation}
-			
+
+			$$ 
+				\begin{aligned}
+				Person(\mathsf{Mary})
+				\end{aligned}
+				$$
+			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言$Person(\mathsf{Mary})$，我们可以得到：
+			$$ 
+				\begin{aligned}
+				Female(\mathsf{Lily})
+				\end{aligned}
+				$$
 			 令：
 			 	$$ \mathcal{S}=\left\{
 				\begin{aligned}
@@ -378,7 +392,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	
 	考虑以下例子：
 	\begin{example}
-		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中$TBox$ $\mathcal{T}$和$ABox$ $\mathcal{A}$包含以下公理：
+		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中$TBox$ $\mathcal{T}$和ABox $\mathcal{A}$包含以下公理：
 			
 	$$ \mathcal{T}=\left\{
 		\begin{aligned}
@@ -407,9 +421,9 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	\right\}.
 	$$
 	
-	根据给出的背景知识可以知道，一个热心的或者是一个工作努力又养猫的人是一个好人，并且乐于助人的人是热心的。又由$ABox$ $\mathcal
+	根据给出的背景知识可以知道，一个热心的或者是一个工作努力又养猫的人是一个好人，并且乐于助人的人是热心的。又由ABox $\mathcal
 	{A}$可以知道Lily是一只猫，Peter是一个人以及James工作努力。
-	由$TBox$ $\mathcal{T}$和$ABox$ $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(James, Lily)\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(James, Peter)\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
+	由$TBox$ $\mathcal{T}$和ABox $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(James, Lily)\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(James, Peter)\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
 	\end{example}
 
 

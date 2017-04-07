@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  7 APR 2017 18:06
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  7 APR 2017 20:06
 entering extended mode
 **C:/Users/Margo/Documents/毕业论文/final/paper.tex
 (C:/Users/Margo/Documents/毕业论文/final/paper.tex
@@ -1305,12 +1305,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{definition.2}
 <to be read again> 
                    \relax 
 l.91 	\begin{definition}
-                        [״̬�̺�)]) [43]
-(C:\Users\Margo\Documents\毕业论文\final\chap5.tex [44
-
-
-
-]
+                        [״̬�̺�)] [43]) [44]
+(C:\Users\Margo\Documents\毕业论文\final\chap5.tex
 ������
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1337,7 +1333,11 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.34996> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.25> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 15.
 
-[45] <img/7.jpg, id=748, 310.15875pt x 198.14024pt>
+[45
+
+
+
+] <img/7.jpg, id=751, 310.15875pt x 198.14024pt>
 File: img/7.jpg Graphic file (type jpg)
  <use img/7.jpg>
 Package pdftex.def Info: img/7.jpg used on input line 89.
@@ -1358,7 +1358,7 @@ LaTeX Warning: File ot160.cmap not found on input line 168.
 Underfull \vbox (badness 2376) has occurred while \output is active []
 
  [49]
-<img/14.jpg, id=780, 439.6425pt x 296.307pt>
+<img/14.jpg, id=783, 439.6425pt x 296.307pt>
 File: img/14.jpg Graphic file (type jpg)
  <use img/14.jpg>
 Package pdftex.def Info: img/14.jpg used on input line 177.
@@ -1407,7 +1407,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 680.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F809AEF1381D398B0471DCB6E0C9F72A;1936.
+(rerunfilecheck)             Checksum: 1D0B2506148027A6B5DAEF0F044023CF;1942.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1418,10 +1418,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16010 strings out of 495354
- 235449 string characters out of 3182739
+ 16018 strings out of 495354
+ 235589 string characters out of 3182739
  356737 words of memory out of 3000000
- 18016 multiletter control sequences out of 15000+200000
+ 18022 multiletter control sequences out of 15000+200000
  126488 words of font info for 420 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,18n,58p,4062b,1331s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1511,9 +1511,9 @@ es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
 x86)/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CT
 EX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKT
 eX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (73 pages, 1699079 bytes).
+Output written on paper.pdf (73 pages, 1703163 bytes).
 PDF statistics:
- 1366 PDF objects out of 1440 (max. 8388607)
- 218 named destinations out of 1000 (max. 500000)
+ 1369 PDF objects out of 1440 (max. 8388607)
+ 220 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

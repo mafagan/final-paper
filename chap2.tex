@@ -111,7 +111,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 		描述逻辑词汇表$\mathcal{V}$是一个三元组$(N_C,N_R,N_I)$，其中$N_C$是概念名的集合，$N_R$是关系名的集合，$N_I$是个体名的集合。
 	\end{definition}
 	
-	我们把$\mathcal{L}$ 的\emph{语义演绎}表示为$\mathcal{I}=(\Delta^\mathcal{I},\cdot^\mathcal{I})$，其中$\Delta^\mathcal{I}$表示$\mathcal{I}$的域，是一个非空的个体集合，$\cdot^\mathcal{I}$是一个映射函数，这个映射函数可以完成概念名到$\Delta^\mathcal{I}$子集的映射，二元关系到$\Delta^\mathcal{I}\times\Delta^\mathcal{I}$ 子集的映射以及个体到$\Delta^\mathcal{I}$元素的映射。定义如下[]：
+	我们把$\mathcal{L}$ 的\emph{语义演绎}表示为$\mathcal{I}=(\Delta^\mathcal{I},\cdot^\mathcal{I})$，其中$\Delta^\mathcal{I}$表示$\mathcal{I}$的域，是一个非空的个体集合，$\cdot^\mathcal{I}$是一个映射函数，这个映射函数可以完成概念名到$\Delta^\mathcal{I}$子集的映射，二元关系到$\Delta^\mathcal{I}\times\Delta^\mathcal{I}$ 子集的映射以及个体到$\Delta^\mathcal{I}$元素的映射。定义如下\cite{XiaoE11}：
 	
 	\begin{definition}
 		一个演绎$\mathcal{I}$是二元组$(\Delta^\mathcal{I},\cdot^\mathcal{I})$，其中$\Delta^\mathcal{I}$被称为域，$\cdot^\mathcal{I}$是一个从$N_I$到$\Delta^\mathcal{I}$的函数。
@@ -267,8 +267,8 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	
      \begin{example}
         考虑一个一致的DL本体$\mathcal{O}$，其中TBox包含以下三条公理:
-            
-			 
+
+			
 			 	$$ \mathcal{T}=\left\{
 				\begin{aligned}
 				Girl\sqsubseteq Female\\
@@ -285,23 +285,23 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 				\end{aligned}
 				\right\}.
 				$$
-			 
+			
         蕴含为：
 
-				$$ 
+				$$
 				\begin{aligned}
 				Female(\mathsf{Lily})
 				\end{aligned}
 				$$
 			 对于以上例子，我们根据$Female(Mary)$以及$Female \sqsubseteq Person$可以得出
 
-			$$ 
+			$$
 				\begin{aligned}
 				Person(\mathsf{Mary})
 				\end{aligned}
 				$$
 			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言$Person(\mathsf{Mary})$，我们可以得到：
-			$$ 
+			$$
 				\begin{aligned}
 				Female(\mathsf{Lily})
 				\end{aligned}
@@ -372,7 +372,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 
 \subsection{断言公理的溯因诊断}
 	
-	溯因诊断对修复本体有着重要的意义。对术语断言的溯因诊断问题有如下两个定义\cite{}：
+	溯因诊断对修复本体有着重要的意义。对术语断言的溯因诊断问题有如下两个定义\cite{KES11}：
     \begin{definition}[术语断言溯因诊断问题)]
         令$\mathcal{L}_K$和$\mathcal{L}_Q$为两个DL本体，$\mathcal{K}=(\mathcal{T}, \mathcal{A})$是一个$\mathcal{L}_K$中的一个知识库，$\Phi$是一个在$\mathcal{L}_Q$中的术语断言集合。当且仅当 $\mathcal{K} \nvDash \Phi$ 且$\mathcal{K} \cup \Phi \nvDash \bot$的时候，二元组$\langle \mathcal{K}, \Phi \rangle$被称作术语断言的溯因诊断问题。
     \end{definition}

@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {3.6}本章小结}{38}{section.3.6}
 \contentsline {chapter}{\numberline {}第四章\hspace {0.8em}解释集生成与嵌入更新}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}决断集计算}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}多观察值的解释生成}{43}{section.4.2}
+\contentsline {section}{\numberline {4.2}多观察值的最小解释集生成}{43}{section.4.2}
 \contentsline {chapter}{\numberline {}第五章\hspace {0.8em}实验与分析}{45}{chapter.5}
 \contentsline {section}{\numberline {5.1}实验工具与环境}{45}{section.5.1}
 \contentsline {section}{\numberline {5.2}程序框架}{46}{section.5.2}
