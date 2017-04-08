@@ -525,7 +525,6 @@
 
 \SetKw{Continue}{continue}
 \SetKw{Or}{or}
-\documentclass{beamer}
 \usepackage{algorithmic}
 \usepackage{cases}
 \usepackage{multirow}

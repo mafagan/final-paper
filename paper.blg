@@ -28,12 +28,10 @@ A bad cross reference---entry "CMN13"
 refers to entry "DBLP:conf/nips/2013", which doesn't exist
 A bad cross reference---entry "WangZFC14"
 refers to entry "DBLP:conf/aaai/2014", which doesn't exist
-A bad cross reference---entry "BaaderLB08"
-refers to entry "DBLP:conf/owled/2008-1", which doesn't exist
-A bad cross reference---entry "BaaderBL05"
-refers to entry "DBLP:conf/ijcai/2005", which doesn't exist
 A bad cross reference---entry "XiaoE11"
 refers to entry "DBLP:conf/rr/2011", which doesn't exist
+A bad cross reference---entry "BaaderBL05"
+refers to entry "DBLP:conf/ijcai/2005", which doesn't exist
 A bad cross reference---entry "findnew"
 refers to entry "DBLP:conf/webi/2013", which doesn't exist
 A bad cross reference---entry "JiGHZ11"
@@ -42,18 +40,16 @@ A bad cross reference---entry "Lin15"
 refers to entry "DBLP:conf/aaai/2015", which doesn't exist
 A bad cross reference---entry "DuWS15"
 refers to entry "DBLP:conf/aaai/2015", which doesn't exist
-Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "DBLP:conf/nips/2013"
 Warning--I didn't find a database entry for "DBLP:conf/aaai/2011"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2016"
 Warning--I didn't find a database entry for "DBLP:conf/aaai/2015"
 Warning--I didn't find a database entry for "DBLP:conf/aaai/2014"
 Warning--I didn't find a database entry for "DBLP:conf/rr/2011"
-Warning--I didn't find a database entry for "DBLP:conf/owled/2008-1"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2005"
 Warning--I didn't find a database entry for "DBLP:conf/aswc/2011"
 Warning--I didn't find a database entry for "DBLP:conf/aaai/2017"
 Warning--I didn't find a database entry for "DBLP:conf/saicsit/2012"
 Warning--I didn't find a database entry for "DBLP:conf/dlog/2016"
 Warning--I didn't find a database entry for "DBLP:conf/webi/2013"
-(There were 16 error messages)
+(There were 15 error messages)

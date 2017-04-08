@@ -174,11 +174,12 @@ F.~Baader, D.~Calvanese, D.~L. McGuinness, D.~Nardi, and P.~F. Patel-Schneider,
   Applications}.
 \newblock Cambridge University Press, 2003.
 
-\bibitem[Baader et~al.(2008)Baader, Lutz, and Brandt]{BaaderLB08}
-Franz Baader, Carsten Lutz, and Sebastian Brandt.
-\newblock Pushing the {EL} envelope further.
-\newblock In \emph{Proceedings of the Fourth {OWLED} Workshop on {OWL:}
-  Experiences and Directions, Washington, DC, USA, 1-2 April 2008.}, 2008.
+\bibitem[Xiao and Eiter(2011)]{XiaoE11}
+Guohui Xiao and Thomas Eiter.
+\newblock Inline evaluation of hybrid knowledge bases - phd description.
+\newblock In \emph{Web Reasoning and Rule Systems - 5th International
+  Conference, {RR} 2011, Galway, Ireland, August 29-30, 2011. Proceedings},
+  pages 300--305, 2011.
 
 \bibitem[Baader et~al.(2005)Baader, Brandt, and Lutz]{BaaderBL05}
 Franz Baader, Sebastian Brandt, and Carsten Lutz.
@@ -186,13 +187,6 @@ Franz Baader, Sebastian Brandt, and Carsten Lutz.
 \newblock In \emph{IJCAI-05, Proceedings of the Nineteenth International Joint
   Conference on Artificial Intelligence, Edinburgh, Scotland, UK, July 30 -
   August 5, 2005}, pages 364--369, 2005.
-
-\bibitem[Xiao and Eiter(2011)]{XiaoE11}
-Guohui Xiao and Thomas Eiter.
-\newblock Inline evaluation of hybrid knowledge bases - phd description.
-\newblock In \emph{Web Reasoning and Rule Systems - 5th International
-  Conference, {RR} 2011, Galway, Ireland, August 29-30, 2011. Proceedings},
-  pages 300--305, 2011.
 
 \bibitem[Du et~al.(2014)Du, Qi, and Fu]{DQF14}
 J.~Du, G.~Qi, and X.~Fu.
@@ -240,6 +234,13 @@ K.~M. Shchekotykhin and G.~Friedrich.
 \newblock Query strategy for sequential ontology debugging.
 \newblock In \emph{Proceedings of the 9th International Semantic Web Conference
   (ISWC)}, pages 696--712, 2010.
+
+\bibitem[Junker(2004)]{Jun04}
+U.~Junker.
+\newblock {QUICKXPLAIN}: Preferred explanations and relaxations for
+  over-constrained problems.
+\newblock In \emph{Proceedings of the 19th National Conference on Artificial
+  Intelligence (AAAI)}, pages 167--172, 2004.
 
 \bibitem[Sirin et~al.(2007)Sirin, Parsia, Grau, Kalyanpur, and Katz]{SPGKK07}
 E.~Sirin, B.~Parsia, B.~C. Grau, A.~Kalyanpur, and Y.~Katz.

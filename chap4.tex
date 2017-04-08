@@ -1,15 +1,22 @@
 \chapter{解释集生成与嵌入更新}
-在上一章中，我们给出了在知识库中进行诊断的基本框架，并且详细地对相关的定理进行了证明。但是我们还没有完成从解释集到嵌入向量的翻译，以及实际的求解算法，因此，在本章当中，我们先给出从解释生成解释训练集的方法，接着给出在解释训练集到嵌入向量的一般性算法。 
+在上一章中，我们给出了在知识库中进行诊断的基本框架，并且详细地对相关的定理进行了证明。但是我们还没有完成从解释集到嵌入向量的翻译，以及实际的求解算法，因此，在本章当中，我们先给出生成解释训练集的方法，接着给出在解释训练集到嵌入向量的一般性算法。 
 
 \section{决断集计算}
 
 	基于决断集模版的解释需要特定的决断集模版的集合。在上一章的命题中我们展示了生成决断集模版的方法，我们首先计算本体中所有的原子蕴含值，接着根据蕴含值我们计算出所有蕴含值的决断集，最后通过$lift$操作生成决断集模版变量。然而，这种方法并不完全可行，因为计算所有蕴含值的决断集是非常耗时的\cite{KPHS07}。所以我们提出了新的计算决断集的方法。
 	
-	这种方法是从一种高效的方法改进而来\cite{DQF14}，我们首先计算所有导致本体不一致的本体最小子集，通过逐条递增的方式计算决断集模版，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算。
+	这种方法是从Du，Junker等人的方法改进而来\cite{DQF14, Jun04}。对于本体$\mathcal{O}$的蕴含值$\alpha_{A,B}$，我们在每次计算新的决断集之前都会通过决断集模版获取具有相同决断集模版的决断集。然后通过逐条递增的方式增量计算不能从已有的决断集模版获取的决断集，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算，算法的流程会重复以上步骤，直至所有的决断集被计算出来为止。
 	
-	在以下算法中，我们以形如$A \sqsubseteq B$的蕴含值为例，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$A \sqsubseteq B$，我们，它首先计算所有对于$X \sqsubseteq Y$的决断集模版。
+	在以下算法中，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$\alpha_{A,B}$，我们首先计算所有对于$\alpha_{A,B}$的决断集模版。
 	利用\cite{DQF14}中的搜索方法，它可以递增地计算新的决断集。
 	
+	\begin{proposition}
+		算法3返回在本体$\mathcal{O}$中对于蕴含值$\alpha_{A,B}$的决断集模版集合$\mathcal{P}$以及在$\mathcal{O}$中对于蕴含值$\alpha_{A,B}$的决断集$\mathcal{J}$，且存在差异化实例替换$\theta$，决断集模版$\mathcal{J}_p \in \mathcal{P}$以及决断集$\mathcal{J}$使得$\mathcal{J}_p\theta=\mathcal{J}$。
+		
+	\end{proposition}
+	
+	
+	证明：对于每个$\mathcal{J}_p \in \mathcal{P}$，存在一个$\mathcal{O}$的蕴含$\alpha_{A,B}$满足$\mathcal{J}_p = lift(\mathcal{J},A,B)$。其中$\mathcal{J}_p$是$\mathcal{O}$中的一个决断集模版，另一方面，令$\theta$是$\mathcal{J}_p$的一个实例化差异替换满足$X\theta=A,Y\theta=B,\mathcal{J}_p\theta \subseteq \mathcal{O}$以及对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J}\not \models \alpha_{A,B}$。根据定义，我们有$\mathcal{J}_p\theta \models \alpha_{A,B}$。由于$\mathcal{J}_p\theta \subseteq \mathcal{O}$且对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J} \not \models \alpha_{A,B}$，所以$\mathcal{J}_p\theta$是$\mathcal{O}$中对于蕴含$\alpha_{A,B}$的一个决断集。
 	\begin{algorithm}
   \caption{决断集模版的计算方法}
   \KwIn{Ontology $\mathcal{O}$}
@@ -17,29 +24,29 @@
   $\mathcal{P}\gets \emptyset $ \ \ //$\mathcal{P}$存储所有的决断集模版\
 		
 
-	\For{each ACIs $A \sqsubseteq B$ entailed by $\mathcal{O}$}
+	\For{each $\alpha_{A,B}$ entailed by $\mathcal{O}$}
 	{
 		$\mathcal{S} \gets \{\mathcal{J}_p\theta\mid \mathcal{J}_p\in \mathcal{P}$,
    $\theta$ is a differentiated substitution for $\mathcal{J}_p$ such that
-   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models A\sqsubseteq B$ for
+   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{A,B}$ for
    all $\mathcal{J}\in subs_1(\mathcal{J}_p\theta)\}$\;
 		\While{$\mathcal{S}=\emptyset$ (then $H$ is set as $\emptyset$) or
-   there is a minimal hitting set $H$ for $\mathcal{S}$ such that $\mathcal{T}\setminus H\models A\sqsubseteq B$}
+   there is a minimal hitting set $H$ for $\mathcal{S}$ such that $\mathcal{T}\setminus H\models \alpha_{A,B}$}
 		{
-			$\mathcal{J}\gets$ FindJustification($\emptyset$, $\mathcal{O}\setminus H$, $A\sqsubseteq B$) \;
+			$\mathcal{J}\gets$ FindJustification($\emptyset$, $\mathcal{O}\setminus H$, $\alpha_{A,B}$) \;
 			$\mathcal{J}_p\gets lift(\mathcal{J},A,B)$
 			
 			$\mathcal{P}\gets\mathcal{P}\cup \{\mathcal{J}_p\}$\;
 			$\mathcal{S}\gets \mathcal{S}\cup \{\mathcal{J}_p\theta\mid \theta$ is a differentiated substitution for $\mathcal{J}_p$ such that
-   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models A\sqsubseteq B$ for all
+   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{A,B}$ for all
    $\mathcal{J}\in subs_1(\mathcal{J}_p\theta)\}$\;
 		}
 	}
 	\Return $\mathcal{P}$\;
 	
-	$\textbf{FindJustification}$($S_u$, $S_c$, $A\sqsubseteq B$) //返回一个$S_c$的最小子集$S$使得$S_u\cup S\models A\sqsubseteq B$\;
+	$\textbf{FindJustification}$($S_u$, $S_c$, $\alpha_{A,B}$) //返回一个$S_c$的最小子集$S$使得$S_u\cup S\models \alpha_{A,B}$\;
 	
-	\If{$S_c=\emptyset$ or $S_u\models A\sqsubseteq B$}
+	\If{$S_c=\emptyset$ or $S_u\models \alpha_{A,B}$}
 	{
 		\Return $\emptyset$
 	}
@@ -52,9 +59,9 @@
 	Divide $S_c$ into two disjoint subsets $S_1$ and $S_2$ such that
  $S_1\cup S_2=S_c$, $S_1\cap S_2=\emptyset$ and $0\leq |S_1|-|S_2|\leq 1$\;
  
- $\Delta_2\gets$ FindJustification($S_u\cup S_1$, $S_2$, $A\sqsubseteq B$)\;
+ $\Delta_2\gets$ FindJustification($S_u\cup S_1$, $S_2$, $\alpha_{A,B}$)\;
  
- $\Delta_1\gets$ FindJustification($S_u\cup \Delta_2$, $S_1$, $A\sqsubseteq B$)\;
+ $\Delta_1\gets$ FindJustification($S_u\cup \Delta_2$, $S_1$, $\alpha_{A,B}$)\;
  
  \Return $\Delta_1\cup\Delta_2$
 
@@ -65,7 +72,7 @@
 	\end{definition}
 	
 	
-	根据最小碰集的特点，我们可以判断如果存在一个决断集集合的最小碰集$H$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$，一个新的决断集可以从集合$\mathcal{O} \setminus H$中通过分治法得到\cite{DQF14}。
+	由于最小碰集与求得的决断集的集合中所有的元素交集都不为空，且是最小集，我们可以判断如果存在一个决断集集合的最小碰集$H$使得$\mathcal{O} \setminus H \models \alpha_{A,B}$，一个新的决断集可以从集合$\mathcal{O} \setminus H$中通过分治法得到\cite{DQF14}。
 	
 	根据以上算法，我们给出以下例子：
 	
@@ -122,4 +129,39 @@
  \Return $\Delta_1\cup\Delta_2$
 
 \end{algorithm}
+
+\section{基于解释集的向量模型更新研究}
+
+	在本节中我们主要考虑向量模型的更新问题。在目前的不少应用中，知识库模型往往在一个在线的系统中提供服务，每一时刻都在服务数量较大的用户。因此，如果问题产生时不能够得到及时地解决，就会带来较大的影响。所以 一般的，在目前的诊断应用中，我们对诊断的要求是时效性敏感的，我们希望在得知问题根源后，能够尽快地更新知识库模型。
 	
+	在下文的研究中，主要研究更新方法对知识库模型性能的影响以及更新的效率。
+	
+\subsection{知识库偏序更新}
+	在目前的知识库嵌入研究中，以Bordes等人提出的TransE影响最大，TransE模型具有语义直观，模型清晰明了的特点，因此下文以TransE的模型为基础，探索在经过决断集模版求解出解释集后，如何使用新增三元组进行模型更新措施。
+	
+	在TransE中，嵌入是一个关键的操作，它的作用是在实体、关系的集合与一个低维的向量空间中形成一个映射关系。当新的实体、关系被加进知识库后，意味着我们对这个映射关系进行修改。
+	
+	
+	首先，我们把知识库记为$G$，对知识库$G$的嵌入记为$embed(G)$，在知识库的基础上由知识库嵌入生成的向量模型为$\Delta_G$，记作$embed(G)=\Delta_G$，并且我们有如下定义：
+	\begin{definition}[向量蕴含)]
+		若向量模型$\Delta_G$中，测试三元组$(h,r,t)$可以由$\Delta_G$成功预测且$(h,r,t) \not \in G$，我们就称向量模型$\Delta_G$向量蕴含$(h,r,t)$，记作$\Delta_G \models_{\Delta} (h,r,t)$。
+	\end{definition}
+	
+	根据基于决断集模版解释的定义以及对解释集的求解过程可知，对于所有的$\alpha \in S_{\mathcal{E}}$，满足$\alpha \not \in \mathcal{O}_G$，所以对于由解释集生成的知识库$G_{\mathcal{E}}$有对于所有的$(h,r,t) \in G_{\mathcal{E}}$满足$(h,r,t) \not \in \Delta_{G}$。因此，在继续训练更新向量模型$\Delta_G$之前，还难以使得对于所有的$(h,r,t) \in G_{\mathcal{E}}$满足$\Delta_G \models_{\Delta} (h,r,t)$。
+	
+	我们的目标是在$G_{\mathcal{E}}$的加入后训练的结果能够使得$h+r \approx t$，其中$(h,r,t) \in G_{\mathcal{E}}$。因此，我们不对TransE的能量框架做出改变，对于三元组(h,r,t)我们依旧把它的能量定义为$d(h+r,t)$，并且$d$为欧几里得距离。由于随机梯度下降具有增量更新的性质，因此一个可行的方式是使用原来的损失函数继续进行训练直至$\mathcal{L}$的值能够再次收敛到一个局部最小值。
+	
+		要注意的是，根据我们基于决断集模版生成的解释集虽然不会对知识库$G$中的关系$r$带来影响，但是基于决断集模版生成的解释中，我们是允许实体变量的存在的(当Exp.$C \geq 2$时)，所以当我们使用解释集生成的三元组$S_\mathcal{E}$对知识库进行修复时，会有新的变量加入，也就意味着在解释集生成三元组的加入后，$G_\mathcal{E}$的实体集合$E' \cap E^- \not = \emptyset$。
+	
+		\begin{equation}
+		\mathcal{L} = \sum\limits_{(h,r,t)\in S\cup S_{\mathcal{E}}} \sum\limits_{(h',r,t')\in (S\cup S_{\mathcal{E}})'_{(h,r,t)}} [\gamma + d(h+r,t)-d(h'+r,t')]_{+}
+	\end{equation}
+		
+		由于我们对知识库进行了更新，我们在生成反例(也就是损坏三元组)的时候需要改变生成的逻辑，对于所有的损坏三元组$(h',r,t') \in (S\cup S_{\mathcal{E}})'$有$(h',r,t') \not \in (S\cup S_{\mathcal{E}})$。
+		
+		\begin{equation}
+		(S \cup S_\mathcal{E})'_{(h,r,t)} = \{(h', r, t\mid h'\in E')\} \cup \{(h,r,t')\mid t' \in E'\}
+		\end{equation}
+		
+		使用原损失函数的方法继续进行训练一般可以使$\mathcal{L}$再次收敛到局部的最小值，但是继续训练至局部
+\subsection{平均采样技术}
