@@ -614,7 +614,7 @@
  %с╒нду╙р╙
  \include{abstract2}
  %\include{phd-term}
- \setcounter{tocdepth}{2}
+ \setcounter{tocdepth}{1}
  \phantomsection
  %\addcontentsline{toc}{chapter}{\contentsname}
  \tableofcontents

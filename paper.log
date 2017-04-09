@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  9 APR 2017 02:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  9 APR 2017 19:57
 entering extended mode
 **C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/paper.tex
 (C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/paper.tex
@@ -843,9 +843,8 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <28> not available
 map>><<c1958.cmap>><<c1949.cmap>>
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 11.
-<<c1940.cmap>><<c1951.cmap>><<c1962.cmap>><<c1961.cmap>><<c1959.cmap>><<c1937.c
-map>><<c1957.cmap>><<c1943.cmap>><<c1963.cmap>><<c1942.cmap>><<c1945.cmap>><<c1
-944.cmap>><<c1938.cmap>><<c1946.cmap>>
+<<c1950.cmap>><<c1959.cmap>><<c1957.cmap>><<c1952.cmap>><<c1961.cmap>><<c1940.c
+map>><<c1946.cmap>>
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 15.
 LaTeX Font Info:    Try loading font information for C19+kai on input line 26.
@@ -873,7 +872,8 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 26.
 
-<<c1952.cmap>><<c1965.cmap>><<c1950.cmap>><<c1941.cmap>> [1
+<<c1965.cmap>><<c1938.cmap>><<c1945.cmap>><<c1942.cmap>><<c1937.cmap>><<c1963.c
+map>><<c1944.cmap>><<c1941.cmap>><<c1951.cmap>> [1
 
 {C:/Program Files (x86)/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGB
 K.sfd}}]) [2]
@@ -882,7 +882,7 @@ LaTeX Font Info:    Try loading font information for C19+hei on input line 24.
 
 ("C:\Program Files (x86)\CTEX\CTeX\tex\latex\CJK\GB\c19hei.fd"
 File: c19hei.fd 2009/09/23 4.8.2
-)<<c1948.cmap>><<c1936.cmap>>
+)<<c1948.cmap>><<c1943.cmap>><<c1962.cmap>><<c1936.cmap>>
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 35.
 
 
@@ -960,7 +960,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.21 
-      [2] <img/8.jpg, id=448, 417.9615pt x 431.211pt>
+      [2] <img/8.jpg, id=392, 417.9615pt x 431.211pt>
 File: img/8.jpg Graphic file (type jpg)
  <use img/8.jpg>
 Package pdftex.def Info: img/8.jpg used on input line 24.
@@ -974,7 +974,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.30 	‘⁄
-        $ABox$µƒÀ›“Ú’Ô∂œŒ Ã‚÷–£¨S Klarmanµ»»À∂‘$ABox$µƒÀ›“ÚÕ∆¿ÌŒ Ã‚◊˜≥ˆ¡À√˜»...
+        ABoxµƒÀ›“Ú’Ô∂œŒ Ã‚÷–£¨S Klarmanµ»»À∂‘ABoxµƒÀ›“ÚÕ∆¿ÌŒ Ã‚◊˜≥ˆ¡À√˜»∑∂®“...
 [3 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/8.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -983,13 +983,17 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.37 
-      [4] [5]) [6] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap2.tex
+      [4]
+
+LaTeX Warning: File ot137.cmap not found on input line 64.
+
+[5]) [6] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap2.tex
 µ⁄∂˛’¬
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\CJKnumber' on input line 1.
 
-<img/13.jpg, id=483, 519.74174pt x 508.299pt>
+<img/13.jpg, id=428, 519.74174pt x 508.299pt>
 File: img/13.jpg Graphic file (type jpg)
  <use img/13.jpg>
 Package pdftex.def Info: img/13.jpg used on input line 17.
@@ -1023,7 +1027,7 @@ N\OT1/ppl/m/n/12 )\C19/song/bx/n/12/64  \C19/song/bx/n/12/55 £ \C19/song/bx/n/
 ong/bx/n/12/40 
  []
 
-[9] [10] <img/9.jpg, id=535, 306.54526pt x 296.307pt>
+[9] [10] <img/9.jpg, id=483, 306.54526pt x 296.307pt>
 File: img/9.jpg Graphic file (type jpg)
  <use img/9.jpg>
 Package pdftex.def Info: img/9.jpg used on input line 69.
@@ -1033,13 +1037,13 @@ Package pdftex.def Info: img/9.jpg used on input line 69.
 LaTeX Warning: File ot155.cmap not found on input line 75.
 
 [11 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/9.jpg>]
-<img/10.jpg, id=542, 326.4195pt x 348.1005pt>
+<img/10.jpg, id=490, 326.4195pt x 348.1005pt>
 File: img/10.jpg Graphic file (type jpg)
  <use img/10.jpg>
 Package pdftex.def Info: img/10.jpg used on input line 79.
 (pdftex.def)             Requested size: 192.0548pt x 204.81448pt.
  [12 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/10.jpg>]
-<img/11.png, id=554, 429.32674pt x 301.24426pt>
+<img/11.png, id=502, 429.32674pt x 301.24426pt>
 File: img/11.png Graphic file (type png)
  <use img/11.png>
 Package pdftex.def Info: img/11.png used on input line 105.
@@ -1116,7 +1120,19 @@ n/12/42 á \C19/kai/m/n/12/57 N \C19/kai/m/n/12/40 ‰ \C19/kai/m/n/12/60 Û$\OML/c
 mm/m/it/12 Person\OT1/cmr/m/n/12 ([])$\C19/kai/m/n/12/26 ß
  []
 
-[18] <img/12.jpg, id=633, 629.9535pt x 387.24675pt>
+
+Overfull \hbox (62.60306pt too wide) in paragraph at lines 321--322
+[]\C19/kai/m/n/12/40 È \C19/kai/m/n/12/62 u \C19/kai/m/n/12/56 § \C19/kai/m/n/1
+2/62 k \C19/kai/m/n/12/40 $\OMS/cmsy/m/n/12 S[]  S$\C19/kai/m/n/12/40 — \C19/
+kai/m/n/12/62 k$\OMS/cmsy/m/n/12 S[] 6j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Fem
+ale\OT1/cmr/m/n/12 ([])$\C19/kai/m/n/12/26 ß \C19/kai/m/n/12/53 Ö$\OMS/cmsy/m/n
+/12 S j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Female\OT1/cmr/m/n/12 ([])$\C19/kai
+/m/n/12/26 ß \C19/kai/m/n/12/56 § \C19/kai/m/n/12/61 ±$\OMS/cmsy/m/n/12 S$\C19/
+kai/m/n/12/55 ¥$\OML/cmm/m/it/12 Female\OT1/cmr/m/n/12 ([])$\C19/kai/m/n/12/63 
+3
+ []
+
+[18] <img/12.jpg, id=584, 629.9535pt x 387.24675pt>
 File: img/12.jpg Graphic file (type jpg)
  <use img/12.jpg>
 Package pdftex.def Info: img/12.jpg used on input line 328.
@@ -1172,20 +1188,6 @@ n/12/63 ˘ \C19/song/bx/n/12/55 ¥ \C19/song/bx/n/12/61 œ \C19/song/bx/n/12/58 è$
 
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
 input line 68.
-
-Overfull \hbox (3.8012pt too wide) in paragraph at lines 68--69
-\C19/kai/m/n/12/63 % \C19/kai/m/n/12/43 π \C19/kai/m/n/12/64 ä$\OML/cmm/m/it/12
- r[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]; e[]\OT1/cmr/m/n/12 )$\C19/kai/m/n/12
-/40  \C19/kai/m/n/12/61 ò \C19/kai/m/n/12/42 á \C19/kai/m/n/12/46 ˚ \C19/kai/m
-/n/12/40 ‰ \C19/kai/m/n/12/45 8 \C19/kai/m/n/12/25 " \C19/kai/m/n/12/51 @ \C19/
-kai/m/n/12/50 o$\OML/cmm/m/it/12 lift\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J\OML/cm
-m/m/it/12 ; e[]; e[]\OT1/cmr/m/n/12 )$\C19/kai/m/n/12/46 “ \C19/kai/m/n/12/55 ¥
- \C19/kai/m/n/12/61 ò \C19/kai/m/n/12/42 á \C19/kai/m/n/12/63 3$\OMS/cmsy/m/n/1
-2 O$\C19/kai/m/n/12/64 • \C19/kai/m/n/12/40 È \C19/kai/m/n/12/62 u$\OML/cmm/m/i
-t/12 r[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]; e[]\OT1/cmr/m/n/12 )$\C19/kai/m/
-n/12/40 
- []
-
 [28]pdfTeX warning (ext4): destination with the same identifier (name{definitio
 n.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -1213,13 +1215,16 @@ nition.6}) has been already used, duplicate ignored
                    \relax 
 l.131 	\begin{definition}
                          [ª˘”⁄æˆ∂œºØƒ£∞ÊµƒΩ‚ Õ)]
-Overfull \hbox (33.73895pt too wide) in paragraph at lines 132--133
-[]\C19/kai/m/n/12/40 È \C19/kai/m/n/12/62 u \C19/kai/m/n/12/61 ò \C19/kai/m/n/1
-2/42 á â \C19/kai/m/n/12/40 Ω  \C19/kai/m/n/12/61 ò \C19/kai/m/n/12/64 ó \C19/
-kai/m/n/12/37  \C19/kai/m/n/12/57 N$\OMS/cmsy/m/n/12 O$\C19/kai/m/n/12/26 ß \C
-19/kai/m/n/12/61 ò \C19/kai/m/n/12/42 á \C19/kai/m/n/12/44 ƒ \C19/kai/m/n/12/62
- u$\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X; Y\OT1/cmr/m/n/12 )$
-\C19/kai/m/n/12/40 
+Overfull \hbox (0.8938pt too wide) in paragraph at lines 144--145
+\C19/kai/m/n/12/57 ” \C19/kai/m/n/12/55 û$\OML/cmm/m/it/12 inst\OT1/cmr/m/n/12 
+(\OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6j[]\
+OT1/cmr/m/n/12 = \OML/cmm/m/it/12 []$\C19/kai/m/n/12/26 ß$\OMS/cmsy/m/n/12 O [
+ \OML/cmm/m/it/12 inst\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12 \O
+T1/cmr/m/n/12 )$\C19/kai/m/n/12/55 ¥ \C19/kai/m/n/12/61 ò \C19/kai/m/n/12/64 ó 
+\C19/kai/m/n/12/40  \C19/kai/m/n/12/26 ß \C19/kai/m/n/12/53 Ö$\OMS/cmsy/m/n/12
+ J[]\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 [ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J
+[]\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 []; \OMS/cmsy/m/n/12 O [$
  []
 
 [32] [33]pdfTeX warning (ext4): destination with the same identifier (name{exam
@@ -1227,49 +1232,85 @@ ple.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.215 \begin{example}
-                     [’Ô∂œ)] [34] [35] [36]
-Overfull \hbox (11.79575pt too wide) in paragraph at lines 304--305
-\C19/song/bx/n/12/42 ä \C19/song/bx/n/12/46 ‚ \C19/song/bx/n/12/44 y \C19/song/
-bx/n/12/41 ©\OT1/ppl/m/n/12 3)\C19/song/bx/n/12/26 ß \C19/song/bx/n/12/47 å \C1
-9/song/bx/n/12/61 ± \C19/song/bx/n/12/40   \C19/song/bx/n/12/61 ò \C19/song/b
-x/n/12/42 á$\OML/cmm/m/it/12 $\C19/song/bx/n/12/55 ¶ \C19/song/bx/n/12/40 $\O
-MS/cmsy/m/n/12 J[]\OML/cmm/m/it/12  \OMS/cmsy/m/n/12  O$\C19/song/bx/n/12/26 
-ß \C19/song/bx/n/12/52 Ÿ \C19/song/bx/n/12/64 •$\OML/cmm/m/it/12  \OT1/cmr/m/n
-/12 = \OMS/cmsy/m/n/12 f\OT1/cmss/m/n/12 A \OMS/cmsy/m/n/12 7! []\OML/cmm/m/it/
-12 ; \OT1/cmss/m/n/12 C \OMS/cmsy/m/n/12 7! []\OML/cmm/m/it/12 ; \OT1/cmss/m/n/
-12 B \OMS/cmsy/m/n/12 7!$
+                     [’Ô∂œ)] [34] [35]
+Overfull \hbox (2.11267pt too wide) in paragraph at lines 293--294
+[]\OT1/ppl/m/n/12 (1)$\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 = $\OMS/cmsy/m/n/12 
+f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 A\OML/cmm/m/it/12 ; \OT1
+/cmss/m/n/12 C\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; r[]\OT1/cmr/m/n/12 (\OT1/cmss
+/m/n/12 C\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 D\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12
+ g$\OT1/ppl/m/n/12 , $\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 =$\OMS/cmsy/m/n/12 f
+\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 D\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 B\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/m/n/12/25 " \C19/son
+g/bx/n/12/62 d
+ []
+
+[36]
+Overfull \hbox (2.11267pt too wide) in paragraph at lines 298--299
+[]\OT1/ppl/m/n/12 (3)$\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 = $\OMS/cmsy/m/n/12 
+f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 A\OML/cmm/m/it/12 ; \OT1
+/cmss/m/n/12 C\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; r[]\OT1/cmr/m/n/12 (\OT1/cmss
+/m/n/12 D\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 B\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12
+ g$\OT1/ppl/m/n/12 , $\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 =$\OMS/cmsy/m/n/12 f
+\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 C\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 D\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/m/n/12/25 " \C19/son
+g/bx/n/12/42 ä
  []
 
 
-Overfull \hbox (11.25449pt too wide) in paragraph at lines 304--305
+Overfull \hbox (13.53452pt too wide) in paragraph at lines 298--299
 $[]\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 D \OMS/cmsy/m/n/12 7! []g$\C19/song/bx/n
 /12/26 ß \C19/song/bx/n/12/56 § \C19/song/bx/n/12/61 ± \C19/song/bx/n/12/58 ∑ \
 C19/song/m/n/12/50 Ç \C19/song/bx/n/12/55 $\OMS/cmsy/m/n/12 E[] \OT1/cmr/m/n/1
 2 = \OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12  \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f
-\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\O
-MS/cmsy/m/n/12 g$\C19/song/bx/n/12/26 ß
+\OML/cmm/m/it/12 r[]$ $\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 
+)\OMS/cmsy/m/n/12 g$\C19/song/bx/n/12/26 ß
  []
 
 
-Overfull \hbox (18.22505pt too wide) in paragraph at lines 310--311
+Overfull \hbox (2.11267pt too wide) in paragraph at lines 300--301
+[]\OT1/ppl/m/n/12 (4)$\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 =$\OMS/cmsy/m/n/12 f
+\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 D\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 B\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\OT1/ppl/m/n/12 , $\OML/cmm/m/
+it/12 J[]$\OT1/ppl/m/n/12 = $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n
+/12 (\OT1/cmss/m/n/12 A\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 C\OT1/cmr/m/n/12 )\O
+ML/cmm/m/it/12 ; r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 C\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 D\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/m/n/12/25 " \C19/son
+g/bx/n/12/42 ä
+ []
+
+
+Overfull \hbox (20.50508pt too wide) in paragraph at lines 300--301
 $[]\OMS/cmsy/m/n/12 g$\C19/song/bx/n/12/26 ß \C19/song/bx/n/12/56 § \C19/song/b
 x/n/12/61 ± \C19/song/bx/n/12/58 ∑ \C19/song/m/n/12/50 Ç \C19/song/bx/n/12/55 
 $\OMS/cmsy/m/n/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12  
 \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ([]\OML
-/cmm/m/it/12 ; e[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; r[]\OT1/cmr/m/n/12 (\OML/
-cmm/m/it/12 e[]; []\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/bx/n/12/26 ß
+/cmm/m/it/12 ; e[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; r[]$ $\OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 e[]; []\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/bx/n/12/26 
+ß
  []
 
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
+Overfull \hbox (2.11267pt too wide) in paragraph at lines 306--308
+[]\OT1/ppl/m/n/12 (6)$\OML/cmm/m/it/12 J[]$\OT1/ppl/m/n/12 =$\OMS/cmsy/m/n/12 f
+\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 C\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 D\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\OT1/ppl/m/n/12 , $\OML/cmm/m/
+it/12 J[]$\OT1/ppl/m/n/12 = $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n
+/12 (\OT1/cmss/m/n/12 A\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 C\OT1/cmr/m/n/12 )\O
+ML/cmm/m/it/12 ; r[]\OT1/cmr/m/n/12 (\OT1/cmss/m/n/12 D\OML/cmm/m/it/12 ; \OT1/
+cmss/m/n/12 B\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\C19/song/m/n/12/25 " \C19/son
+g/bx/n/12/42 ä
  []
 
-) [38] [39] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap4.tex [40
 
+Overfull \hbox (2.90648pt too wide) in paragraph at lines 306--308
+$[]\OML/cmm/m/it/12 ; \OT1/cmss/m/n/12 D \OMS/cmsy/m/n/12 7! []g$\C19/song/bx/n
+/12/26 ß \C19/song/bx/n/12/56 § \C19/song/bx/n/12/61 ± \C19/song/bx/n/12/55 $\
+OMS/cmsy/m/n/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12  \O
+T1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 ([]\OML/c
+mm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; r[]$
+ []
 
-
-]
+[37]) [38] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap4.tex
 µ⁄Àƒ’¬
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1280,12 +1321,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{proposition.1
 <to be read again> 
                    \relax 
 l.13 	\begin{proposition}
-                          [41]pdfTeX warning (ext4): destination with the same 
-identifier (name{definition.1}) has been already used, duplicate ignored
+                          [39
+
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{definition.1
+}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.70 	\begin{definition}
-                        [◊Ó–°≈ˆºØ)] [42]pdfTeX warning (ext4): destination with
+                        [◊Ó–°≈ˆºØ)] [40]pdfTeX warning (ext4): destination with
  the same identifier (name{example.1}) has been already used, duplicate ignored
 
 <to be read again> 
@@ -1307,7 +1352,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{definition.2}
 <to be read again> 
                    \relax 
 l.98 	\begin{definition}
-                        [◊¥Ã¨‘Ã∫¨)] [43]
+                        [◊¥Ã¨‘Ã∫¨)] [41]
 Overfull \hbox (6.62404pt too wide) in paragraph at lines 137--138
 []\C19/song/bx/n/12/63 3 \C19/song/bx/n/12/51 8 \C19/song/bx/n/12/53 c \C19/son
 g/bx/n/12/40  \C19/song/bx/n/12/64  \C19/song/bx/n/12/55 £ \C19/song/bx/n/12/
@@ -1320,12 +1365,12 @@ song/bx/n/12/46 ƒ \C19/song/bx/n/12/64 • \C19/song/bx/n/12/26 ß \C19/song/bx/n/
 12/51 
  []
 
-[44]pdfTeX warning (ext4): destination with the same identifier (name{definitio
+[42]pdfTeX warning (ext4): destination with the same identifier (name{definitio
 n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.143 	\begin{definition}
-                         [œÚ¡ø‘Ã∫¨)] [45]) [46]
+                         [œÚ¡ø‘Ã∫¨)] [43]) [44]
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap5.tex
 µ⁄ŒÂ’¬
 
@@ -1353,54 +1398,54 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.34996> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.25> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 15.
 
-[47
+[45
 
 
 
-] <img/7.jpg, id=822, 310.15875pt x 198.14024pt>
+] <img/7.jpg, id=766, 310.15875pt x 198.14024pt>
 File: img/7.jpg Graphic file (type jpg)
  <use img/7.jpg>
 Package pdftex.def Info: img/7.jpg used on input line 89.
 (pdftex.def)             Requested size: 234.73654pt x 149.95624pt.
- [48]
+ [46]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 99.
 
 ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [49 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/7.jpg>]
+) [47 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/7.jpg>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50] <img/14.jpg, id=847, 439.6425pt x 296.307pt>
+[48] <img/14.jpg, id=793, 439.6425pt x 296.307pt>
 File: img/14.jpg Graphic file (type jpg)
  <use img/14.jpg>
 Package pdftex.def Info: img/14.jpg used on input line 176.
 (pdftex.def)             Requested size: 362.77525pt x 244.50603pt.
- [51]
-[52 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/14.jpg>] [53]) [54]
+ [49]
+[50 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/14.jpg>] [51]) [52]
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap6.tex
 µ⁄¡˘’¬
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\CJKnumber' on input line 1.
 
-[55
+[53
 
 
 
-]) [56] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\paper.bbl [57
+]) [54] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\paper.bbl [55
 
 
 
-] [58]
-[59] [60] [61]) [62] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\public.tex)
-[63
+] [56]
+[57] [58] [59]) [60] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\public.tex)
+[61
 
 
 ]
 \tf@thm=\write5
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 681.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
  (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\paper.aux
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\abstract1.aux)
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\abstract2.aux)
@@ -1411,10 +1456,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap5.aux)
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap6.aux)
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\public.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 680.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 681.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 681.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: C76DA98F85A84725C86C3D6E00C90D3E;2815.
+(rerunfilecheck)             Checksum: B2501FE11200B225A2122C3FB43A4858;2018.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1425,13 +1470,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16045 strings out of 495354
- 236084 string characters out of 3182739
- 354887 words of memory out of 3000000
- 18045 multiletter control sequences out of 15000+200000
- 126786 words of font info for 421 fonts, out of 3000000 for 9000
+ 15989 strings out of 495354
+ 235095 string characters out of 3182739
+ 353629 words of memory out of 3000000
+ 18002 multiletter control sequences out of 15000+200000
+ 123193 words of font info for 409 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 40i,18n,58p,4062b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,18n,58p,4154b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
 simfang.ttf>{C:/Program Files (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc
 }<C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
@@ -1448,43 +1493,43 @@ tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
 simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Progra
 m Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x8
 6)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTe
-X/fonts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fo
-nts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wi
-ndows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.t
-tf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts
-/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Wi
-ndows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang
-.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fo
-nts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:
-/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei
-.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Wi
-ndows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Program Files (x86)/CTE
-X/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/font
-s/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/
-chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/sim
-sun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:
-/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Fi
-les (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/C
-TEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fo
-nts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
-simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Window
-s/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C
+X/fonts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fo
+nts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wi
+ndows/Fonts/simkai.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.t
+tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
+simkai.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Wind
+ows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.t
+tf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Font
+s/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/W
+indows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei
+.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Program File
+s (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simhei.tt
+f><C:/Windows/Fonts/simhei.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype
+/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/si
+msun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C
+:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program F
+iles (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/
+CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/f
+onts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truety
+pe/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/
+simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>
+<C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program
+ Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86
+)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX
+/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/true
+type/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chines
+e/simsun.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Wind
+ows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf>
+<C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/sim
+kai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/F
+onts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/W
+indows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.t
+tf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
+simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Window
+s/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C
 :/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simka
 i.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fon
-ts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Win
-dows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf
-><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/si
-mkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/
-Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/
-Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.
-ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts
-/simkai.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Progra
-m Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x8
-6)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTe
-X/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/tru
-etype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chine
-se/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.t
+ts/simkai.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.t
 tf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Prog
 ram Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (
 x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/C
@@ -1518,9 +1563,9 @@ es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
 x86)/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CT
 EX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKT
 eX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (73 pages, 1727390 bytes).
+Output written on paper.pdf (71 pages, 1717796 bytes).
 PDF statistics:
- 1429 PDF objects out of 1440 (max. 8388607)
- 225 named destinations out of 1000 (max. 500000)
- 537 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1375 PDF objects out of 1440 (max. 8388607)
+ 223 named destinations out of 1000 (max. 500000)
+ 449 words of extra memory for PDF output out of 10000 (max. 10000000)
 

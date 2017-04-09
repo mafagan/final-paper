@@ -62,7 +62,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 		S'_{(h,l,t)} = \{(h', l, t\mid h'\in E)\} \cup \{(h,l,t')\mid t' \in E\}
 	\end{equation}
 	
-	TransE选择了随机梯度下降法(Stochastic Gradient Descent，SGD)作为优化方法，随机梯度下降法在进行训练的时候，并不需要对所有的和求梯度，因此随机梯度下降法也不需要在每次循环的时候更新所有的向量，而只需要对一个批次的向量进行求梯度计算就可以更新$theta$值。
+	TransE选择了随机梯度下降法(Stochastic Gradient Descent，SGD)作为优化方法，随机梯度下降法在进行训练的时候，并不需要对所有的和求梯度，因此随机梯度下降法也不需要在每次循环的时候更新所有的向量，而只需要对一个批次的向量进行求梯度计算就可以更新$\theta$值。
 	
 		\begin{figure}[htb]
   \center
@@ -182,7 +182,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	其中$A$是$N_C$中的概念名实例，$a$是$N_I$中的个体实例，$r$是二元关系，$C'$和$D'$是$\mathcal{SHOI}$ 中的概念。一般的，为了便于表述，$\mathcal{T}$中还包含了RBoxes。 在本文中RBox包含以下形式公理的集合，$r_1 \circ \cdots \circ r_k \sqsubseteq r$以及关系属性断言，其中所有的属性断言我们都以公理进行表达：对称性($r\sqsubseteq r^-$)，传递性($r\circ r\sqsubseteq r$)以及自反性($\top \sqsubseteq \exists r.\mathsf{Self}$)。
 	另一个是断言知识的集合ABox $\mathcal{A}$，它描述的是TBox词汇表中的个体断言,包括概念类的成员元素，二元关系的成员元素二元组以及二元关系的等价关系，在本文中我们只需要对知识库中三元组进行表达，所以ABox中我们只考虑形如$r(a,b)$的关系断言，其中$a$和$b$是$N_I$中的个体实例，$r$是$\mathcal{SHOI}$中的关系。
 	
-	在本文中，断言知识部分我们仅考虑二元关系的断言，形如$r(a,b)$，其中$r$是$\Delta^\mathcal{I}\times\Delta^\mathcal{I}$ 中的一个二元关系实例，$a$和$b$是$\Delta^\mathcal{I}$中的一个个体。表2.2展示了TBox与ABox的语法以及语义。
+	在本文中，断言知识部分我们仅考虑二元关系的断言，形如$r(a,b)$，其中$r$是$\Delta^\mathcal{I}\times\Delta^\mathcal{I}$ 中的一个二元关系实例，$a$和$b$是$\Delta^\mathcal{I}$中的一个个体。表2.3展示了TBox与ABox的语法以及语义。
 
 	
 	语法和语义具有对应关系，如下表
@@ -246,11 +246,11 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 		
 		$\mathcal{A}$为：
 		\begin{center}
-			\item $Father(Tom)$
-			\item $Male(Tony)$
+			\item $Father(\mathsf{Tom})$
+			\item $Male(\mathsf{Tony})$
 		\end{center}
 		
-		显然，在本例中本体$\mathcal{O}$是一致的，又我们可以得出$\mathcal{O} \models Father \sqsubseteq Human$，$\mathcal{O} \models Male(Tom)$，$\mathcal{O} \models Human(Tony)$。
+		显然，在本例中本体$\mathcal{O}$是一致的，又我们可以得出$\mathcal{O} \models Father \sqsubseteq Human$，$\mathcal{O} \models Male(\mathsf{Tom})$，$\mathcal{O} \models Human(\mathsf{Tony})$。
 	\end{example}
 	
 	
@@ -309,8 +309,8 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 			 令：
 			 	$$ \mathcal{S}=\left\{
 				\begin{aligned}
-				giveBirth(Lily, Mary)\\
-				Female(Mary)\\
+				giveBirth(\mathsf{Lily}, \mathsf{Mary})\\
+				Female(\mathsf{Mary})\\
 				\exists giveBirth.Person \sqsubseteq Female\\
 				Female \sqsubseteq Person\\
 				\end{aligned}
@@ -318,7 +318,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 				$$
 			
 			
-			 对于所有的$\mathcal{S}' \subseteq \mathcal{S}$都有$\mathcal{S}' \not \models Female(Lily)$，且$\mathcal{S} \models Female(Lily)$，所以$\mathcal{S}$是$Female(Lily)$在本体$\mathcal{O}$中的决断集。
+			 对于所有的$\mathcal{S}' \subseteq \mathcal{S}$都有$\mathcal{S}' \not \models Female(\mathsf{Lily})$，且$\mathcal{S} \models Female(\mathsf{Lily})$，所以$\mathcal{S}$是$Female(\mathsf{Lily})$在本体$\mathcal{O}$中的决断集。
     \end{example}
 	
 	寻找决断集模板的方法是本体推理任务中重要的一环，寻找决断集的方法分为黑盒法和白盒法。
