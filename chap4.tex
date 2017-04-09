@@ -134,12 +134,9 @@
 
 	在本节中我们主要考虑向量模型的更新问题。在目前的不少应用中，知识库模型往往在一个在线的系统中提供服务，每一时刻都在服务数量较大的用户。因此，如果问题产生时不能够得到及时地解决，就会带来较大的影响。所以 一般的，在目前的诊断应用中，我们对诊断的要求是时效性敏感的，我们希望在得知问题根源后，能够尽快地更新知识库模型。
 	
-	在下文的研究中，主要研究更新方法对知识库模型性能的影响以及更新的效率。
-	
-\subsection{知识库偏序更新}
 	在目前的知识库嵌入研究中，以Bordes等人提出的TransE影响最大，TransE模型具有语义直观，模型清晰明了的特点，因此下文以TransE的模型为基础，探索在经过决断集模版求解出解释集后，如何使用新增三元组进行模型更新措施。
 	
-	在TransE中，嵌入是一个关键的操作，它的作用是在实体、关系的集合与一个低维的向量空间中形成一个映射关系。当新的实体、关系被加进知识库后，意味着我们对这个映射关系进行修改。
+	在TransE中，嵌入是一个关键的操作，它的作用是在实体、关系的集合与一个低维的向量空间中形成一个映射关系。当新的实体、关系被加进知识库后，意味着我们需要对这个映射关系进行修改。
 	
 	
 	首先，我们把知识库记为$G$，对知识库$G$的嵌入记为$embed(G)$，在知识库的基础上由知识库嵌入生成的向量模型为$\Delta_G$，记作$embed(G)=\Delta_G$，并且我们有如下定义：
@@ -147,11 +144,11 @@
 		若向量模型$\Delta_G$中，测试三元组$(h,r,t)$可以由$\Delta_G$成功预测且$(h,r,t) \not \in G$，我们就称向量模型$\Delta_G$向量蕴含$(h,r,t)$，记作$\Delta_G \models_{\Delta} (h,r,t)$。
 	\end{definition}
 	
-	根据基于决断集模版解释的定义以及对解释集的求解过程可知，对于所有的$\alpha \in S_{\mathcal{E}}$，满足$\alpha \not \in \mathcal{O}_G$，所以对于由解释集生成的知识库$G_{\mathcal{E}}$有对于所有的$(h,r,t) \in G_{\mathcal{E}}$满足$(h,r,t) \not \in \Delta_{G}$。因此，在继续训练更新向量模型$\Delta_G$之前，还难以使得对于所有的$(h,r,t) \in G_{\mathcal{E}}$满足$\Delta_G \models_{\Delta} (h,r,t)$。
+	根据基于决断集模版解释的定义以及对解释集的求解过程可知，对于所有的$\alpha \in S_{\mathcal{E}}$，满足$\alpha \not \in \mathcal{O}_G$，所以对于由解释集生成的知识库$G_{\mathcal{E}}$有对于所有的$(h,r,t) \in G_{\mathcal{E}}$满足$(h,r,t) \not \in \Delta_{G}$。因此，在继续训练更新向量模型$\Delta_G$之前，还难以使得尽量多的$(h,r,t) \in G_{\mathcal{E}}$满足$\Delta_G \models_{\Delta} (h,r,t)$。
 	
-	我们的目标是在$G_{\mathcal{E}}$的加入后训练的结果能够使得$h+r \approx t$，其中$(h,r,t) \in G_{\mathcal{E}}$。因此，我们不对TransE的能量框架做出改变，对于三元组(h,r,t)我们依旧把它的能量定义为$d(h+r,t)$，并且$d$为欧几里得距离。由于随机梯度下降具有增量更新的性质，因此一个可行的方式是使用原来的损失函数继续进行训练直至$\mathcal{L}$的值能够再次收敛到一个局部最小值。
+	我们的目标是在$G_{\mathcal{E}}$的加入后训练的结果能够使得$h+r \approx t$，其中$(h,r,t) \in G_{\mathcal{E}}$。因此，我们不对TransE的能量框架做出改变，对于三元组$(h,r,t)$我们依旧把它的能量定义为$d(h+r,t)$，并且$d$为欧几里得距离。由于随机梯度下降具有增量更新的性质，因此一个可行的方式是使用原来的损失函数继续进行训练直至$\mathcal{L}$的值能够再次收敛到一个局部最小值。
 	
-		要注意的是，根据我们基于决断集模版生成的解释集虽然不会对知识库$G$中的关系$r$带来影响，但是基于决断集模版生成的解释中，我们是允许实体变量的存在的(当Exp.$C \geq 2$时)，所以当我们使用解释集生成的三元组$S_\mathcal{E}$对知识库进行修复时，会有新的变量加入，也就意味着在解释集生成三元组的加入后，$G_\mathcal{E}$的实体集合$E' \cap E^- \not = \emptyset$。
+		要注意的是，根据我们基于决断集模版生成的解释集虽然不会对知识库$G$中的关系$r$带来影响，但是基于决断集模版生成的解释中，我们是允许实体变量的存在的(特别是当Exp.$C \geq 2$时)，所以当我们使用解释集生成的三元组$S_\mathcal{E}$对知识库进行修复时，会有新的变量加入，也就意味着在解释集生成三元组的加入后，$G_\mathcal{E}$的实体集合$E' \cap E^- \not = \emptyset$。
 	
 		\begin{equation}
 		\mathcal{L} = \sum\limits_{(h,r,t)\in S\cup S_{\mathcal{E}}} \sum\limits_{(h',r,t')\in (S\cup S_{\mathcal{E}})'_{(h,r,t)}} [\gamma + d(h+r,t)-d(h'+r,t')]_{+}
@@ -162,6 +159,30 @@
 		\begin{equation}
 		(S \cup S_\mathcal{E})'_{(h,r,t)} = \{(h', r, t\mid h'\in E')\} \cup \{(h,r,t')\mid t' \in E'\}
 		\end{equation}
+	
+	
+		以下方法基于TransE提供的训练方法修改而来。
 		
-		使用原损失函数的方法继续进行训练一般可以使$\mathcal{L}$再次收敛到局部的最小值，但是继续训练至局部
-\subsection{平均采样技术}
+			\begin{algorithm}
+  \caption{嵌入更新}
+  \KwIn{Training set $S=\{(h,l,t)\}$, explanation set $S_{\mathcal{E}}$ and rel. sets $E \cup E'$ and $L$, margin $\gamma$, embedding. $k$}
+	\textbf{initialize} $e \gets uniform(-\frac{6}{\sqrt{k}}, \frac{6}{\sqrt{k}})$ for each entity $e \not \in E$ and $e \in E'$\;
+	
+	\While{loop times $t \leq epoch$}
+	{
+		$e \gets e \slash \mid\mid e\mid\mid$ for each entity $e \in E \cup E'$\;
+		
+		$(S\cup S_{\mathcal{E}})_{batch} \gets sample(S,b) \cup sample(S_{\mathcal{E}},c)$ //sample a minibatch of size $b+c$, where $c\geq 1$ \;
+		
+		$T_{batch} \gets \emptyset$\;
+		
+		\For{$(h,l,t) \in (S\cup S_{\mathcal{E}})_{batch}$}
+		{
+			$(h',l,t') \gets sample((S \cup S_\mathcal{E})'_{(h,r,t)})$\;
+			$T_{batch} \gets T_{batch} \cup \{((h,l,t), (h',l,t'))\}$\;
+		}
+		
+		Update embeddings with $\sum\limits_{((h,l,t), (h',l,t'))\in T_{batch}} \nabla [\gamma + d(h+r,t)-d(h'+r,t')]_{+}$
+	}
+
+\end{algorithm}

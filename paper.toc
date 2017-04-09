@@ -32,8 +32,6 @@
 \contentsline {section}{\numberline {4.1}决断集计算}{41}{section.4.1}
 \contentsline {section}{\numberline {4.2}多观察值的最小解释集生成}{43}{section.4.2}
 \contentsline {section}{\numberline {4.3}基于解释集的向量模型更新研究}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}知识库偏序更新}{45}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}平均采样技术}{46}{subsection.4.3.2}
 \contentsline {chapter}{\numberline {}第五章\hspace {0.8em}实验与分析}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}实验工具与环境}{47}{section.5.1}
 \contentsline {section}{\numberline {5.2}程序框架}{48}{section.5.2}

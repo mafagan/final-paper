@@ -392,7 +392,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	
 	考虑以下例子：
 	\begin{example}
-		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中$TBox$ $\mathcal{T}$和ABox $\mathcal{A}$包含以下公理：
+		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中TBox $\mathcal{T}$和ABox $\mathcal{A}$包含以下公理：
 			
 	$$ \mathcal{T}=\left\{
 		\begin{aligned}
@@ -423,7 +423,7 @@ $E$表示的由知识库中实体组成的集合，$\mid R \mid$表示在知识库中二元关系组成的集合
 	
 	根据给出的背景知识可以知道，一个热心的或者是一个工作努力又养猫的人是一个好人，并且乐于助人的人是热心的。又由ABox $\mathcal
 	{A}$可以知道Lily是一只猫，Peter是一个人以及James工作努力。
-	由$TBox$ $\mathcal{T}$和ABox $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(James, Lily)\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(James, Peter)\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
+	由TBox $\mathcal{T}$和ABox $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(James, Lily)\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(James, Peter)\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
 	\end{example}
 
 

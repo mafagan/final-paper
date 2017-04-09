@@ -28,19 +28,17 @@
 \BOOKMARK [1][-]{section.4.1}{决断集计算}{chapter.4}% 28
 \BOOKMARK [1][-]{section.4.2}{多观察值的最小解释集生成}{chapter.4}% 29
 \BOOKMARK [1][-]{section.4.3}{基于解释集的向量模型更新研究}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.3.1}{知识库偏序更新}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.2}{平均采样技术}{section.4.3}% 32
-\BOOKMARK [0][-]{chapter.5}{第5章 实验与分析}{}% 33
-\BOOKMARK [1][-]{section.5.1}{实验工具与环境}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.2}{程序框架}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.3}{解释基数对生成解释的效率以及数量对比实验}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.3.1}{实验设计}{section.5.3}% 37
-\BOOKMARK [2][-]{subsection.5.3.2}{实验结果与数据分析}{section.5.3}% 38
-\BOOKMARK [1][-]{section.5.4}{决断集模板解释修复知识库模型对比实验}{chapter.5}% 39
-\BOOKMARK [2][-]{subsection.5.4.1}{实验设计}{section.5.4}% 40
-\BOOKMARK [2][-]{subsection.5.4.2}{实验结果与数据分析}{section.5.4}% 41
-\BOOKMARK [0][-]{chapter.6}{第6章 总结与展望}{}% 42
-\BOOKMARK [1][-]{section.6.1}{工作总结}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.2}{后续工作以及展望}{chapter.6}% 44
-\BOOKMARK [0][-]{section*.5}{参考文献}{}% 45
-\BOOKMARK [0][-]{chapter*.7}{在学期间论文发表情况}{}% 46
+\BOOKMARK [0][-]{chapter.5}{第5章 实验与分析}{}% 31
+\BOOKMARK [1][-]{section.5.1}{实验工具与环境}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.2}{程序框架}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.3}{解释基数对生成解释的效率以及数量对比实验}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.3.1}{实验设计}{section.5.3}% 35
+\BOOKMARK [2][-]{subsection.5.3.2}{实验结果与数据分析}{section.5.3}% 36
+\BOOKMARK [1][-]{section.5.4}{决断集模板解释修复知识库模型对比实验}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.4.1}{实验设计}{section.5.4}% 38
+\BOOKMARK [2][-]{subsection.5.4.2}{实验结果与数据分析}{section.5.4}% 39
+\BOOKMARK [0][-]{chapter.6}{第6章 总结与展望}{}% 40
+\BOOKMARK [1][-]{section.6.1}{工作总结}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{后续工作以及展望}{chapter.6}% 42
+\BOOKMARK [0][-]{section*.5}{参考文献}{}% 43
+\BOOKMARK [0][-]{chapter*.7}{在学期间论文发表情况}{}% 44

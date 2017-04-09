@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  8 APR 2017 19:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  9 APR 2017 02:31
 entering extended mode
 **C:/Users/Margo/Documents/æ¯•ä¸šè®ºæ–‡/final/paper.tex
 (C:/Users/Margo/Documents/æ¯•ä¸šè®ºæ–‡/final/paper.tex
@@ -960,7 +960,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.21 
-      [2] <img/8.jpg, id=458, 417.9615pt x 431.211pt>
+      [2] <img/8.jpg, id=448, 417.9615pt x 431.211pt>
 File: img/8.jpg Graphic file (type jpg)
  <use img/8.jpg>
 Package pdftex.def Info: img/8.jpg used on input line 24.
@@ -989,7 +989,7 @@ l.37
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\CJKnumber' on input line 1.
 
-<img/13.jpg, id=493, 519.74174pt x 508.299pt>
+<img/13.jpg, id=483, 519.74174pt x 508.299pt>
 File: img/13.jpg Graphic file (type jpg)
  <use img/13.jpg>
 Package pdftex.def Info: img/13.jpg used on input line 17.
@@ -1023,7 +1023,7 @@ N\OT1/ppl/m/n/12 )\C19/song/bx/n/12/64  \C19/song/bx/n/12/55 £ \C19/song/bx/n/
 ong/bx/n/12/40 
  []
 
-[9] [10] <img/9.jpg, id=545, 306.54526pt x 296.307pt>
+[9] [10] <img/9.jpg, id=535, 306.54526pt x 296.307pt>
 File: img/9.jpg Graphic file (type jpg)
  <use img/9.jpg>
 Package pdftex.def Info: img/9.jpg used on input line 69.
@@ -1033,13 +1033,13 @@ Package pdftex.def Info: img/9.jpg used on input line 69.
 LaTeX Warning: File ot155.cmap not found on input line 75.
 
 [11 <C:/Users/Margo/Documents/æ¯•ä¸šè®ºæ–‡/final/img/9.jpg>]
-<img/10.jpg, id=552, 326.4195pt x 348.1005pt>
+<img/10.jpg, id=542, 326.4195pt x 348.1005pt>
 File: img/10.jpg Graphic file (type jpg)
  <use img/10.jpg>
 Package pdftex.def Info: img/10.jpg used on input line 79.
 (pdftex.def)             Requested size: 192.0548pt x 204.81448pt.
  [12 <C:/Users/Margo/Documents/æ¯•ä¸šè®ºæ–‡/final/img/10.jpg>]
-<img/11.png, id=564, 429.32674pt x 301.24426pt>
+<img/11.png, id=554, 429.32674pt x 301.24426pt>
 File: img/11.png Graphic file (type png)
  <use img/11.png>
 Package pdftex.def Info: img/11.png used on input line 105.
@@ -1116,7 +1116,7 @@ n/12/42 ‡ \C19/kai/m/n/12/57 N \C19/kai/m/n/12/40 ä \C19/kai/m/n/12/60 ó$\OML/c
 mm/m/it/12 Person\OT1/cmr/m/n/12 ([])$\C19/kai/m/n/12/26 §
  []
 
-[18] <img/12.jpg, id=643, 629.9535pt x 387.24675pt>
+[18] <img/12.jpg, id=633, 629.9535pt x 387.24675pt>
 File: img/12.jpg Graphic file (type jpg)
  <use img/12.jpg>
 Package pdftex.def Info: img/12.jpg used on input line 328.
@@ -1308,7 +1308,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{definition.2}
                    \relax 
 l.98 	\begin{definition}
                         [×´Ì¬ÔÌº¬)] [43]
-Overfull \hbox (6.62404pt too wide) in paragraph at lines 140--141
+Overfull \hbox (6.62404pt too wide) in paragraph at lines 137--138
 []\C19/song/bx/n/12/63 3 \C19/song/bx/n/12/51 8 \C19/song/bx/n/12/53 c \C19/son
 g/bx/n/12/40  \C19/song/bx/n/12/64  \C19/song/bx/n/12/55 £ \C19/song/bx/n/12/
 47 ¥ \C19/song/bx/n/12/53 i \C19/song/bx/n/12/54 \ \C19/song/bx/n/12/60 ï \C19/
@@ -1324,7 +1324,7 @@ song/bx/n/12/46 Ä \C19/song/bx/n/12/64 ¥ \C19/song/bx/n/12/26 § \C19/song/bx/n/
 n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.146 	\begin{definition}
+l.143 	\begin{definition}
                          [ÏòÁ¿ÔÌº¬)] [45]) [46]
 (C:\Users\Margo\Documents\æ¯•ä¸šè®ºæ–‡\final\chap5.tex
 µÚÎåÕÂ
@@ -1357,7 +1357,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.25> not available
 
 
 
-] <img/7.jpg, id=830, 310.15875pt x 198.14024pt>
+] <img/7.jpg, id=822, 310.15875pt x 198.14024pt>
 File: img/7.jpg Graphic file (type jpg)
  <use img/7.jpg>
 Package pdftex.def Info: img/7.jpg used on input line 89.
@@ -1371,7 +1371,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50] <img/14.jpg, id=855, 439.6425pt x 296.307pt>
+[50] <img/14.jpg, id=847, 439.6425pt x 296.307pt>
 File: img/14.jpg Graphic file (type jpg)
  <use img/14.jpg>
 Package pdftex.def Info: img/14.jpg used on input line 176.
@@ -1414,7 +1414,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 680.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 0C8D5425A653235BB99442884C901FC3;2951.
+(rerunfilecheck)             Checksum: C76DA98F85A84725C86C3D6E00C90D3E;2815.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1425,13 +1425,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16056 strings out of 495354
- 236321 string characters out of 3182739
- 354031 words of memory out of 3000000
- 18055 multiletter control sequences out of 15000+200000
+ 16045 strings out of 495354
+ 236084 string characters out of 3182739
+ 354887 words of memory out of 3000000
+ 18045 multiletter control sequences out of 15000+200000
  126786 words of font info for 421 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 40i,18n,58p,4062b,1343s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,18n,58p,4062b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
 simfang.ttf>{C:/Program Files (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc
 }<C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
@@ -1518,9 +1518,9 @@ es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
 x86)/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CT
 EX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKT
 eX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (73 pages, 1726467 bytes).
+Output written on paper.pdf (73 pages, 1727390 bytes).
 PDF statistics:
- 1437 PDF objects out of 1440 (max. 8388607)
+ 1429 PDF objects out of 1440 (max. 8388607)
  225 named destinations out of 1000 (max. 500000)
- 553 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 537 words of extra memory for PDF output out of 10000 (max. 10000000)
 
