@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  9 APR 2017 19:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  9 APR 2017 21:38
 entering extended mode
-**C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/paper.tex
-(C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/paper.tex
+**paper.tex
+(C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\paper.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\base\book.cls"
@@ -964,19 +964,14 @@ l.21
 File: img/8.jpg Graphic file (type jpg)
  <use img/8.jpg>
 Package pdftex.def Info: img/8.jpg used on input line 24.
-(pdftex.def)             Requested size: 405.45047pt x 418.32022pt.
-
-
-LaTeX Warning: File ot163.cmap not found on input line 30.
-
+(pdftex.def)             Requested size: 277.41176pt x 286.21875pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 	‘⁄
-        ABoxµƒÀ›“Ú’Ô∂œŒ Ã‚÷–£¨S Klarmanµ»»À∂‘ABoxµƒÀ›“ÚÕ∆¿ÌŒ Ã‚◊˜≥ˆ¡À√˜»∑∂®“...
-[3 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/8.jpg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+l.31 
+      [3 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/8.jpg>]
+Underfull \vbox (badness 2512) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
@@ -985,7 +980,7 @@ been already used, duplicate ignored
 l.37 
       [4]
 
-LaTeX Warning: File ot137.cmap not found on input line 64.
+LaTeX Warning: File ot137.cmap not found on input line 70.
 
 [5]) [6] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap2.tex
 µ⁄∂˛’¬
@@ -1027,7 +1022,7 @@ N\OT1/ppl/m/n/12 )\C19/song/bx/n/12/64  \C19/song/bx/n/12/55 £ \C19/song/bx/n/
 ong/bx/n/12/40 
  []
 
-[9] [10] <img/9.jpg, id=483, 306.54526pt x 296.307pt>
+[9] [10] <img/9.jpg, id=484, 306.54526pt x 296.307pt>
 File: img/9.jpg Graphic file (type jpg)
  <use img/9.jpg>
 Package pdftex.def Info: img/9.jpg used on input line 69.
@@ -1037,13 +1032,13 @@ Package pdftex.def Info: img/9.jpg used on input line 69.
 LaTeX Warning: File ot155.cmap not found on input line 75.
 
 [11 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/9.jpg>]
-<img/10.jpg, id=490, 326.4195pt x 348.1005pt>
+<img/10.jpg, id=491, 326.4195pt x 348.1005pt>
 File: img/10.jpg Graphic file (type jpg)
  <use img/10.jpg>
 Package pdftex.def Info: img/10.jpg used on input line 79.
 (pdftex.def)             Requested size: 192.0548pt x 204.81448pt.
  [12 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/10.jpg>]
-<img/11.png, id=502, 429.32674pt x 301.24426pt>
+<img/11.png, id=503, 429.32674pt x 301.24426pt>
 File: img/11.png Graphic file (type png)
  <use img/11.png>
 Package pdftex.def Info: img/11.png used on input line 105.
@@ -1093,6 +1088,9 @@ ng/bx/n/12/59 X \C19/song/bx/n/12/26 ß$\OML/cmm/m/it/12 C[]$\C19/song/bx/n/12/4
 3 ⁄$\OML/cmm/m/it/12 D[]$\C19/song/bx/n/12/55 ¥$[]$
  []
 
+
+LaTeX Warning: File ot163.cmap not found on input line 185.
+
 [15]
 Overfull \hbox (14.36543pt too wide) in paragraph at lines 192--209
  [][] 
@@ -1132,7 +1130,7 @@ kai/m/n/12/55 ¥$\OML/cmm/m/it/12 Female\OT1/cmr/m/n/12 ([])$\C19/kai/m/n/12/63
 3
  []
 
-[18] <img/12.jpg, id=584, 629.9535pt x 387.24675pt>
+[18] <img/12.jpg, id=585, 629.9535pt x 387.24675pt>
 File: img/12.jpg Graphic file (type jpg)
  <use img/12.jpg>
 Package pdftex.def Info: img/12.jpg used on input line 328.
@@ -1402,7 +1400,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5.25> not available
 
 
 
-] <img/7.jpg, id=766, 310.15875pt x 198.14024pt>
+] <img/7.jpg, id=767, 310.15875pt x 198.14024pt>
 File: img/7.jpg Graphic file (type jpg)
  <use img/7.jpg>
 Package pdftex.def Info: img/7.jpg used on input line 89.
@@ -1416,14 +1414,26 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[48] <img/14.jpg, id=793, 439.6425pt x 296.307pt>
+[48] <img/14.jpg, id=795, 439.6425pt x 296.307pt>
 File: img/14.jpg Graphic file (type jpg)
  <use img/14.jpg>
 Package pdftex.def Info: img/14.jpg used on input line 176.
 (pdftex.def)             Requested size: 362.77525pt x 244.50603pt.
  [49]
-[50 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/14.jpg>] [51]) [52]
-(C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap6.tex
+[50 <C:/Users/Margo/Documents/ÊØï‰∏öËÆ∫Êñá/final/img/14.jpg>]
+Overfull \hbox (20.70018pt too wide) in paragraph at lines 220--221
+[]\C19/song/bx/n/12/63 3 \C19/song/bx/n/12/37  \C19/song/bx/n/12/39 g \C19/son
+g/bx/n/12/55 ¢ \C19/song/bx/n/12/61  \C19/song/bx/n/12/64 • \C19/song/bx/n/12/
+58 ∑ \C19/song/m/n/12/50 Ç \C19/song/bx/n/12/62 ^ \C19/song/m/n/12/48 5 \C19/so
+ng/bx/n/12/61  \C19/song/bx/n/12/64 y  \C19/song/bx/n/12/40 ‰ \C19/song/bx/n/
+12/60  \C19/song/bx/n/12/43 J \C19/song/bx/n/12/40  \C19/song/bx/n/12/64  \C
+19/song/bx/n/12/55 £ \C19/song/bx/n/12/47 • \C19/song/bx/n/12/51  \C19/song/bx
+/n/12/60 . \C19/song/bx/n/12/36 ù \C19/song/m/n/12/48 ) \C19/song/bx/n/12/61 ± 
+\C19/song/bx/n/12/59 e \C19/song/bx/n/12/26 µ\OT1/ppl/m/n/12 TransE\C19/song/bx
+/n/12/26 ß\OT1/ppl/m/n/12 TransH\C19/song/bx/n/12/61 ±
+ []
+
+[51]) [52] (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\chap6.tex
 µ⁄¡˘’¬
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1458,9 +1468,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
 (C:\Users\Margo\Documents\ÊØï‰∏öËÆ∫Êñá\final\public.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 681.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 681.
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: B2501FE11200B225A2122C3FB43A4858;2018.
 
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 2A3D2BB05B59AF6410CCD67F788F1B54;4013
+(rerunfilecheck)             After:  B2501FE11200B225A2122C3FB43A4858;2018.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
@@ -1471,101 +1487,102 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  15989 strings out of 495354
- 235095 string characters out of 3182739
- 353629 words of memory out of 3000000
- 18002 multiletter control sequences out of 15000+200000
- 123193 words of font info for 409 fonts, out of 3000000 for 9000
+ 235065 string characters out of 3182739
+ 353663 words of memory out of 3000000
+ 17998 multiletter control sequences out of 15000+200000
+ 123789 words of font info for 411 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 40i,18n,58p,4154b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,18n,58p,4110b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
 simfang.ttf>{C:/Program Files (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc
-}<C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
-imhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows
+}<C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/
+simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Window
+s/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simfang.ttf><
+C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/si
+mfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows
 /Fonts/simhei.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><
 C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/si
-mhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/
-Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><
-C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/sim
-kai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/F
-onts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/W
-indows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.t
-tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
-simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Progra
-m Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x8
-6)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTe
-X/fonts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fo
-nts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wi
-ndows/Fonts/simkai.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.t
-tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
-simkai.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Wind
+mhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/
+Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/
+Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.
+ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts
+/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windo
+ws/Fonts/simkai.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/si
+msun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C
+:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Windows/F
+onts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/W
+indows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simfang.
+ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Font
+s/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wind
 ows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.t
 tf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Font
 s/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/W
-indows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei
-.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Program File
-s (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simhei.tt
-f><C:/Windows/Fonts/simhei.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype
-/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/si
-msun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C
-:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program F
-iles (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/
-CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/f
-onts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truety
-pe/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/
-simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>
-<C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program
- Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86
-)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX
-/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/true
-type/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chines
-e/simsun.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Wind
-ows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf>
-<C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/sim
-kai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/F
-onts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/W
-indows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.t
-tf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/
-simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Window
-s/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C
-:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simka
-i.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fon
-ts/simkai.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.t
+indows/Fonts/simfang.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simfan
+g.ttf><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fo
+nts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Program Files (x86)/CTEX/CTeX/f
+onts/truetype/chinese/simsun.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts
+/simhei.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
+><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Progra
+m Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x8
+6)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTe
+X/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/tru
+etype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chine
+se/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.t
 tf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Prog
 ram Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (
 x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/C
 TeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/t
 ruetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chi
 nese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun
-.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Pr
-ogram Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files
- (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX
-/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts
-/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/c
-hinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/sims
-un.ttf><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
-.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.p
-fb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Program Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/P
-rogram Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
-ram Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
- Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program 
-Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Fi
-les (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
-es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files
- (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (
-x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Fil
-es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
- Files (x86)/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (
-x86)/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CT
-EX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKT
-eX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (71 pages, 1717796 bytes).
+.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Wi
+ndows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.tt
+f><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
+imhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows
+/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:
+/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai
+.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Font
+s/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wind
+ows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf>
+<C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/sim
+kai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/F
+onts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/P
+rogram Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program File
+s (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTE
+X/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/font
+s/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/
+chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/sim
+sun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:
+/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Fi
+les (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/C
+TEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fo
+nts/truetype/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetyp
+e/chinese/simsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/s
+imsun.ttf><C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><
+C:/Program Files (x86)/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><C:/Program 
+Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program F
+iles (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
+es (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
+s (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files 
+(x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x
+86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86
+)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/
+CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/CTEX/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files (x86)/CTEX/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/CTEX/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fo
+nts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/CTEX/MiKTe
+X/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/CTEX/M
+iKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fo
+nts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/typ
+e1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts/type1/urw/
+palatino/uplri8a.pfb>
+Output written on paper.pdf (71 pages, 1723485 bytes).
 PDF statistics:
- 1375 PDF objects out of 1440 (max. 8388607)
+ 1383 PDF objects out of 1440 (max. 8388607)
  223 named destinations out of 1000 (max. 500000)
  449 words of extra memory for PDF output out of 10000 (max. 10000000)
 
