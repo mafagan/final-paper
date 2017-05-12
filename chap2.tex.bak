@@ -2,7 +2,7 @@
 \section{知识库模型研究}
 知识库存储的是客观事实的元数据，利用已有信息与数据构建知识库模型是知识表示学习的重要内容。构建知识库模型的主要任务，是寻找构建模型的方法完成对知识库中实体关系进行表达\cite{zhiyuan}。在近年来，研究者对知识库模型进行了深入的研究，提出了多种知识库模型的构建方法，并对他们的研究成果进行了验证。
 \subsection{知识库与建模}
-首先我们先给出知识库的定义\cite{zhiyuan}：
+首先我们先给出简单三元组知识库的定义\cite{zhiyuan}：
 \begin{equation}
 	G = (E,R,S)
 \end{equation}
@@ -199,7 +199,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 		\hline
 		$\emph{conjunction}$ & C $\sqcap$ D & $C ^\mathcal{I} \cap D^\mathcal{I}$\\
 		\hline
-		$\emph{existential restriction}$ & $\exists r.C$ &  $\{X \in \vartriangle ^\mathcal{I} | \exists y \in \vartriangle ^\mathcal{I} : \left(x, y \right) \in r ^\mathcal{I}  \wedge r \in C^\mathcal{I}\}$ \\
+		$\emph{existential restriction}$ & $\exists r.C$ &  $\{x \in \vartriangle ^\mathcal{I} | \exists y \in \vartriangle ^\mathcal{I} : \left(x, y \right) \in r ^\mathcal{I}  \wedge r \in C^\mathcal{I}\}$ \\
 		\hline
 		$\emph{general concept inclusion}$ & $C \sqsubseteq D$ & $C ^\mathcal{I} \subseteq D^\mathcal{I}$ \\
 		\hline
@@ -300,7 +300,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 				Person(\mathsf{Mary})
 				\end{aligned}
 				$$
-			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言$Person(\mathsf{Mary})$，我们可以得到：
+			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言 $Person(\mathsf{Mary})$，我们可以得到：
 			$$
 				\begin{aligned}
 				Female(\mathsf{Lily})
@@ -355,7 +355,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 \end{algorithm}
 	
 	
-	在Kalyanpur的黑盒算法中，主要分两步：1)快速地找到一个决断集的超集$\mathcal{O}'$使得$\mathcal{O}' \models \alpha$ 2)移除$\mathcal{O}'$中的一条或多条公理，使用推理机测试移除后得到的本体$\mathcal{O}'$是否可以蕴含$\alpha$，重复步骤1和2，就可以得到在$\mathcal{O}$中$\alpha$的一个决断集。可以看出，可以优化的关键步骤就在于每次添加公理和减少公理的个数，因为在整个算法中，推理机的蕴含检测是最为耗时的，减少推理机的运行次数可以有效地优化算法的耗时。
+	在Kalyanpur的黑盒算法中，主要分两步：1)快速地找到一个决断集的超集$\mathcal{O}'$使得$\mathcal{O}' \models \alpha$。 2)移除$\mathcal{O}'$中的一条或多条公理，使用推理机测试移除后得到的本体$\mathcal{O}'$是否可以蕴含$\alpha$，重复步骤1和2，就可以得到在$\mathcal{O}$中$\alpha$的一个决断集。可以看出，可以优化的关键步骤就在于每次添加公理和减少公理的个数，因为在整个算法中，推理机的蕴含检测是最为耗时的，减少推理机的运行次数可以有效地优化算法的耗时。
 	
 	白盒法计算决断集并不完全依赖于推理机的计算，其中一种白盒的算法是由Zhou等人提出的基于解释依赖图的决断集算法\cite{findnew}，这种算法可以在OWL 2 EL中计算本体$\mathcal{O}$蕴含值的决断集。解释依赖图算法需要先使用补全规则对本体$\mathcal{O}$进行蕴含值的计算，然后根据依赖图对本体中的蕴含值进行模板回溯。
 	
@@ -382,7 +382,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
         \begin{enumerate}
                \item $(\emph{一致})$ 当且仅当$\mathcal{K} \cup A \nvDash \bot$。
                \item $(\emph{非平凡})$ 当且仅当 $\mathcal{K} \nvDash \Phi$。
-               \item $(\emph{最小})$ 当且仅当不存在对于$\langle \mathcal{K}, \Phi \rangle$问题的解释$B$，其中$B$是$A$的实例化子集。我们说$B$是$A$的实例化子集当且仅当存在一个重命名映射$\rho$:$N_I^*(B) \mapsto N_I^*(A)$，其中$N_I^*(B)$和$N_I^*(A)$是来自于$A$和$B$的个体名且不出现于$\mathcal{K}$，使得$A \vDash \rho B$。但是对于所有的$\varrho$:$N_I^*(A) \mapsto N_I^*(B)$满足$B \nvDash \varrho A$。满足以上条件的，我们称$A$是问题$\langle \mathcal{K}, \Phi \rangle$的最小解释。
+               \item $(\emph{最小})$ 当且仅当不存在对于$\langle \mathcal{K}, \Phi \rangle$ 问题的解释$B$，其中$B$是$A$的实例化子集。我们说$B$是$A$的实例化子集当且仅当存在一个重命名映射$\rho$:$N_I^*(B) \mapsto N_I^*(A)$，其中$N_I^*(B)$和$N_I^*(A)$是来自于$A$和$B$的个体名且不出现于$\mathcal{K}$，使得$A \vDash \rho B$。但是对于所有的$\varrho$:$N_I^*(A) \mapsto N_I^*(B)$满足$B \nvDash \varrho A$。满足以上条件的，我们称$A$是问题$\langle \mathcal{K}, \Phi \rangle$的最小解释。
         \end{enumerate}
 
     \end{definition}
@@ -392,7 +392,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 	
 	考虑以下例子：
 	\begin{example}
-		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中TBox $\mathcal{T}$和ABox $\mathcal{A}$包含以下公理：
+		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中TBox $\mathcal{T}$ 和ABox $\mathcal{A}$包含以下公理：
 			
 	$$ \mathcal{T}=\left\{
 		\begin{aligned}
@@ -423,7 +423,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 	
 	根据给出的背景知识可以知道，一个热心的或者是一个工作努力又养猫的人是一个好人，并且乐于助人的人是热心的。又由ABox $\mathcal
 	{A}$可以知道Lily是一只猫，Peter是一个人以及James工作努力。
-	由TBox $\mathcal{T}$和ABox $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(James, Lily)\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(James, Peter)\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
+	由TBox $\mathcal{T}$和ABox $\mathcal{A}$，我们知道$\mathcal{O} \not \models \alpha$。从语义上说，溯因诊断的任务是提出一个合理的假设去解释“James是好人”。从技术上说，就是要找到合理的断言公理集合$\mathcal{E}$使得$\mathcal{O} \cup \mathcal{E} \models NicePerson(\mathsf{James})$。例如，在本例中，我们根据观察值和背景知识可以提出三个合理的解释：1)根据背景知识“热心人是好人”，我们可以假设“James是热心的”，即$\mathcal{E}=\{Enthusiastic(James)\}$，2)根据一个工作努力又养猫的人是一个好人，而James工作努力且Lily是一只猫，我们可以假设“James拥有Lily”，即$\mathcal{E}=\{owns(\mathsf{James}, \mathsf{Lily})\}$，3)根据背景知识利于助人的人是热心人，热心人是好人，我们可以假设“James帮助了Peter”，即$\mathcal{E}=\{help(\mathsf{James}, \mathsf{Peter})\}$。这三种假设都可以使观察值得出合理解释，从而使得$\mathcal{O} \cup \mathcal{E} \models \alpha$。
 	\end{example}
 
 

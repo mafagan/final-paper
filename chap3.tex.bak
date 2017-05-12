@@ -2,7 +2,7 @@
 \chapter{基于决断集模板进行溯因诊断}
 	本体中的知识库以及规则是本体可以进行推理的前提。目前的本体构造主要由手工或者是半手工构建。由于本体的结构复杂，信息量大，因此本体的构建是一个长期的过程。在本体的构建过程中，构建的本体与观察值的不一致是一个常会发生的问题。因此，找到问题的原因，对观察值提出合理解释成为本体推理中的一个重要任务，这类任务也被称作是溯因推理问题。
 \section{知识库诊断问题}
-	对于一个事实集合$G$，我们定义在事实信息的基础上经过自动或半自动构建出的知识库模型为$\Delta_G$，令$\Delta_G$无法表达的客观事实观察值记作$g$。我们的目标是使用本体语言对知识库进行表达，并在本体上对观察值做溯因诊断，因此，我们定义一个由知识库$S$构成的本体为$\mathcal{O}_G=\mathcal{T}_G \cup \mathcal{A}_G$。其中，$\mathcal{T}_G$ 是知识库$G$ 中的规则集合，$\mathcal{A}_G = \{r_l(h,t)\mid h \in E, t\in E, l \in R\}$。另外，我们使用$\alpha_g$表示$\mathcal{O}_G$无法表达的观察值。
+	对于一个事实集合$G$，我们定义在事实信息的基础上经过自动或半自动构建出的知识库模型为$\Delta_G$，令$\Delta_G$无法表达的客观事实观察值记作$g$。我们的目标是使用本体语言对知识库进行表达，并在本体上对观察值做溯因诊断，因此，我们定义一个由知识库$S$构成的本体为$\mathcal{O}_G=\mathcal{T}_G \cup \mathcal{A}_G$。其中，$\mathcal{T}_G$ 是知识库$G$ 中的规则集合，$\mathcal{A}_G $为断言公理集合。另外，我们使用$\alpha_g$表示$\mathcal{O}_G$无法表达的观察值。
 	
 	在本文中我们考虑$\mathcal{O}_G$的诊断问题，我们对该问题做出以下定义：
 	
@@ -154,18 +154,18 @@
     在本节中，我们主要介绍生成基于决断集模版的诊断方法。在命题3.4中我们给出了基于决断集模板解释集合的描述，对生成解释的验证方法可以通过简化非平凡、$\subseteq_\mathsf{ds}$-$\emph{minimal}$以及可接受特性的测试方法达到优化的目的，因此我们有以下推论。
 
      \begin{corollary}
-    给定一个一致的本体$\mathcal{O}$，一个观察值$\alpha_{(\mathsf{A}, \mathsf{B})}$以及命题3.4中给定的决断集模板的集合$\mathcal{P}$，根据决断集模板的集合$\mathcal{P}$在$\mathcal{O}$中得到的对于观察值$\alpha_{(\mathsf{A}, \mathsf{B})}$的基于决断集模板的解释的集合为$\{\emph{inst}(\mathcal{J}_1\theta) \mid \mathcal{J}_p \in \mathcal{P}, (\mathcal{J}_1, \mathcal{J}_2) \in \mathsf{B}^*(\mathcal{J}_p)$ 且$\theta$ 是$\mathcal{J}_2 \cup \alpha_{(X, Y)}$的一个差异化实例替换使得$\emptyset \subset \mathcal{J}_2 \subset \mathcal{J}_P$, $X\theta=A$，$Y\theta=\mathsf{B}$，$\mathcal{J}_2\theta \subset \mathcal{O}$,$\mathcal{O} \cup inst(\mathcal{J}_1\theta)$是一致的，对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_2\theta)$有$\mathcal{J} \cup inst(\mathcal{J}_1\theta)\not \models \alpha_{(\mathsf{A}, \mathsf{B})}$ 同时$inst(\mathcal{J}_1\theta) \not \models \alpha_{(X, Y)}$，$\mathcal{O} \cup inst(\mathcal{J}_1\theta)$是一致的，且$\mathcal{J}_2\theta\cup \emph{inst}(\mathcal{J}_1\theta)\in \emph{Jst}(\alpha_{(\mathsf{A}, \mathsf{B})}, \mathcal{O} \cup \emph{inst}(\mathcal{J}_1)\theta)$, 以及不存在一个在本体$\mathcal{O}$ 对于观察值$\alpha_{(\mathsf{A}, \mathsf{B})}$的解释$\mathcal{E}'$满足$\mathcal{E}'\subseteq_\mathsf{ds} \emph{inst}(\mathcal{J}_1\theta)$ 以及$\emph{inst}(\mathcal{J}_1\theta) \not \subseteq_\mathsf{ds} \mathcal{E}'\}$
+    给定一个一致的本体$\mathcal{O}$，一个观察值$\alpha_{(\mathsf{A}, \mathsf{B})}$以及命题3.4中给定的决断集模板的集合$\mathcal{P}$，根据决断集模板的集合$\mathcal{P}$在$\mathcal{O}$中得到的对于观察值$\alpha_{(\mathsf{A}, \mathsf{B})}$的基于决断集模板的解释的集合为$\{\emph{inst}(\mathcal{J}_1\theta) \mid \mathcal{J}_p \in \mathcal{P}, (\mathcal{J}_1, \mathcal{J}_2) \in \mathsf{B}^*(\mathcal{J}_p)$ 且$\theta$ 是$\mathcal{J}_2 \cup \alpha_{(X, Y)}$的一个差异化实例替换使得$\emptyset \subset \mathcal{J}_2 \subset \mathcal{J}_P$, $X\theta=A$，$Y\theta=\mathsf{B}$，$\mathcal{J}_2\theta \subset \mathcal{O}$,$\mathcal{O} \cup inst(\mathcal{J}_1\theta)$是一致的，对于所有的$\mathcal{J} \in \mathsf{subs_1}(\mathcal{J}_2\theta)$有$\mathcal{J} \cup inst(\mathcal{J}_1\theta)\not \models \alpha_{(\mathsf{A}, \mathsf{B})}$，以及对于所有的$\mathcal{E}'\in \mathsf{lifts_1}(inst(\mathcal{J}_1\theta))\cup \mathsf{subs_1}(inst(\mathcal{J}_1\theta))$使得$\mathcal{O}\cup\mathcal{E}'\not\models\alpha_{(\mathsf{A}, \mathsf{B})}$。
 	\end{corollary}
 
      证明：本推论的证明由以下四点组成。
 
-     (1)
+     (1)当对于所有的$\mathcal{J}\in\mathsf{subs_1}(\mathcal{J_2}\theta)$使得$\mathcal{J}\cup inst(\mathcal{J}_1\theta)\not\models\alpha_{(\mathsf{A}, \mathsf{B})}$，我们有对于所有的$\mathcal{J} \subset \mathcal{J}_2\theta$，$\mathcal{J}\cup inst(\mathcal{J}_1\theta)\not \models\alpha_{(\mathsf{A}, \mathsf{B})}$成立，所以$inst(\mathcal{J}_1\theta)\not \models\alpha_{(\mathsf{A}, \mathsf{B})}$。
 
-     (2)
+     (2)存在一个$\mathcal{J}_P$的差异化替换$\theta'$使得$X\theta'=X\theta'$，$Y\theta=Y\theta'$，$\mathcal{J}_1\theta'=inst(\mathcal{J}_1\theta)$且$\mathcal{J}_2\theta'=\mathcal{J}_2\theta$。由于$\mathcal{J}_2\theta\cup inst(\mathcal{J}_1\theta)=\mathcal{J}_P\theta'$以及$\mathcal{J}_P\theta'\models X\theta' \sqsubseteq Y\theta'$，我们有$\mathcal{J}_2\theta\cup inst(\mathcal{J}_1\theta)\models\alpha_{(\mathsf{A}, \mathsf{B})}$。所以，当$\mathcal{J}_2\theta \subseteq \mathcal{O}$以及对于所有的$\mathcal{J}\in \mathsf{subs_1}(\mathcal{J}_2\theta)$，我们有$\mathcal{J}_2\theta\cup inst(\mathcal{J}_1\theta)\in \mathsf{Jst}(\alpha_{(\mathsf{A}, \mathsf{B})},\mathcal{O}\cup \mathsf{inst}(\mathcal{J}_1\theta))$。另一方面，当$\mathcal{J}_2\theta\cup inst(\mathcal{J}_1\theta)\in\mathsf{Jst}(\alpha_{(\mathsf{A}, \mathsf{B})}, \mathcal{O}\cup inst(\mathcal{J}_1\theta))$，可得对于所有的$\mathcal{J} \in \mathsf{subs_1}(\mathcal{J}_2\theta)$有$\mathcal{J}\cup inst(\mathcal{J}_1\theta)\not \models\alpha_{(\mathsf{A}, \mathsf{B})}$。
 
-     (3)
+     (3)通过命题3.3，对于所有的$\mathcal{E}'\in\mathsf{lifts_1}(inst(\mathcal{J}_1\theta))\cup\mathsf{subs_1(inst(\mathcal{J}_1\theta))}$ 有$\mathcal{O}\cup\mathcal{E}'\not\models\alpha_{(\mathsf{A}, \mathsf{B})}$当且仅当不存在一个对于$\alpha_{(\mathsf{A}, \mathsf{B})}$的解释$\mathcal{E}'$使得$\mathcal{E}'\subseteq_{ds} inst(\mathcal{J}_1\theta)$且$inst(\mathcal{J}_1\theta)\not\subseteq_{ds}\mathcal{E}'$。
 
-     (4)
+     (4)通过第(2)条我们可以有$\mathcal{J}_2\theta\cup inst(\mathcal{J}_1\theta)\models\alpha_{(\mathsf{A}, \mathsf{B})}$。由于$inst(\mathcal{J}_1\theta)\not \models\alpha_{(\mathsf{A}, \mathsf{B})}$，我们有$\mathcal{J}_2 \not= \emptyset$。又由于$\mathcal{J}_2\theta\subseteq\mathcal{O}$，$\mathcal{O}\not\models\alpha_{(\mathsf{A}, \mathsf{B})}$，我们有$\mathcal{J}_1\not=\emptyset$且$\mathcal{J}_2\subset\mathcal{J}_P$。
 
 
      给定一致本体，观察值以$r_o(\mathsf{A},\mathsf{B})$ 为例，以及蕴含$r_o(X,Y)$ 的决断集模版的集合$\mathcal{P}$，算法2 计算出所有相应的基于决断集模版的解释集。对于给定的输入，算法2 首先检测表达本体$\mathcal{O}$的一致性，之后对于所有的决断集模版$\mathcal{J}_p$，我们使用使用二分法生成$(\mathcal{J}_1, \mathcal{J}_2)$。其中$\mathcal{J}_1$ 用于在$\mathcal{O}\cup r_o(\mathsf{A},\mathsf{B})$ 中寻找实例并计算出替换$\theta$，$\mathcal{J}_2$用于生成解释并验证是否合理解释。遍历所有的$(\mathcal{J}_1, \mathcal{J}_2)$(除了$\mathcal{J}_1 = \emptyset$或$\mathcal{J}_2 = \emptyset$)得出解释集。例3.4是根据算法给出的例子。

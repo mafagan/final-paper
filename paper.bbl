@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -153,11 +153,11 @@ Richard Socher, Danqi Chen, Christopher~D. Manning, and Andrew~Y. Ng.
 \newblock In \emph{27th Annual Conference on Neural Information Processing
   Systems 2013.}, pages 926--934, 2013.
 
-\bibitem[Yang et~al.(2014{\natexlab{a}})Yang, Yih, He, Gao, and Deng]{Yang14a}
+\bibitem[Yang et~al.(2014)Yang, Yih, He, Gao, and Deng]{Yang14a}
 Bishan Yang, Wen{-}tau Yih, Xiaodong He, Jianfeng Gao, and Li~Deng.
 \newblock Embedding entities and relations for learning and inference in
   knowledge bases.
-\newblock \emph{CoRR}, abs/1412.6575, 2014{\natexlab{a}}.
+\newblock \emph{CoRR}, abs/1412.6575, 2014.
 
 \bibitem[Wang et~al.(2014)Wang, Zhang, Feng, and Chen]{WangZFC14}
 Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen.
@@ -269,11 +269,5 @@ J.~Du, G.~Qi, Y.~Shen, and J.~Z. Pan.
 \newblock Towards practical {ABox} abduction in large {OWL DL} ontologies.
 \newblock In \emph{Proceedings of the 25th National Conference on Artificial
   Intelligence (AAAI)}, pages 1160--1165, 2011{\natexlab{b}}.
-
-\bibitem[Yang et~al.(2014{\natexlab{b}})Yang, Yih, He, Gao, and Deng]{14a}
-Bishan Yang, Wen{-}tau Yih, Xiaodong He, Jianfeng Gao, and Li~Deng.
-\newblock Embedding entities and relations for learning and inference in
-  knowledge bases.
-\newblock \emph{CoRR}, abs/1412.6575, 2014{\natexlab{b}}.
 
 \end{thebibliography}

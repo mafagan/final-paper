@@ -300,7 +300,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 				Person(\mathsf{Mary})
 				\end{aligned}
 				$$
-			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言$Person(\mathsf{Mary})$，我们可以得到：
+			 又根据$\exists giveBirth.Person \sqsubseteq Female$，$giveBirth(\mathsf{Lily}, \mathsf{Mary})$以及个体断言 $Person (\mathsf{Mary})$，我们可以得到：
 			$$
 				\begin{aligned}
 				Female(\mathsf{Lily})
@@ -382,7 +382,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
         \begin{enumerate}
                \item $(\emph{一致})$ 当且仅当$\mathcal{K} \cup A \nvDash \bot$。
                \item $(\emph{非平凡})$ 当且仅当 $\mathcal{K} \nvDash \Phi$。
-               \item $(\emph{最小})$ 当且仅当不存在对于$\langle \mathcal{K}, \Phi \rangle$问题的解释$B$，其中$B$是$A$的实例化子集。我们说$B$是$A$的实例化子集当且仅当存在一个重命名映射$\rho$:$N_I^*(B) \mapsto N_I^*(A)$，其中$N_I^*(B)$和$N_I^*(A)$是来自于$A$和$B$的个体名且不出现于$\mathcal{K}$，使得$A \vDash \rho B$。但是对于所有的$\varrho$:$N_I^*(A) \mapsto N_I^*(B)$满足$B \nvDash \varrho A$。满足以上条件的，我们称$A$是问题$\langle \mathcal{K}, \Phi \rangle$的最小解释。
+               \item $(\emph{最小})$ 当且仅当不存在对于$\langle \mathcal{K}, \Phi \rangle$ 问题的解释$B$，其中$B$是$A$的实例化子集。我们说$B$是$A$的实例化子集当且仅当存在一个重命名映射$\rho$:$N_I^*(B) \mapsto N_I^*(A)$，其中$N_I^*(B)$和$N_I^*(A)$是来自于$A$和$B$的个体名且不出现于$\mathcal{K}$，使得$A \vDash \rho B$。但是对于所有的$\varrho$:$N_I^*(A) \mapsto N_I^*(B)$满足$B \nvDash \varrho A$。满足以上条件的，我们称$A$是问题$\langle \mathcal{K}, \Phi \rangle$的最小解释。
         \end{enumerate}
 
     \end{definition}
@@ -392,7 +392,7 @@ $E$表示的是由知识库中实体组成的集合，$|R|$表示在知识库中二元关系组成的集合。一般
 	
 	考虑以下例子：
 	\begin{example}
-		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中TBox $\mathcal{T}$和ABox $\mathcal{A}$包含以下公理：
+		令$\mathcal{O} = \mathcal{T} \cup \mathcal{A}$是一个DL 本体，其中TBox $\mathcal{T}$ 和ABox $\mathcal{A}$包含以下公理：
 			
 	$$ \mathcal{T}=\left\{
 		\begin{aligned}
