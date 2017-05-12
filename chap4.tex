@@ -1,17 +1,17 @@
-\chapter{解释集生成与嵌入更新}
+\chapter{解释集生成与知识库诊断}
 在上一章中，我们给出了在知识库中进行诊断的基本框架，并且详细地对相关的定理进行了证明。但是我们还没有完成从解释集到嵌入向量的翻译，以及实际的求解算法，因此，在本章当中，我们先给出生成解释训练集的方法，接着给出在解释训练集到嵌入向量的一般性算法。
 
 \section{决断集计算}
 
 	基于决断集模版的解释需要特定的决断集模版的集合。在上一章的命题中我们展示了生成决断集模版的方法，我们首先计算本体中所有的原子蕴含值，接着根据蕴含值我们计算出所有蕴含值的决断集，最后通过$lift$操作生成决断集模版变量。然而，这种方法并不完全可行，因为计算所有蕴含值的决断集是非常耗时的\cite{KPHS07}。所以我们提出了新的计算决断集的方法。
 	
-	这种方法是从Du，Junker等人的方法改进而来\cite{DQF14, Jun04}。对于本体$\mathcal{O}$的蕴含值$\alpha_{A,B}$，我们在每次计算新的决断集之前都会通过决断集模版获取具有相同决断集模版的决断集。然后通过逐条递增的方式增量计算不能从已有的决断集模版获取的决断集，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算，算法的流程会重复以上步骤，直至所有的决断集被计算出来为止。
+	这种方法是从Du，Junker等人的方法改进而来\cite{DQF14, Jun04}。对于本体$\mathcal{O}$的蕴含值$\alpha_{(A,B)}$，我们在每次计算新的决断集之前都会通过决断集模版获取具有相同决断集模版的决断集。然后通过逐条递增的方式增量计算不能从已有的决断集模版获取的决断集，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算，算法的流程会重复以上步骤，直至所有的决断集被计算出来为止。
 	
-	在以下算法中，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$\alpha_{A,B}$，我们首先计算所有对于$\alpha_{A,B}$的决断集模版。
+	在以下算法中，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$\alpha_{(A,B)}$，我们首先计算所有对于$\alpha_{(A,B)}$的决断集模版。
 	利用\cite{DQF14}中的搜索方法，它可以递增地计算新的决断集。
 	
 	\begin{proposition}
-		算法3返回在本体$\mathcal{O}$中对于蕴含值$\alpha_{(\mathsf{A},\mathsf{B})}$的决断集模版集合$\mathcal{P}$以及在$\mathcal{O}$中对于蕴含值$\alpha_{A,B}$的决断集$\mathcal{J}$，且存在差异化实例替换$\theta$，决断集模版$\mathcal{J}_p \in \mathcal{P}$以及决断集$\mathcal{J}$使得$\mathcal{J}_p\theta=\mathcal{J}$。
+		算法3返回在本体$\mathcal{O}$中对于蕴含值$\alpha_{(\mathsf{A},\mathsf{B})}$的决断集模版集合$\mathcal{P}$以及在$\mathcal{O}$中对于蕴含值$\alpha_{(A,B)}$的决断集$\mathcal{J}$，且存在差异化实例替换$\theta$，决断集模版$\mathcal{J}_p \in \mathcal{P}$以及决断集$\mathcal{J}$使得$\mathcal{J}_p\theta=\mathcal{J}$。
 		
 	\end{proposition}
 	
@@ -88,7 +88,7 @@
 	\right\}.
 	$$
 	
-	可以得到其中$A \sqsubseteq B$可由$\mathcal{O}$蕴含。我们以$A \sqsubseteq B$为例进行运算，第一轮运算中，我们使用$\textbf{FindJustification}(\emptyset, \mathcal{O}, A \sqsubseteq B)$计算第一个决断集。我们把$\mathcal{O}$划分为$S_1=\{\alpha_1, \alpha_2, \alpha_3\}$以及$S_2=\{\alpha_4, \alpha_5, \alpha_6\}$。通过递归调用$\textbf{FindJustification}(S_1,S_2,A \sqsubseteq B)$，我们得到$\Delta_2 = \emptyset$。又通过递归调用$\textbf{FindJustification}(\Delta_2,S_1,A \sqsubseteq B)$，我们可以得到$\Delta_1=\{\alpha_2, \alpha_3\}$。所以$A \sqsubseteq B$的第一个决断集是$\mathcal{J}_1 =\{\alpha_2, \alpha_3\}$。通过$lift\{\mathcal{J}_1\}$，我们得到第一个$X\sqsubseteq Y$的决断集模版$\mathcal{J}_{p1} =\{X \sqsubseteq Y \sqcup Z_C,X \sqcap Z_C \sqsubseteq \bot \}$。由于无法在本体$\mathcal{O}$中找到可实例化的决断集，我们计算$\mathcal{J}_1$的MHS $H$，令$H = \{\alpha_2\}$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$。我们继续调用$\textbf{FindJustification}(\emptyset,\mathcal{O}\setminus H,A \sqsubseteq B)$得到第二个决断集$\mathcal{J}_2 = \{\alpha_1, \alpha_4, \alpha_5\}$。由于不存在$\{\mathcal{J}_1, \mathcal{J}_2\}$的MHS $H$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$，我们已经得到全部的决断集$\{\mathcal{J}_1, \mathcal{J}_2\}$。
+	可以得到其中$A \sqsubseteq B$可由$\mathcal{O}$蕴含。我们以$A \sqsubseteq B$为例进行运算，第一轮运算中，我们使用$\textbf{FindJustification}(\emptyset, \mathcal{O}, A \sqsubseteq B)$计算第一个决断集。我们把$\mathcal{O}$划分为$S_1=\{\alpha_1, \alpha_2, \alpha_3\}$以及$S_2=\{\alpha_4, \alpha_5, \alpha_6\}$。通过递归调用$\textbf{FindJustification}(S_1,S_2,A \sqsubseteq B)$，我们得到$\Delta_2 = \emptyset$。又通过递归调用$\textbf{FindJustification}(\Delta_2,S_1,A \sqsubseteq B)$，我们可以得到$\Delta_1=\{\alpha_2, \alpha_3\}$。所以$A \sqsubseteq B$的第一个决断集是$\mathcal{J}_1 =\{\alpha_2, \alpha_3\}$。通过$lift\{\mathcal{J}_1\}$，我们得到第一个$X\sqsubseteq Y$的决断集模版$\mathcal{J}_{p1} =\{X \sqsubseteq Y \sqcup Z_C,X \sqcap Z_C \sqsubseteq \bot \}$。 由于无法在本体$\mathcal{O}$中找到可实例化的决断集，我们计算$\mathcal{J}_1$的MHS $H$，令$H = \{\alpha_2\}$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$。我们继续调用$\textbf{FindJustification}(\emptyset,\mathcal{O}\setminus H,A \sqsubseteq B)$得到第二个决断集$\mathcal{J}_2 = \{\alpha_1, \alpha_4, \alpha_5\}$。由于不存在$\{\mathcal{J}_1, \mathcal{J}_2\}$ 的MHS $H$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$，我们已经得到全部的决断集$\{\mathcal{J}_1, \mathcal{J}_2\}$。
 	\end{example}
 	
 	
@@ -130,13 +130,13 @@
 
 \end{algorithm}
 
-\section{基于解释集的向量模型更新研究}
+\section{基于解释集的知识库模型更新研究}
 
-	在本节中我们主要考虑向量模型的更新问题。在目前的不少应用中，知识库模型往往在一个在线的系统中提供服务，每一时刻都在服务数量较大的用户。因此，如果问题产生时不能够得到及时地解决，就会带来较大的影响。所以 一般的，在目前的诊断应用中，我们对诊断的要求是时效性敏感的，我们希望在得知问题根源后，能够尽快地更新知识库模型。
+	在本节中我们主要考虑知识库模型的更新问题。在目前的不少应用中，知识库模型往往在一个在线的系统中提供服务，每一时刻都在服务数量较大的用户。因此，如果问题产生时不能够得到及时地解决，就会带来较大的影响。所以 一般的，在目前的诊断应用中，我们对诊断的要求是时效性敏感的，我们希望在得知问题根源后，能够尽快地更新知识库模型。
 	
-	在目前的知识库嵌入研究中，以Bordes等人提出的TransE影响最大，TransE模型具有语义直观，模型清晰明了的特点，因此下文以TransE的模型为基础，探索在经过决断集模版求解出解释集后，如何使用新增三元组进行模型更新措施。
+	在目前的知识库嵌入研究中，以Bordes等人提出的翻译影响最大，翻译模型具有语义直观，模型清晰明了的特点，因此下文以翻译模型为基础，探索在经过决断集模版求解出解释集后，如何使用生成解释集进行知识库模型更新。
 	
-	在TransE中，嵌入是一个关键的操作，它的作用是在实体、关系的集合与一个低维的向量空间中形成一个映射关系。当新的实体、关系被加进知识库后，意味着我们需要对这个映射关系进行修改。
+	在翻译模型中，嵌入是一个关键的操作，它的作用是在实体、关系的集合与一个低维的向量空间中形成一个映射关系。当新的实体、关系被加进知识库后，意味着我们需要对这个映射关系进行修改。
 	
 	
 	首先，我们把知识库记为$G$，对知识库$G$的嵌入记为$embed(G)$，在知识库的基础上由知识库嵌入生成的向量模型为$\Delta_G$，记作$embed(G)=\Delta_G$，并且我们有如下定义：
@@ -161,7 +161,7 @@
 		\end{equation}
 	
 	
-		以下方法基于TransE提供的训练方法修改而来。
+		以下方法基于翻译模型提供的训练方法修改而来。
 		
 			\begin{algorithm}
   \caption{嵌入更新}

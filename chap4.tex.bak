@@ -1,22 +1,22 @@
-\chapter{解释集生成与嵌入更新}
-在上一章中，我们给出了在知识库中进行诊断的基本框架，并且详细地对相关的定理进行了证明。但是我们还没有完成从解释集到嵌入向量的翻译，以及实际的求解算法，因此，在本章当中，我们先给出生成解释训练集的方法，接着给出在解释训练集到嵌入向量的一般性算法。 
+\chapter{解释集生成与知识库诊断}
+在上一章中，我们给出了在知识库中进行诊断的基本框架，并且详细地对相关的定理进行了证明。但是我们还没有完成从解释集到嵌入向量的翻译，以及实际的求解算法，因此，在本章当中，我们先给出生成解释训练集的方法，接着给出在解释训练集到嵌入向量的一般性算法。
 
 \section{决断集计算}
 
 	基于决断集模版的解释需要特定的决断集模版的集合。在上一章的命题中我们展示了生成决断集模版的方法，我们首先计算本体中所有的原子蕴含值，接着根据蕴含值我们计算出所有蕴含值的决断集，最后通过$lift$操作生成决断集模版变量。然而，这种方法并不完全可行，因为计算所有蕴含值的决断集是非常耗时的\cite{KPHS07}。所以我们提出了新的计算决断集的方法。
 	
-	这种方法是从Du，Junker等人的方法改进而来\cite{DQF14, Jun04}。对于本体$\mathcal{O}$的蕴含值$\alpha_{A,B}$，我们在每次计算新的决断集之前都会通过决断集模版获取具有相同决断集模版的决断集。然后通过逐条递增的方式增量计算不能从已有的决断集模版获取的决断集，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算，算法的流程会重复以上步骤，直至所有的决断集被计算出来为止。
+	这种方法是从Du，Junker等人的方法改进而来\cite{DQF14, Jun04}。对于本体$\mathcal{O}$的蕴含值$\alpha_{(A,B)}$，我们在每次计算新的决断集之前都会通过决断集模版获取具有相同决断集模版的决断集。然后通过逐条递增的方式增量计算不能从已有的决断集模版获取的决断集，这种方式使用了更有效地剪枝技术和分治策略，以最大程度避免对相同类型的决断集进行重复计算，算法的流程会重复以上步骤，直至所有的决断集被计算出来为止。
 	
-	在以下算法中，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$\alpha_{A,B}$，我们首先计算所有对于$\alpha_{A,B}$的决断集模版。
+	在以下算法中，我们对于所有的原子蕴含值进行顺序求解。例如，对于所有由本体$\mathcal{O}$蕴含的形如$\alpha_{(A,B)}$，我们首先计算所有对于$\alpha_{(A,B)}$的决断集模版。
 	利用\cite{DQF14}中的搜索方法，它可以递增地计算新的决断集。
 	
 	\begin{proposition}
-		算法3返回在本体$\mathcal{O}$中对于蕴含值$\alpha_{A,B}$的决断集模版集合$\mathcal{P}$以及在$\mathcal{O}$中对于蕴含值$\alpha_{A,B}$的决断集$\mathcal{J}$，且存在差异化实例替换$\theta$，决断集模版$\mathcal{J}_p \in \mathcal{P}$以及决断集$\mathcal{J}$使得$\mathcal{J}_p\theta=\mathcal{J}$。
+		算法3返回在本体$\mathcal{O}$中对于蕴含值$\alpha_{(\mathsf{A},\mathsf{B})}$的决断集模版集合$\mathcal{P}$以及在$\mathcal{O}$中对于蕴含值$\alpha_{(A,B)}$的决断集$\mathcal{J}$，且存在差异化实例替换$\theta$，决断集模版$\mathcal{J}_p \in \mathcal{P}$以及决断集$\mathcal{J}$使得$\mathcal{J}_p\theta=\mathcal{J}$。
 		
 	\end{proposition}
 	
 	
-	证明：对于每个$\mathcal{J}_p \in \mathcal{P}$，存在一个$\mathcal{O}$的蕴含$\alpha_{A,B}$满足$\mathcal{J}_p = lift(\mathcal{J},A,B)$。其中$\mathcal{J}_p$是$\mathcal{O}$中的一个决断集模版，另一方面，令$\theta$是$\mathcal{J}_p$的一个实例化差异替换满足$X\theta=A,Y\theta=B,\mathcal{J}_p\theta \subseteq \mathcal{O}$以及对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J}\not \models \alpha_{A,B}$。根据定义，我们有$\mathcal{J}_p\theta \models \alpha_{A,B}$。由于$\mathcal{J}_p\theta \subseteq \mathcal{O}$且对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J} \not \models \alpha_{A,B}$，所以$\mathcal{J}_p\theta$是$\mathcal{O}$中对于蕴含$\alpha_{A,B}$的一个决断集。
+	证明：对于每个$\mathcal{J}_p \in \mathcal{P}$，存在一个$\mathcal{O}$的蕴含$\alpha_{(\mathsf{A},\mathsf{B})}$满足$\mathcal{J}_p = lift(\mathcal{J},A,B)$。其中$\mathcal{J}_p$是$\mathcal{O}$中的一个决断集模版，另一方面，令$\theta$是$\mathcal{J}_p$的一个实例化差异替换满足$X\theta=A,Y\theta=B,\mathcal{J}_p\theta \subseteq \mathcal{O}$以及对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J}\not \models \alpha_{(\mathsf{A},\mathsf{B})}$。根据定义，我们有$\mathcal{J}_p\theta \models \alpha_{(\mathsf{A},\mathsf{B})}$。由于$\mathcal{J}_p\theta \subseteq \mathcal{O}$且对于所有的$\mathcal{J} \in subs_1(\mathcal{J}_p\theta)$有$\mathcal{J} \not \models \alpha_{(\mathsf{A},\mathsf{B})}$，所以$\mathcal{J}_p\theta$是$\mathcal{O}$中对于蕴含$\alpha_{(\mathsf{A},\mathsf{B})}$的一个决断集。
 	\begin{algorithm}
   \caption{决断集模版的计算方法}
   \KwIn{Ontology $\mathcal{O}$}
@@ -24,29 +24,29 @@
   $\mathcal{P}\gets \emptyset $ \ \ //$\mathcal{P}$存储所有的决断集模版\
 		
 
-	\For{each $\alpha_{A,B}$ entailed by $\mathcal{O}$}
+	\For{each $\alpha_{(\mathsf{A},\mathsf{B})}$ entailed by $\mathcal{O}$}
 	{
 		$\mathcal{S} \gets \{\mathcal{J}_p\theta\mid \mathcal{J}_p\in \mathcal{P}$,
    $\theta$ is a differentiated substitution for $\mathcal{J}_p$ such that
-   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{A,B}$ for
+   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{(\mathsf{A},\mathsf{B})}$ for
    all $\mathcal{J}\in subs_1(\mathcal{J}_p\theta)\}$\;
 		\While{$\mathcal{S}=\emptyset$ (then $H$ is set as $\emptyset$) or
-   there is a minimal hitting set $H$ for $\mathcal{S}$ such that $\mathcal{T}\setminus H\models \alpha_{A,B}$}
+   there is a minimal hitting set $H$ for $\mathcal{S}$ such that $\mathcal{T}\setminus H\models \alpha_{(\mathsf{A},\mathsf{B})}$}
 		{
-			$\mathcal{J}\gets$ FindJustification($\emptyset$, $\mathcal{O}\setminus H$, $\alpha_{A,B}$) \;
+			$\mathcal{J}\gets$ FindJustification($\emptyset$, $\mathcal{O}\setminus H$, $\alpha_{(\mathsf{A},\mathsf{B})}$) \;
 			$\mathcal{J}_p\gets lift(\mathcal{J},A,B)$
 			
 			$\mathcal{P}\gets\mathcal{P}\cup \{\mathcal{J}_p\}$\;
 			$\mathcal{S}\gets \mathcal{S}\cup \{\mathcal{J}_p\theta\mid \theta$ is a differentiated substitution for $\mathcal{J}_p$ such that
-   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{A,B}$ for all
+   $X\theta=A$, $Y\theta=B$, $\mathcal{J}_p\theta\subseteq \mathcal{O}$ and $\mathcal{J}\not\models \alpha_{(\mathsf{A},\mathsf{B})}$ for all
    $\mathcal{J}\in subs_1(\mathcal{J}_p\theta)\}$\;
 		}
 	}
 	\Return $\mathcal{P}$\;
 	
-	$\textbf{FindJustification}$($S_u$, $S_c$, $\alpha_{A,B}$) //返回一个$S_c$的最小子集$S$使得$S_u\cup S\models \alpha_{A,B}$\;
+	$\textbf{FindJustification}$($S_u$, $S_c$, $\alpha_{(\mathsf{A},\mathsf{B})}$) //返回一个$S_c$的最小子集$S$使得$S_u\cup S\models \alpha_{(\mathsf{A},\mathsf{B})}$\;
 	
-	\If{$S_c=\emptyset$ or $S_u\models \alpha_{A,B}$}
+	\If{$S_c=\emptyset$ or $S_u\models \alpha_{(\mathsf{A},\mathsf{B})}$}
 	{
 		\Return $\emptyset$
 	}
@@ -58,11 +58,11 @@
 	
 	Divide $S_c$ into two disjoint subsets $S_1$ and $S_2$ such that
  $S_1\cup S_2=S_c$, $S_1\cap S_2=\emptyset$ and $0\leq |S_1|-|S_2|\leq 1$\;
- 
- $\Delta_2\gets$ FindJustification($S_u\cup S_1$, $S_2$, $\alpha_{A,B}$)\;
- 
- $\Delta_1\gets$ FindJustification($S_u\cup \Delta_2$, $S_1$, $\alpha_{A,B}$)\;
- 
+
+ $\Delta_2\gets$ FindJustification($S_u\cup S_1$, $S_2$, $\alpha_{(\mathsf{A},\mathsf{B})}$)\;
+
+ $\Delta_1\gets$ FindJustification($S_u\cup \Delta_2$, $S_1$, $\alpha_{(\mathsf{A},\mathsf{B})}$)\;
+
  \Return $\Delta_1\cup\Delta_2$
 
 \end{algorithm}
@@ -72,7 +72,7 @@
 	\end{definition}
 	
 	
-	由于最小碰集与求得的决断集的集合中所有的元素交集都不为空，且是最小集，我们可以判断如果存在一个决断集集合的最小碰集$H$使得$\mathcal{O} \setminus H \models \alpha_{A,B}$，一个新的决断集可以从集合$\mathcal{O} \setminus H$中通过分治法得到\cite{DQF14}。
+	由于最小碰集与求得的决断集的集合中所有的元素交集都不为空，且是最小集，我们可以判断如果存在一个决断集集合的最小碰集$H$使得$\mathcal{O} \setminus H \models \alpha_{(\mathsf{A},\mathsf{B})}$，一个新的决断集可以从集合$\mathcal{O} \setminus H$中通过分治法得到\cite{DQF14}。
 	
 	根据以上算法，我们给出以下例子：
 	
@@ -88,7 +88,7 @@
 	\right\}.
 	$$
 	
-	可以得到其中$A \sqsubseteq B$可由$\mathcal{O}$蕴含。我们以$A \sqsubseteq B$为例进行运算，第一轮运算中，我们使用$\textbf{FindJustification}(\emptyset, \mathcal{O}, A \sqsubseteq B)$计算第一个决断集。我们把$\mathcal{O}$划分为$S_1=\{\alpha_1, \alpha_2, \alpha_3\}$以及$S_2=\{\alpha_4, \alpha_5, \alpha_6\}$。通过递归调用$\textbf{FindJustification}(S_1,S_2,A \sqsubseteq B)$，我们得到$\Delta_2 = \emptyset$。又通过递归调用$\textbf{FindJustification}(\Delta_2,S_1,A \sqsubseteq B)$，我们可以得到$\Delta_1=\{\alpha_2, \alpha_3\}$。所以$A \sqsubseteq B$的第一个决断集是$\mathcal{J}_1 =\{\alpha_2, \alpha_3\}$。通过$lift\{\mathcal{J}_1\}$，我们得到第一个$X\sqsubseteq Y$的决断集模版$\mathcal{J}_{p1} =\{X \sqsubseteq Y \sqcup Z_C,X \sqcap Z_C \sqsubseteq \bot \}$。由于无法在本体$\mathcal{O}$中找到可实例化的决断集，我们计算$\mathcal{J}_1$的MHS $H$，令$H = \{\alpha_2\}$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$。我们继续调用$\textbf{FindJustification}(\emptyset,\mathcal{O}\setminus H,A \sqsubseteq B)$得到第二个决断集$\mathcal{J}_2 = \{\alpha_1, \alpha_4, \alpha_5\}$。由于不存在$\{\mathcal{J}_1, \mathcal{J}_2\}$的MHS $H$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$，我们已经得到全部的决断集$\{\mathcal{J}_1, \mathcal{J}_2\}$。
+	可以得到其中$A \sqsubseteq B$可由$\mathcal{O}$蕴含。我们以$A \sqsubseteq B$为例进行运算，第一轮运算中，我们使用$\textbf{FindJustification}(\emptyset, \mathcal{O}, A \sqsubseteq B)$计算第一个决断集。我们把$\mathcal{O}$划分为$S_1=\{\alpha_1, \alpha_2, \alpha_3\}$以及$S_2=\{\alpha_4, \alpha_5, \alpha_6\}$。通过递归调用$\textbf{FindJustification}(S_1,S_2,A \sqsubseteq B)$，我们得到$\Delta_2 = \emptyset$。又通过递归调用$\textbf{FindJustification}(\Delta_2,S_1,A \sqsubseteq B)$，我们可以得到$\Delta_1=\{\alpha_2, \alpha_3\}$。所以$A \sqsubseteq B$的第一个决断集是$\mathcal{J}_1 =\{\alpha_2, \alpha_3\}$。通过$lift\{\mathcal{J}_1\}$，我们得到第一个$X\sqsubseteq Y$的决断集模版$\mathcal{J}_{p1} =\{X \sqsubseteq Y \sqcup Z_C,X \sqcap Z_C \sqsubseteq \bot \}$。 由于无法在本体$\mathcal{O}$中找到可实例化的决断集，我们计算$\mathcal{J}_1$的MHS $H$，令$H = \{\alpha_2\}$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$。我们继续调用$\textbf{FindJustification}(\emptyset,\mathcal{O}\setminus H,A \sqsubseteq B)$得到第二个决断集$\mathcal{J}_2 = \{\alpha_1, \alpha_4, \alpha_5\}$。由于不存在$\{\mathcal{J}_1, \mathcal{J}_2\}$ 的MHS $H$使得$\mathcal{O} \setminus H \models A \sqsubseteq B$，我们已经得到全部的决断集$\{\mathcal{J}_1, \mathcal{J}_2\}$。
 	\end{example}
 	
 	
@@ -121,11 +121,11 @@
 	
 	Divide $S_c$ into two disjoint subsets $S_1$ and $S_2$ such that
  $S_1\cup S_2=S_c$, $S_1\cap S_2=\emptyset$ and $0\leq |S_1|-|S_2|\leq 1$\;
- 
+
  $\Delta_2\gets$ FindMinimalExp($S_u\cup S_1$, $S_2$, $\mathcal{O}$)\;
- 
+
  $\Delta_1\gets$ FindMinimalExp($S_u\cup \Delta_2$, $S_1$, $\mathcal{O}$)\;
- 
+
  \Return $\Delta_1\cup\Delta_2$
 
 \end{algorithm}
@@ -148,7 +148,7 @@
 	
 	我们的目标是在$G_{\mathcal{E}}$的加入后训练的结果能够使得$h+r \approx t$，其中$(h,r,t) \in G_{\mathcal{E}}$。因此，我们不对TransE的能量框架做出改变，对于三元组$(h,r,t)$我们依旧把它的能量定义为$d(h+r,t)$，并且$d$为欧几里得距离。由于随机梯度下降具有增量更新的性质，因此一个可行的方式是使用原来的损失函数继续进行训练直至$\mathcal{L}$的值能够再次收敛到一个局部最小值。
 	
-		要注意的是，根据我们基于决断集模版生成的解释集虽然不会对知识库$G$中的关系$r$带来影响，但是基于决断集模版生成的解释中，我们是允许实体变量的存在的(特别是当Exp.$C \geq 2$时)，所以当我们使用解释集生成的三元组$S_\mathcal{E}$对知识库进行修复时，会有新的变量加入，也就意味着在解释集生成三元组的加入后，$G_\mathcal{E}$的实体集合$E' \cap E^- \not = \emptyset$。
+		要注意的是，根据我们基于决断集模版生成的解释集虽然不会对知识库$G$中的关系$r$带来影响，但是基于决断集模版生成的解释中，我们是允许实体变量的存在的(特别是当Exp.$C \geq 2$时)，所以当我们使用解释集生成的三元组$S_\mathcal{E}$对知识库进行修复时，会有新的变量加入，也就意味着在解释集生成三元组的加入后，$G_\mathcal{E}$的实体集合$E' \not \subseteq  E$。
 	
 		\begin{equation}
 		\mathcal{L} = \sum\limits_{(h,r,t)\in S\cup S_{\mathcal{E}}} \sum\limits_{(h',r,t')\in (S\cup S_{\mathcal{E}})'_{(h,r,t)}} [\gamma + d(h+r,t)-d(h'+r,t')]_{+}

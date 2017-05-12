@@ -10,8 +10,6 @@ A level-1 auxiliary file: chap6.aux
 The style file: unsrtnat.bst
 A level-1 auxiliary file: public.aux
 Database file #1: cfo2lp.bib
-A bad cross reference---entry "BordesWCB11"
-refers to entry "DBLP:conf/aaai/2011", which doesn't exist
 A bad cross reference---entry "LinLS16"
 refers to entry "DBLP:conf/ijcai/2016", which doesn't exist
 A bad cross reference---entry "earlyAbox"
@@ -22,8 +20,8 @@ A bad cross reference---entry "BordesUGWY13"
 refers to entry "DBLP:conf/nips/2013", which doesn't exist
 A bad cross reference---entry "alcTableau"
 refers to entry "DBLP:conf/saicsit/2012", which doesn't exist
-A bad cross reference---entry "DuWM17"
-refers to entry "DBLP:conf/aaai/2017", which doesn't exist
+A bad cross reference---entry "BordesWCB11"
+refers to entry "DBLP:conf/aaai/2011", which doesn't exist
 A bad cross reference---entry "CMN13"
 refers to entry "DBLP:conf/nips/2013", which doesn't exist
 A bad cross reference---entry "WangZFC14"
@@ -48,8 +46,7 @@ Warning--I didn't find a database entry for "DBLP:conf/aaai/2014"
 Warning--I didn't find a database entry for "DBLP:conf/rr/2011"
 Warning--I didn't find a database entry for "DBLP:conf/ijcai/2005"
 Warning--I didn't find a database entry for "DBLP:conf/aswc/2011"
-Warning--I didn't find a database entry for "DBLP:conf/aaai/2017"
 Warning--I didn't find a database entry for "DBLP:conf/saicsit/2012"
 Warning--I didn't find a database entry for "DBLP:conf/dlog/2016"
 Warning--I didn't find a database entry for "DBLP:conf/webi/2013"
-(There were 15 error messages)
+(There were 14 error messages)

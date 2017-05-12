@@ -26,24 +26,24 @@
 \contentsline {section}{\numberline {3.2}本体的诊断与解释}{25}{section.3.2}
 \contentsline {section}{\numberline {3.3}决断集模版的生成与验证}{27}{section.3.3}
 \contentsline {section}{\numberline {3.4}基于决断集模版的解释}{30}{section.3.4}
-\contentsline {section}{\numberline {3.5}生成基于决断集模版解释的算法}{34}{section.3.5}
-\contentsline {section}{\numberline {3.6}本章小结}{38}{section.3.6}
-\contentsline {chapter}{\numberline {}第四章\hspace {0.8em}解释集生成与嵌入更新}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}决断集计算}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}多观察值的最小解释集生成}{41}{section.4.2}
-\contentsline {section}{\numberline {4.3}基于解释集的向量模型更新研究}{42}{section.4.3}
-\contentsline {chapter}{\numberline {}第五章\hspace {0.8em}实验与分析}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}实验工具与环境}{45}{section.5.1}
-\contentsline {section}{\numberline {5.2}程序框架}{46}{section.5.2}
-\contentsline {section}{\numberline {5.3}解释基数对生成解释的效率以及数量对比实验}{47}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}实验设计}{47}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}实验结果与数据分析}{48}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}决断集模板解释修复知识库模型对比实验}{49}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}实验设计}{50}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}实验结果与数据分析}{51}{subsection.5.4.2}
-\contentsline {chapter}{\numberline {}第六章\hspace {0.8em}总结与展望}{53}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{53}{section.6.1}
-\contentsline {section}{\numberline {6.2}后续工作以及展望}{54}{section.6.2}
-\contentsline {chapter}{参考文献}{55}{section*.5}
-\contentsline {chapter}{在学期间论文发表情况}{61}{chapter*.7}
+\contentsline {section}{\numberline {3.5}基于决断集模版的诊断}{34}{section.3.5}
+\contentsline {section}{\numberline {3.6}本章小结}{39}{section.3.6}
+\contentsline {chapter}{\numberline {}第四章\hspace {0.8em}解释集生成与知识库诊断}{41}{chapter.4}
+\contentsline {section}{\numberline {4.1}决断集计算}{41}{section.4.1}
+\contentsline {section}{\numberline {4.2}多观察值的最小解释集生成}{43}{section.4.2}
+\contentsline {section}{\numberline {4.3}基于解释集的知识库模型更新研究}{44}{section.4.3}
+\contentsline {chapter}{\numberline {}第五章\hspace {0.8em}实验与分析}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}实验工具与环境}{47}{section.5.1}
+\contentsline {section}{\numberline {5.2}程序框架}{48}{section.5.2}
+\contentsline {section}{\numberline {5.3}解释基数对生成解释的效率以及数量对比实验}{49}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}实验设计}{49}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}实验结果与数据分析}{50}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}决断集模板解释修复知识库模型对比实验}{51}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}实验设计}{52}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}实验结果与数据分析}{53}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {}第六章\hspace {0.8em}总结与展望}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}后续工作以及展望}{56}{section.6.2}
+\contentsline {chapter}{参考文献}{57}{section*.5}
+\contentsline {chapter}{在学期间论文发表情况}{63}{chapter*.7}
 \contentsfinish 

@@ -15,12 +15,12 @@
 \BOOKMARK [1][-]{section.3.2}{本体的诊断与解释}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.3}{决断集模版的生成与验证}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.4}{基于决断集模版的解释}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.5}{生成基于决断集模版解释的算法}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.5}{基于决断集模版的诊断}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.6}{本章小结}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{第4章 解释集生成与嵌入更新}{}% 20
+\BOOKMARK [0][-]{chapter.4}{第4章 解释集生成与知识库诊断}{}% 20
 \BOOKMARK [1][-]{section.4.1}{决断集计算}{chapter.4}% 21
 \BOOKMARK [1][-]{section.4.2}{多观察值的最小解释集生成}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{基于解释集的向量模型更新研究}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{基于解释集的知识库模型更新研究}{chapter.4}% 23
 \BOOKMARK [0][-]{chapter.5}{第5章 实验与分析}{}% 24
 \BOOKMARK [1][-]{section.5.1}{实验工具与环境}{chapter.5}% 25
 \BOOKMARK [1][-]{section.5.2}{程序框架}{chapter.5}% 26
