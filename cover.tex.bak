@@ -9,11 +9,11 @@
  \vspace{20mm}
  \begin{center}
  {\bfseries\song\fontsize{20pt}{\baselineskip}\selectfont
-    稳定模型语义下不一致本体规则修复及回答查询的研究}\\
+    面向知识图谱溯因诊断的研究}\\
  \end{center}
  \begin{center}
  {\bfseries\fontsize{17pt}{\baselineskip}\selectfont
-    Query Answering with Existential Rules Repairs of Inconsistent Ontologies under Stable Model Semantics}\\
+	Research on the Abduction of Knowledge Graph}\\
  \end{center}
 
 
@@ -23,11 +23,11 @@
  \begin{tabbing}
  \hspace*{3.3cm} \= \hspace{3.1cm} \= \kill
 
- \>{\sanhao 学位申请人：} \> \underline{\sihao 肖\,鹏\hspace{3.54cm}}\\ %总长3.4cm
+ \>{\sanhao 学位申请人：} \> \underline{\sihao \,\hspace{4.07cm}}\\ %总长3.4cm
  \\
- \>{\sanhao 指\,\,导\,\,教\,\,师：} \> \underline{\sihao 万\,海\;\;高级讲师\hspace{1.88cm}}\\
+ \>{\sanhao 指\,\,导\,\,教\,\,师：} \> \underline{\sihao \,\;\;\hspace{1.88cm}}\\
  \\
- \>{\sanhao 专\,\,业\,\,名\,\,称：}\> \underline{\sihao 软件工程\hspace{1.26cm}}\\
+ \>{\sanhao 专\,\,业\,\,名\,\,称：}\> \underline{\sihao 软件工程\hspace{3.2cm}}\\
  \end{tabbing}
 \vspace{12mm}
 
@@ -47,7 +47,7 @@
  \end{tabbing}
 
  \begin{center}\sanhao
- \;\;二零一四\,年\;五\,月
+ \;\;二零一五\,年\;五\,月
  \end{center}
  \newpage
  \normalsize
