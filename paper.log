@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  6 JUN 2017 14:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.1.21)  20 JUN 2017 19:28
 entering extended mode
-**C:/Users/Margo/Documents/毕业论文/final/paper.tex
-(C:/Users/Margo/Documents/毕业论文/final/paper.tex
+**paper.tex
+(C:\Users\Margo\Documents\毕业论文\final\paper.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\base\book.cls"
@@ -1433,9 +1433,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
 (C:\Users\Margo\Documents\毕业论文\final\ack.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 439BB637A6446A653F501CFE5F5861F8;2071.
 
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 9DA9C16BCB7EB67E9496165F306486A5;4123
+(rerunfilecheck)             After:  439BB637A6446A653F501CFE5F5861F8;2071.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
@@ -1451,7 +1457,7 @@ Here is how much of TeX's memory you used:
  18019 multiletter control sequences out of 15000+200000
  122302 words of font info for 406 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,18n,58p,4198b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,18n,58p,4154b,1335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simfang.ttf>{C:/Program Files 
 (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Windows/Fonts/simfang.ttf
 ><C:/Windows/Fonts/simfang.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
@@ -1536,7 +1542,7 @@ x86)/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/CTE
 X/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/CTEX/MiKTe
 X/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fonts
 /type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (77 pages, 1743748 bytes).
+Output written on paper.pdf (77 pages, 1745800 bytes).
 PDF statistics:
  1391 PDF objects out of 1440 (max. 8388607)
  230 named destinations out of 1000 (max. 500000)
